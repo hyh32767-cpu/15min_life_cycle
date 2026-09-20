@@ -1,0 +1,45 @@
+{
+ "limit_declared": "50 req / 3s (~16.7 QPS)",
+ "tiers": {
+  "2": {
+   "n": 40,
+   "ok": 40,
+   "statuses": {
+    "0": 40
+   },
+   "latency_p50_ms": 1664,
+   "latency_p95_ms": 1757,
+   "mean_ms": 1655
+  },
+  "4": {
+   "n": 40,
+   "ok": 40,
+   "statuses": {
+    "0": 40
+   },
+   "latency_p50_ms": 1661,
+   "latency_p95_ms": 1748,
+   "mean_ms": 1651
+  },
+  "8": {
+   "n": 40,
+   "ok": 40,
+   "statuses": {
+    "0": 40
+   },
+   "latency_p50_ms": 1661,
+   "latency_p95_ms": 2029,
+   "mean_ms": 1684
+  },
+  "16": {
+   "n": 40,
+   "ok": 40,
+   "statuses": {
+    "0": 40
+   },
+   "latency_p50_ms": 1715,
+   "latency_p95_ms": 2173,
+   "mean_ms": 1751
+  }
+ }
+}

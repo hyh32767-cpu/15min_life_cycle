@@ -1,0 +1,32 @@
+{
+ "北京B·东花市": {
+  "target": 441,
+  "covered": 441,
+  "new_pairs": 0,
+  "complete": true
+ },
+ "上海·陆家嘴": {
+  "target": 441,
+  "covered": 441,
+  "new_pairs": 0,
+  "complete": true
+ },
+ "广州·上下九": {
+  "target": 441,
+  "covered": 441,
+  "new_pairs": 0,
+  "complete": true
+ },
+ "成都·九眼桥": {
+  "target": 441,
+  "covered": 441,
+  "new_pairs": 0,
+  "complete": true
+ },
+ "哈尔滨·道外": {
+  "target": 441,
+  "covered": 441,
+  "new_pairs": 316,
+  "complete": true
+ }
+}

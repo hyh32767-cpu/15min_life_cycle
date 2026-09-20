@@ -1,0 +1,52 @@
+{
+ "community": "哈尔滨·道外",
+ "cells": 818,
+ "cands": 203,
+ "network": "OSM walk (参照)",
+ "results": {
+  "养老(全盲)": [
+   {
+    "k": 1,
+    "site_bd09": [
+     45.787629,
+     126.647361
+    ],
+    "covered": 775,
+    "demand": 818,
+    "coverage_pct": 95
+   },
+   {
+    "k": 2,
+    "site_bd09": [
+     45.788527,
+     126.646073
+    ],
+    "covered": 800,
+    "demand": 818,
+    "coverage_pct": 98
+   },
+   {
+    "k": 3,
+    "site_bd09": [
+     45.780442,
+     126.647361
+    ],
+    "covered": 818,
+    "demand": 818,
+    "coverage_pct": 100
+   }
+  ],
+  "教育(轻度盲区)": [
+   {
+    "k": 1,
+    "site_bd09": [
+     45.784036,
+     126.642209
+    ],
+    "covered": 23,
+    "demand": 23,
+    "coverage_pct": 100
+   }
+  ]
+ }
+}

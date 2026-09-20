@@ -1,0 +1,19 @@
+{
+ "education_baidu_best": {
+  "site_bd09": [
+   45.787629,
+   126.643497
+  ],
+  "baidu_cov": 20,
+  "osm_cov": 23,
+  "demand": 23
+ },
+ "old_site": {
+  "site_bd09": [
+   45.78404,
+   126.64221
+  ],
+  "baidu_cov": 2,
+  "osm_cov": 23
+ }
+}

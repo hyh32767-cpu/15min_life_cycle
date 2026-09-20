@@ -1,0 +1,134 @@
+{
+ "experiment": "E0",
+ "ts": "2026-08-25T12:12:36",
+ "geocode": {
+  "北京市东城区天安门": [
+   39.91511908708907,
+   116.40396298757886
+  ],
+  "北京市东城区王府井大街": [
+   39.92256304162586,
+   116.41759225843734
+  ],
+  "北京市东城区北京站": [
+   39.90890943799633,
+   116.43414344762813
+  ],
+  "北京市朝阳区朝阳公园": [
+   39.94847808685094,
+   116.48692168108643
+  ],
+  "北京市海淀区中关村": [
+   39.98387690325234,
+   116.32495647899299
+  ],
+  "北京市西城区金融街": [
+   39.92934036696799,
+   116.36843698093135
+  ]
+ },
+ "center": [
+  39.92256304162586,
+  116.41759225843734
+ ],
+ "walk_latency": {
+  "n_ok": 40,
+  "n_err": 0,
+  "p50": 1735,
+  "p95": 1811,
+  "p99": 2054,
+  "mean": 1736
+ },
+ "walk_errors": [],
+ "batch": [
+  {
+   "n": 2,
+   "ok": true,
+   "status": 0,
+   "returned": 2,
+   "latency_ms": 1668,
+   "message": "成功"
+  },
+  {
+   "n": 5,
+   "ok": true,
+   "status": 0,
+   "returned": 5,
+   "latency_ms": 1780,
+   "message": "成功"
+  },
+  {
+   "n": 10,
+   "ok": true,
+   "status": 0,
+   "returned": 10,
+   "latency_ms": 1734,
+   "message": "成功"
+  },
+  {
+   "n": 25,
+   "ok": true,
+   "status": 0,
+   "returned": 25,
+   "latency_ms": 1701,
+   "message": "成功"
+  },
+  {
+   "n": 50,
+   "ok": true,
+   "status": 0,
+   "returned": 50,
+   "latency_ms": 1702,
+   "message": "成功"
+  }
+ ],
+ "batch_blocked": false,
+ "consistency_single_minus_batch_s": [
+  -1,
+  -1,
+  -1,
+  -1,
+  0,
+  0,
+  -1,
+  0
+ ],
+ "batch_max_ok": 50,
+ "poi": {
+  "医疗": {
+   "ok": true,
+   "status": 0,
+   "n_page1": 20,
+   "total": 35,
+   "message": "ok"
+  },
+  "教育": {
+   "ok": true,
+   "status": 0,
+   "n_page1": 20,
+   "total": 20,
+   "message": "ok"
+  },
+  "购物": {
+   "ok": true,
+   "status": 0,
+   "n_page1": 6,
+   "total": 6,
+   "message": "ok"
+  },
+  "药店": {
+   "ok": true,
+   "status": 0,
+   "n_page1": 20,
+   "total": 22,
+   "message": "ok"
+  },
+  "养老": {
+   "ok": true,
+   "status": 0,
+   "n_page1": 1,
+   "total": 1,
+   "message": "ok"
+  }
+ }
+}

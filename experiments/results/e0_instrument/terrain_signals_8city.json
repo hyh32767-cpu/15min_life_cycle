@@ -1,0 +1,377 @@
+{
+ "chongqing": {
+  "rays": {
+   "90": {
+    "max_dev": 113.50536380756924,
+    "max_lat": 91.7276799997704,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "180": {
+    "max_dev": 160.50305919581683,
+    "max_lat": 157.15738067126475,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "270": {
+    "max_dev": 109.49694080418317,
+    "max_lat": 84.15791999989882,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "0": {
+    "max_dev": 90.0,
+    "max_lat": 143.60098307909308,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "重庆长江大桥",
+    "dist": 1029
+   },
+   "河": {
+    "n": 3,
+    "nearest": "水泥河沙红砖除渣平平建材",
+    "dist": 189
+   },
+   "隧道": {
+    "n": 3,
+    "nearest": "中铁一局集团重庆轨道交通27号线穿江隧道始发井工区",
+    "dist": 581
+   }
+  },
+  "roads": {}
+ },
+ "guilin": {
+  "rays": {
+   "163": {
+    "max_dev": 86.04056856284626,
+    "max_lat": 111.04524716133491,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "200": {
+    "max_dev": 77.18083134734934,
+    "max_lat": 76.9542854102347,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "300": {
+    "max_dev": 84.32854649473842,
+    "max_lat": 102.41211576673274,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "30": {
+    "max_dev": 122.11117237820076,
+    "max_lat": 66.6337570136716,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "胜利桥",
+    "dist": 1037
+   },
+   "河": {
+    "n": 3,
+    "nearest": "力港琴潭壹号-南门",
+    "dist": 729
+   },
+   "隧道": {
+    "n": 1,
+    "nearest": "检察院小区-4栋",
+    "dist": 210
+   }
+  },
+  "roads": {}
+ },
+ "harbin": {
+  "rays": {
+   "45": {
+    "max_dev": 119.0447063640569,
+    "max_lat": 253.92088052903534,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "135": {
+    "max_dev": 79.67827767195931,
+    "max_lat": 56.4473075576754,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "225": {
+    "max_dev": 119.00487242910742,
+    "max_lat": 125.43047573863763,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "315": {
+    "max_dev": 69.19077351889206,
+    "max_lat": 36.48261977423573,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "圣开三里桥火盆(南五道街店)",
+    "dist": 494
+   },
+   "河": {
+    "n": 3,
+    "nearest": "哈尔滨市道外区沿江河公园",
+    "dist": 1158
+   },
+   "隧道": {
+    "n": 0
+   }
+  },
+  "roads": {}
+ },
+ "wuhan": {
+  "rays": {
+   "90": {
+    "max_dev": 93.78871440487751,
+    "max_lat": 190.80247999997454,
+    "terrain_roads": [
+     "沿江大道"
+    ],
+    "signal": true
+   },
+   "180": {
+    "max_dev": 75.35291128192921,
+    "max_lat": 91.23392904817173,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "270": {
+    "max_dev": 104.48112495740043,
+    "max_lat": 219.07776000016972,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "0": {
+    "max_dev": 49.78082727046706,
+    "max_lat": 192.7220917197234,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "六渡桥",
+    "dist": 1087
+   },
+   "河": {
+    "n": 2,
+    "nearest": "武汉市杨河建筑工程有限公司",
+    "dist": 87
+   },
+   "隧道": {
+    "n": 3,
+    "nearest": "武汉长江隧道/沿江大道(路口)",
+    "dist": 646
+   }
+  },
+  "roads": {}
+ },
+ "tianjin": {
+  "rays": {
+   "90": {
+    "max_dev": 124.33987421894568,
+    "max_lat": 144.15939999988151,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "180": {
+    "max_dev": 141.84226393205284,
+    "max_lat": 114.18034570412286,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "270": {
+    "max_dev": 57.545446530222335,
+    "max_lat": 135.2537999994278,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "0": {
+    "max_dev": 133.98522321426864,
+    "max_lat": 117.03053587818974,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "友谊北路桥",
+    "dist": 921
+   },
+   "河": {
+    "n": 3,
+    "nearest": "废墙子河",
+    "dist": 984
+   },
+   "隧道": {
+    "n": 0
+   }
+  },
+  "roads": {}
+ },
+ "shenzhen": {
+  "rays": {
+   "22": {
+    "max_dev": 158.0,
+    "max_lat": 121.39353302500854,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "45": {
+    "max_dev": 178.80280090238946,
+    "max_lat": 153.34963693282054,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "225": {
+    "max_dev": 49.95087184639203,
+    "max_lat": 166.10269571108705,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "315": {
+    "max_dev": 134.2245425567976,
+    "max_lat": 80.34547441597604,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "黄木岗立交桥与笋岗西路交叉口",
+    "dist": 1023
+   },
+   "河": {
+    "n": 3,
+    "nearest": "福田河",
+    "dist": 919
+   },
+   "隧道": {
+    "n": 1,
+    "nearest": "黄木岗隧道",
+    "dist": 985
+   }
+  },
+  "roads": {}
+ },
+ "xiamen": {
+  "rays": {
+   "90": {
+    "max_dev": 82.61713499384064,
+    "max_lat": 67.79388000008322,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "180": {
+    "max_dev": 151.35878832064617,
+    "max_lat": 90.99366213997978,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "270": {
+    "max_dev": 159.8873207073388,
+    "max_lat": 160.52344000009262,
+    "terrain_roads": [],
+    "signal": true
+   },
+   "0": {
+    "max_dev": 98.63376383981341,
+    "max_lat": 102.34253759481527,
+    "terrain_roads": [],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "中山路",
+    "dist": 466
+   },
+   "河": {
+    "n": 3,
+    "nearest": "河仔墘巷与小打铁巷交叉口",
+    "dist": 656
+   },
+   "隧道": {
+    "n": 3,
+    "nearest": "鼓浪屿-海底隧道",
+    "dist": 995
+   }
+  },
+  "roads": {}
+ },
+ "lanzhou": {
+  "rays": {
+   "84": {
+    "max_dev": 85.01296114742689,
+    "max_lat": 125.8651231715676,
+    "terrain_roads": [
+     "中山桥",
+     "北滨河中路"
+    ],
+    "signal": true
+   },
+   "90": {
+    "max_dev": 88.06065955876286,
+    "max_lat": 132.02551999966857,
+    "terrain_roads": [
+     "中山桥"
+    ],
+    "signal": true
+   },
+   "96": {
+    "max_dev": 82.06065955876286,
+    "max_lat": 130.74735454875037,
+    "terrain_roads": [
+     "中山桥"
+    ],
+    "signal": true
+   },
+   "270": {
+    "max_dev": 90.0,
+    "max_lat": 126.23688000004591,
+    "terrain_roads": [
+     "中山桥"
+    ],
+    "signal": true
+   }
+  },
+  "poi": {
+   "桥": {
+    "n": 3,
+    "nearest": "中山桥",
+    "dist": 7
+   },
+   "河": {
+    "n": 3,
+    "nearest": "绣河沿清真古寺",
+    "dist": 1006
+   },
+   "隧道": {
+    "n": 1,
+    "nearest": "金城关隧道",
+    "dist": 869
+   }
+  },
+  "roads": {}
+ }
+}

@@ -1,0 +1,171 @@
+{
+ "v": "v2-selfsignal",
+ "rows": [
+  {
+   "slug": "A",
+   "city": "A",
+   "aniso8": 1.47,
+   "ng200_8": 3,
+   "gmax": 292,
+   "label": false
+  },
+  {
+   "slug": "B",
+   "city": "B",
+   "aniso8": 2.27,
+   "ng200_8": 2,
+   "gmax": 347,
+   "label": false
+  },
+  {
+   "slug": "shanghai",
+   "city": "上海·陆家嘴",
+   "aniso8": 1.74,
+   "ng200_8": 2,
+   "gmax": 394,
+   "label": true
+  },
+  {
+   "slug": "guangzhou",
+   "city": "广州·上下九",
+   "aniso8": 1.33,
+   "ng200_8": 0,
+   "gmax": 187,
+   "label": true
+  },
+  {
+   "slug": "chengdu",
+   "city": "成都·九眼桥",
+   "aniso8": 1.85,
+   "ng200_8": 2,
+   "gmax": 405,
+   "label": false
+  },
+  {
+   "slug": "harbin",
+   "city": "哈尔滨·道外",
+   "aniso8": 2.08,
+   "ng200_8": 3,
+   "gmax": 487,
+   "label": true
+  },
+  {
+   "slug": "xian",
+   "city": "西安·钟楼",
+   "aniso8": 1.36,
+   "ng200_8": 0,
+   "gmax": 125,
+   "label": false
+  },
+  {
+   "slug": "chongqing",
+   "city": "重庆·解放碑",
+   "aniso8": 3.14,
+   "ng200_8": 2,
+   "gmax": 572,
+   "label": true
+  },
+  {
+   "slug": "changsha",
+   "city": "长沙·五一广场",
+   "aniso8": 1.68,
+   "ng200_8": 2,
+   "gmax": 366,
+   "label": true
+  },
+  {
+   "slug": "wuhan",
+   "city": "武汉·江汉路",
+   "aniso8": 2.21,
+   "ng200_8": 5,
+   "gmax": 667,
+   "label": true
+  },
+  {
+   "slug": "luoyang",
+   "city": "洛阳·老城",
+   "aniso8": 1.78,
+   "ng200_8": 4,
+   "gmax": 379,
+   "label": true
+  },
+  {
+   "slug": "kunshan",
+   "city": "昆山·人民路",
+   "aniso8": 1.14,
+   "ng200_8": 0,
+   "gmax": 65,
+   "label": false
+  },
+  {
+   "slug": "guilin",
+   "city": "桂林·东西巷",
+   "aniso8": 8.11,
+   "ng200_8": 5,
+   "gmax": 728,
+   "label": true
+  },
+  {
+   "slug": "zunyi",
+   "city": "遵义·老城",
+   "aniso8": 1.67,
+   "ng200_8": 1,
+   "gmax": 216,
+   "label": true
+  },
+  {
+   "slug": "yiwu",
+   "city": "义乌·稠城",
+   "aniso8": 2.62,
+   "ng200_8": 4,
+   "gmax": 392,
+   "label": true
+  },
+  {
+   "slug": "nanchang",
+   "city": "南昌·八一广场",
+   "aniso8": 1.34,
+   "ng200_8": 1,
+   "gmax": 234,
+   "label": false
+  },
+  {
+   "slug": "huilongguan",
+   "city": "北京·回龙观",
+   "aniso8": 2.09,
+   "ng200_8": 3,
+   "gmax": 450,
+   "label": true
+  },
+  {
+   "slug": "zhangjiang",
+   "city": "上海·张江",
+   "aniso8": 1.42,
+   "ng200_8": 2,
+   "gmax": 216,
+   "label": false
+  },
+  {
+   "slug": "zhujiangxincheng",
+   "city": "广州·珠江新城",
+   "aniso8": 2.62,
+   "ng200_8": 5,
+   "gmax": 620,
+   "label": true
+  },
+  {
+   "slug": "yulin_cd",
+   "city": "成都·玉林",
+   "aniso8": 2.37,
+   "ng200_8": 6,
+   "gmax": 319,
+   "label": true
+  }
+ ],
+ "rule": {
+  "feature": "aniso8",
+  "thr": 1.67,
+  "loo": 0.85
+ },
+ "note": "8向tol50完成后的第二决策点;零路网零额外调用;v1(朝向熵)因路网政策作废"
+}

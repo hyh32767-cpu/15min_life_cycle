@@ -1,0 +1,23 @@
+{
+ "experiment": "E1",
+ "ts": "2026-08-24T16:57:33",
+ "roundtrip_max_m": 0.14082916488344513,
+ "roundtrip_mean_m": 0.07079618653276173,
+ "pass_lt_1m": true,
+ "numeric_offset_m": 1375.3,
+ "route": {
+  "correct": [
+   899,
+   769
+  ],
+  "mixed": [
+   1183,
+   1102
+  ],
+  "delta_m": 284,
+  "delta_s": 333
+ },
+ "address_correct": "北京市东城区建国门街道西石槽胡同7号",
+ "address_mixed": "北京市东城区东华门街道东长安街37号",
+ "landing_offset_m": 1369
+}

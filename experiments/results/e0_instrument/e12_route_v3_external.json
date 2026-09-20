@@ -1,0 +1,253 @@
+{
+ "v": "v3-external",
+ "rows": [
+  {
+   "slug": "A",
+   "city": "A",
+   "type": "",
+   "dem": {
+    "relief": 44.0,
+    "std": 4.3,
+    "rug": 0.94
+   },
+   "aniso8": 1.47,
+   "label": false
+  },
+  {
+   "slug": "B",
+   "city": "B",
+   "type": "",
+   "dem": {
+    "relief": 64.0,
+    "std": 5.2,
+    "rug": 0.76
+   },
+   "aniso8": 2.27,
+   "label": false
+  },
+  {
+   "slug": "shanghai",
+   "city": "上海·陆家嘴",
+   "type": "CBD超级街区+黄浦江",
+   "dem": {
+    "relief": 141.0,
+    "std": 7.7,
+    "rug": 1.6
+   },
+   "aniso8": 1.74,
+   "label": true
+  },
+  {
+   "slug": "guangzhou",
+   "city": "广州·上下九",
+   "type": "老城窄巷+河涌",
+   "dem": {
+    "relief": 114.0,
+    "std": 6.8,
+    "rug": 1.88
+   },
+   "aniso8": 1.33,
+   "label": true
+  },
+  {
+   "slug": "chengdu",
+   "city": "成都·九眼桥",
+   "type": "规则路网+府河",
+   "dem": {
+    "relief": 45.0,
+    "std": 3.7,
+    "rug": 0.74
+   },
+   "aniso8": 1.85,
+   "label": false
+  },
+  {
+   "slug": "harbin",
+   "city": "哈尔滨·道外",
+   "type": "北方老城+江/铁路",
+   "dem": {
+    "relief": 54.0,
+    "std": 6.0,
+    "rug": 0.47
+   },
+   "aniso8": 2.08,
+   "label": true
+  },
+  {
+   "slug": "xian",
+   "city": "西安·钟楼",
+   "type": "明城墙环障",
+   "dem": {
+    "relief": 40.0,
+    "std": 4.0,
+    "rug": 0.73
+   },
+   "aniso8": 1.36,
+   "label": false
+  },
+  {
+   "slug": "chongqing",
+   "city": "重庆·解放碑",
+   "type": "立体过街/山城",
+   "dem": {
+    "relief": 214.0,
+    "std": 50.4,
+    "rug": 2.85
+   },
+   "aniso8": 3.14,
+   "label": true
+  },
+  {
+   "slug": "changsha",
+   "city": "长沙·五一广场",
+   "type": "商圈规则+湘江",
+   "dem": {
+    "relief": 77.0,
+    "std": 12.3,
+    "rug": 1.05
+   },
+   "aniso8": 1.68,
+   "label": true
+  },
+  {
+   "slug": "wuhan",
+   "city": "武汉·江汉路",
+   "type": "老城+长江",
+   "dem": {
+    "relief": 77.0,
+    "std": 9.9,
+    "rug": 1.38
+   },
+   "aniso8": 2.21,
+   "label": true
+  },
+  {
+   "slug": "luoyang",
+   "city": "洛阳·老城",
+   "type": "古城十字街",
+   "dem": {
+    "relief": 39.0,
+    "std": 7.3,
+    "rug": 0.55
+   },
+   "aniso8": 1.78,
+   "label": true
+  },
+  {
+   "slug": "kunshan",
+   "city": "昆山·人民路",
+   "type": "县级市商圈",
+   "dem": {
+    "relief": 19.0,
+    "std": 2.5,
+    "rug": 0.58
+   },
+   "aniso8": 1.14,
+   "label": false
+  },
+  {
+   "slug": "guilin",
+   "city": "桂林·东西巷",
+   "type": "旅游老城+漓江",
+   "dem": {
+    "relief": 103.0,
+    "std": 11.1,
+    "rug": 0.64
+   },
+   "aniso8": 8.11,
+   "label": true
+  },
+  {
+   "slug": "zunyi",
+   "city": "遵义·老城",
+   "type": "山地江城",
+   "dem": {
+    "relief": 207.0,
+    "std": 45.2,
+    "rug": 2.26
+   },
+   "aniso8": 1.67,
+   "label": true
+  },
+  {
+   "slug": "yiwu",
+   "city": "义乌·稠城",
+   "type": "强县级市商圈",
+   "dem": {
+    "relief": 39.0,
+    "std": 5.3,
+    "rug": 0.92
+   },
+   "aniso8": 2.62,
+   "label": true
+  },
+  {
+   "slug": "nanchang",
+   "city": "南昌·八一广场",
+   "type": "省会广场商圈(演示城)",
+   "dem": {
+    "relief": 67.0,
+    "std": 5.0,
+    "rug": 1.2
+   },
+   "aniso8": 1.34,
+   "label": false
+  },
+  {
+   "slug": "huilongguan",
+   "city": "北京·回龙观",
+   "type": "超大型居住区",
+   "dem": {
+    "relief": 28.0,
+    "std": 2.4,
+    "rug": 0.48
+   },
+   "aniso8": 2.09,
+   "label": true
+  },
+  {
+   "slug": "zhangjiang",
+   "city": "上海·张江",
+   "type": "科技园区",
+   "dem": {
+    "relief": 33.0,
+    "std": 2.2,
+    "rug": 0.57
+   },
+   "aniso8": 1.42,
+   "label": false
+  },
+  {
+   "slug": "zhujiangxincheng",
+   "city": "广州·珠江新城",
+   "type": "新CBD",
+   "dem": {
+    "relief": 106.0,
+    "std": 9.5,
+    "rug": 2.26
+   },
+   "aniso8": 2.62,
+   "label": true
+  },
+  {
+   "slug": "yulin_cd",
+   "city": "成都·玉林",
+   "type": "老居住市井",
+   "dem": {
+    "relief": 32.0,
+    "std": 3.2,
+    "rug": 0.66
+   },
+   "aniso8": 2.37,
+   "label": true
+  }
+ ],
+ "A_rule": {
+  "feature": "std",
+  "thr": 5.3,
+  "loo": 0.9
+ },
+ "C_prior_loo": 0.75,
+ "combo_loo": 0.75,
+ "note": "A=AWS terrarium z12(非路网);C=类型先验表,产品化由 LLM 打标签"
+}

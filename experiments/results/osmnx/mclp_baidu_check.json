@@ -1,0 +1,64 @@
+{
+ "community": "哈尔滨·道外",
+ "elderly_sample_n": 200,
+ "results": {
+  "养老(全盲)": {
+   "sample_n": 200,
+   "sites": [
+    {
+     "k": 1,
+     "site": [
+      45.787629,
+      126.647361
+     ],
+     "osm_cov": 191,
+     "baidu_cov": 190,
+     "osm_cum_pct": 95.5,
+     "baidu_cum_pct": 95.0
+    },
+    {
+     "k": 2,
+     "site": [
+      45.788527,
+      126.646073
+     ],
+     "osm_cov": 171,
+     "baidu_cov": 178,
+     "osm_cum_pct": 96.5,
+     "baidu_cum_pct": 96.5
+    },
+    {
+     "k": 3,
+     "site": [
+      45.780442,
+      126.647361
+     ],
+     "osm_cov": 94,
+     "baidu_cov": 79,
+     "osm_cum_pct": 100.0,
+     "baidu_cum_pct": 98.5
+    }
+   ],
+   "osm_total_pct": 100.0,
+   "baidu_total_pct": 98.5
+  },
+  "教育(轻度盲区)": {
+   "sample_n": 23,
+   "sites": [
+    {
+     "k": 1,
+     "site": [
+      45.784036,
+      126.642209
+     ],
+     "osm_cov": 23,
+     "baidu_cov": 2,
+     "osm_cum_pct": 100.0,
+     "baidu_cum_pct": 8.7
+    }
+   ],
+   "osm_total_pct": 100.0,
+   "baidu_total_pct": 8.7
+  }
+ }
+}
