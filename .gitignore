@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+experiments/logs/
+experiments/results/
+
+.obsidian/
