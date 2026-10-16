@@ -8,4 +8,6 @@ import './styles/base.css'
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)
-app.mount('#app')
+// Do not expose interactive shell controls until the initial lazy route is ready.
+// Otherwise its completion can close a search dialog the user has just opened.
+void router.isReady().then(() => app.mount('#app'))
