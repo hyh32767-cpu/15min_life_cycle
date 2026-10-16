@@ -114,7 +114,7 @@
 - `demo-data/v1/cases/`：历史实验案例静态数据（只读展示研究基础）；百度实时字段一律走 live API，不再固化 fixture。
 - `tools/demo/`：历史案例导出、发布包扫描、规划基准；录制/校验/同步工具已删除。
 - 优先复用 `core/baidu_client.py`、坐标转换、缓存和账本，但先补产品级接口与测试；`experiments/`仍是研究资产，不覆盖其原始结果和数据库。
-- `app-dxcyy98y3xtv`是空Gitlink且缺.gitmodules；不作为实现基础，不擅自删改或猜测远端来源。
+- `app-dxcyy98y3xtv`原为空Gitlink且缺.gitmodules，已于2026-10-16按用户明确要求移除仓库引用；不恢复或猜测远端来源。
 
 ## 数据、坐标与时间
 
