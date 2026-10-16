@@ -3,3 +3,25 @@ __pycache__/
 .obsidian/
 .venv/
 uv.lock
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+api/var/
+
+.env
+.env.*
+!.env.example
+release/
+
+# 本地生成与工作副本；精选展示材料放入 docs/media/。
+/output/
+/backup/
+/.zcode/
+# 用户授权保留清除密钥后的研究数据库及缓存；运行中的 api/var 仍不直接跟踪。
+*.db-wal
+*.db-shm

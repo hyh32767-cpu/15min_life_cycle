@@ -1,0 +1,37 @@
+{
+  "sample": "北京回龙观小区→龙泽苑",
+  "routeSeconds": 3608,
+  "routeDistanceM": 3984,
+  "geometryPoints": 119,
+  "retrievedPoiCount": 6,
+  "retrieval": {
+    "queryTerms": [
+      "药店"
+    ],
+    "category": "",
+    "windows": 4,
+    "pages": 4,
+    "rawCount": 18,
+    "uniqueCount": 15,
+    "truncated": true,
+    "truncationReason": "max_unique",
+    "sourceKind": "derived"
+  },
+  "planStatus": "ready",
+  "planFinishSeconds": 68268.0,
+  "replanClosed": "infeasible",
+  "replanRecovered": "ready",
+  "isoStatus": "complete",
+  "isoRays": 8,
+  "isoFailedBearings": [],
+  "isoSkippedBearings": [],
+  "isoPairs": 48,
+  "isoSeconds": 14.24,
+  "isoLiveRequests": 8,
+  "repeatLiveRequests": 0,
+  "repeatCacheHit": true,
+  "repeatPairs": 0,
+  "totalLiveRequests": 17,
+  "totalCacheHits": 0,
+  "totalPairs": 88
+}

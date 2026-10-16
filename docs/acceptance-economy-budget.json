@@ -1,0 +1,191 @@
+{
+  "limits": {
+    "requests": 40,
+    "pairs": 100
+  },
+  "requests": 36,
+  "pairs": 96,
+  "calls": [
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "walking",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi_detail",
+      "pairs": 1,
+      "status": 401
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 15,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 15,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 12,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 12,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 9,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 1,
+      "status": 401
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "poi",
+      "pairs": 1,
+      "status": 0
+    },
+    {
+      "kind": "matrix_walking",
+      "pairs": 3,
+      "status": 0
+    }
+  ],
+  "blockedKinds": []
+}

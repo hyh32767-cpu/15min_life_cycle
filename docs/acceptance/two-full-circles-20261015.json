@@ -1,0 +1,197 @@
+{
+  "checkedAt": "2026-10-15T07:14:50.306540+00:00",
+  "parameters": {
+    "thresholdSeconds": 900,
+    "maxPairs": 320,
+    "tolM": 25,
+    "adaptive": true,
+    "l2First": true
+  },
+  "method": "Sequential POST + status polling on running production backend; cache untouched; no facility calls",
+  "cases": [
+    {
+      "name": "北京·王府井",
+      "origin": {
+        "lng": 116.417601,
+        "lat": 39.921669,
+        "crs": "BD09"
+      },
+      "initialResponseSeconds": 0.024,
+      "firstMeasuredBoundarySeconds": 0.024,
+      "finalSeconds": 0.024,
+      "status": "complete",
+      "backgroundStatus": "completed",
+      "taskId": "ffb84bc25a90",
+      "traceId": "44c176fe4f184e82",
+      "rays": 31,
+      "pairsUsed": 0,
+      "cacheHit": true,
+      "sourceKind": "mixed",
+      "warnings": [
+        "adaptive_resolution_limited",
+        "derived-cache-hit:ledger-cost-0"
+      ],
+      "failedBearings": [],
+      "skippedBearings": [],
+      "transitions": [
+        {
+          "seconds": 0.024,
+          "status": "complete",
+          "backgroundStatus": "completed",
+          "rays": 31
+        }
+      ],
+      "cost": {
+        "liveHttpAttempts": 0,
+        "liveRouteCost": 0,
+        "cacheRows": 0,
+        "rateLimitRows": 0,
+        "errorRows": 0,
+        "sumNetworkLatencyMs": 0
+      },
+      "reportMatchesBoundary": true
+    },
+    {
+      "name": "重庆·解放碑",
+      "origin": {
+        "lng": 106.57544006681098,
+        "lat": 29.559090182993803,
+        "crs": "BD09"
+      },
+      "initialResponseSeconds": null,
+      "initialTimingNote": "Timing was not saved before the report crosscheck returned HTTP 404; no extra run performed.",
+      "firstMeasuredBoundarySeconds": 55.922,
+      "finalSeconds": 117.436,
+      "status": "complete",
+      "backgroundStatus": "completed",
+      "taskId": "5b927a56bf39",
+      "traceId": "ed08bc7f17614b29",
+      "rays": 28,
+      "pairsUsed": 294,
+      "cacheHit": false,
+      "sourceKind": "derived",
+      "warnings": [
+        "refinement:ray_failed:106.875:measurement_missing_during_bisect",
+        "refinement:ray_failed:275.625:measurement_missing_during_bisect",
+        "refinement:ray_failed:5.625:measurement_missing_during_bisect",
+        "adaptive_resolution_limited",
+        "upstream:SERVICE_BUSY"
+      ],
+      "failedBearings": [],
+      "skippedBearings": [],
+      "transitions": [
+        {
+          "seconds": 55.922,
+          "rays": 16,
+          "backgroundStatus": "running"
+        },
+        {
+          "seconds": 100.666,
+          "rays": 28,
+          "backgroundStatus": "running"
+        },
+        {
+          "seconds": 117.436,
+          "rays": 28,
+          "backgroundStatus": "completed"
+        }
+      ],
+      "cost": {
+        "liveHttpAttempts": 22,
+        "liveRouteCost": 318,
+        "successfulResponseRouteCost": 267,
+        "cacheRows": 0,
+        "rateLimitRows": 3,
+        "errorRows": 3,
+        "sumNetworkLatencyMs": 54584,
+        "responsesOver10Seconds": 5
+      },
+      "initialReportHttpStatus": 404,
+      "reportMatchesBoundary": false,
+      "finalSnapshot": {
+        "expiresAt": "2026-10-15T13:14:50.580563+00:00",
+        "taskId": "5b927a56bf39",
+        "status": "complete",
+        "placeId": null,
+        "thresholdSeconds": 900.0,
+        "radiiM": {
+          "0.0": 509.375,
+          "22.5": 790.625,
+          "45.0": 917.1875,
+          "67.5": 870.3125,
+          "90.0": 870.3125,
+          "112.5": 584.375,
+          "135.0": 284.375,
+          "157.5": 303.125,
+          "180.0": 415.625,
+          "202.5": 415.625,
+          "225.0": 415.625,
+          "247.5": 359.375,
+          "270.0": 584.375,
+          "292.5": 885.9375,
+          "315.0": 771.875,
+          "337.5": 640.625,
+          "123.75": 415.625,
+          "101.25": 807.8125,
+          "258.75": 434.375,
+          "326.25": 621.875,
+          "78.75": 807.8125,
+          "213.75": 396.875,
+          "281.25": 771.875,
+          "11.25": 678.125,
+          "33.75": 854.6875,
+          "348.75": 640.625,
+          "303.75": 885.9375,
+          "56.25": 885.9375
+        },
+        "failedBearings": [],
+        "skippedBearings": [],
+        "algorithmVersion": "m3-adaptive-batched-v1",
+        "warnings": [
+          "refinement:ray_failed:106.875:measurement_missing_during_bisect",
+          "refinement:ray_failed:275.625:measurement_missing_during_bisect",
+          "refinement:ray_failed:5.625:measurement_missing_during_bisect",
+          "adaptive_resolution_limited",
+          "upstream:SERVICE_BUSY"
+        ],
+        "cacheHit": false,
+        "pairsUsed": 294,
+        "traceId": "ed08bc7f17614b29",
+        "mode": "live",
+        "sourceKind": "derived",
+        "origin": {
+          "lng": 106.57544006681098,
+          "lat": 29.559090182993803,
+          "crs": "BD09"
+        },
+        "report": {
+          "thresholdSeconds": 900.0,
+          "origin": {
+            "lng": 106.57544006681098,
+            "lat": 29.559090182993803,
+            "crs": "BD09"
+          },
+          "algorithmVersion": "m3-adaptive-batched-v1",
+          "effectiveBearings": 28,
+          "failedBearings": [],
+          "skippedBearings": [],
+          "maxRadiusM": 917.1875,
+          "minRadiusM": 284.375,
+          "medianRadiusM": 640.625,
+          "approxAreaM2": 1255771.7293436925,
+          "approxPerimeterM": 4720.783688732252,
+          "approxNote": "实测射线重建近似边界，非完整路网可达面积",
+          "pairsUsed": 294
+        },
+        "backgroundStatus": "completed"
+      },
+      "reportSnapshotRecheck": {
+        "method": "Saved real final snapshot supplied to production report/export handlers; no upstream calls, no persistent cache insertion",
+        "matchesBoundary": true,
+        "warningsPreserved": true,
+        "cacheHit": false,
+        "lifetime": "Available in task memory until process restart or expiry; not persisted as a healthy derived-cache result"
+      }
+    }
+  ]
+}

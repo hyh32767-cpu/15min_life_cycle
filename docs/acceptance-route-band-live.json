@@ -1,0 +1,956 @@
+{
+  "nativeSupplementLedger": [
+    {"traceId": "4fec278fe7314866", "started": "2026-10-07T15:53:15.416889+00:00", "liveRequests": 7, "livePairs": 41, "cacheHits": 1},
+    {"traceId": "2901a2ffcd2b4b53", "started": "2026-10-07T15:53:19.640463+00:00", "liveRequests": 11, "livePairs": 72, "cacheHits": 1},
+    {"traceId": "4dd9d1068f0a43ba", "started": "2026-10-07T15:53:37.532274+00:00", "liveRequests": 9, "livePairs": 59, "cacheHits": 1}
+  ],
+  "definition": "complete sampled outgoing walking circles union; approximate, not detour feasibility",
+  "route": {
+    "durationSeconds": 1208,
+    "distanceM": 1365
+  },
+  "stages": [
+    {
+      "name": "preview",
+      "result": {
+        "routeHash": "74c8224fbe2687fb4bb36a27e8b008a9f10d9980452262ff7592e94d84630cfc",
+        "thresholdSeconds": 900,
+        "nodes": [
+          {
+            "index": 0,
+            "origin": {
+              "lng": 116.346787,
+              "lat": 40.08198,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 1,
+            "origin": {
+              "lng": 116.351165,
+              "lat": 40.08423,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 2,
+            "origin": {
+              "lng": 116.356385,
+              "lat": 40.085716,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          }
+        ],
+        "centers": [
+          {
+            "lng": 116.346787,
+            "lat": 40.08198,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.351165,
+            "lat": 40.08423,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.356385,
+            "lat": 40.085716,
+            "crs": "BD09"
+          }
+        ],
+        "distanceM": 1363.695388242843,
+        "maxGapM": 684.1389354936695,
+        "boundaries": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "fills": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "completeCount": 3,
+        "status": "complete",
+        "sourceKind": "derived",
+        "upstreamResponseHashes": [
+          "041de83815c4e18197438e2096e6f00c415b6fbb4b778bd7bab9df5661dbc9d7",
+          "0cef954fef5851d6d8837f412f5164dad8e06c27f358901031dfe78d7b12cb99",
+          "160b00a8d7e8fbe026a16d83a94a4b07aacea31446721aa04e6419aff0d42dd0",
+          "270a2939dd132bd15ca248ae18bb8974ea64ca953d0af445b8866197d7167318",
+          "27b804aece212410d7648b960719a0a6f7aacc140a93cbf2952a691246536b7f",
+          "29b794c0a485b9c15db0c3b1bf754c6c05647e3cf8d4dd476d6f29acd060f9b9",
+          "2aeebd0e641d73fe0db3e6e37db22d79787645fe5a10bda41cd00ba0f1356fb2",
+          "2e752ea59be92eb9237d02b18a0ef4aee1eef94b46d8f78cac4afea70e94aa50",
+          "34183f251765e9cf8f14ca6e04187a959b7cf938baf054bea5d25280d4594ab3",
+          "350edcd50e8432a99e470072262205abeaa69fc6294a4de3f9e5a645bd603587",
+          "3dd3b7aba796a5f23a5781ecc9b939828d8c6684847e86fcefa585db6f958c41",
+          "3ea67e341037bd8751e6090fb96ec718ef535d2eb9597e449b5d79bae9431ea2",
+          "3f31ba63f425b043148558cb32a2a48d635cdf25d8bd97d41b78edf0ac80cc93",
+          "41e75fc1b7c94632c4a4c49cb14a2a7ea5072f25d63554688f412b7d632d7fbe",
+          "44b209b5fcdfcbad81190293bb71be14a5f4a8769d680dd083c0ac68990dab86",
+          "56c7e3bc73323a72a496b339473e1205abfabc62afef9e9cae390d30d58d7851",
+          "6a3fc7bbeb8a479599fb5e99775314139ecac9338e4a1db97b7d90629e3976b9",
+          "6ced4ad72923fa355c9c01792776f8a06259f47882a91920a8d66b3f9a3ab69d",
+          "6f122b9158017c95a1032f2bdc9905d1c54115cb66f22f4b84c1d8a387950e88",
+          "73a4aea9ddc0b305b57a8d15857684dc635247213ddf4125a68fbd6c4be0bddc",
+          "75423d57bcac447cd90498a198fa96db35a376989d409d87d5601be7c8fdd934",
+          "8803b7d3d200956997533abdd4e184abcef7f4cec81284f6c2fab68b798b2f55",
+          "bf5887f902856dd459b192694e23e62ccd6698b13b993b61ef3a3c2e58c29deb",
+          "c1464990022f6d943a40fdda1f3460d1cddfc726065938cfb4cde3bb2a035d8d",
+          "d3f8a5fa1a6dd2f53851a61031a01495351e74fe9d7852fece1ade0a8443e2c6",
+          "e373b581db615595a8bc56355469046daf177654a4033fd9b16f268dac180829"
+        ],
+        "algorithmVersion": "route-band-v1:m2-ray-bisect-v3",
+        "cost": {
+          "liveRequests": 0,
+          "cacheHits": 0,
+          "pairs": 0,
+          "livePairs": 0
+        },
+        "cacheHit": true,
+        "traceId": "762a714f4e78425f"
+      }
+    },
+    {
+      "name": "repeat",
+      "result": {
+        "routeHash": "74c8224fbe2687fb4bb36a27e8b008a9f10d9980452262ff7592e94d84630cfc",
+        "thresholdSeconds": 900,
+        "nodes": [
+          {
+            "index": 0,
+            "origin": {
+              "lng": 116.346787,
+              "lat": 40.08198,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 1,
+            "origin": {
+              "lng": 116.351165,
+              "lat": 40.08423,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 2,
+            "origin": {
+              "lng": 116.356385,
+              "lat": 40.085716,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          }
+        ],
+        "centers": [
+          {
+            "lng": 116.346787,
+            "lat": 40.08198,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.351165,
+            "lat": 40.08423,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.356385,
+            "lat": 40.085716,
+            "crs": "BD09"
+          }
+        ],
+        "distanceM": 1363.695388242843,
+        "maxGapM": 684.1389354936695,
+        "boundaries": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "fills": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "completeCount": 3,
+        "status": "complete",
+        "sourceKind": "derived",
+        "upstreamResponseHashes": [
+          "041de83815c4e18197438e2096e6f00c415b6fbb4b778bd7bab9df5661dbc9d7",
+          "0cef954fef5851d6d8837f412f5164dad8e06c27f358901031dfe78d7b12cb99",
+          "160b00a8d7e8fbe026a16d83a94a4b07aacea31446721aa04e6419aff0d42dd0",
+          "270a2939dd132bd15ca248ae18bb8974ea64ca953d0af445b8866197d7167318",
+          "27b804aece212410d7648b960719a0a6f7aacc140a93cbf2952a691246536b7f",
+          "29b794c0a485b9c15db0c3b1bf754c6c05647e3cf8d4dd476d6f29acd060f9b9",
+          "2aeebd0e641d73fe0db3e6e37db22d79787645fe5a10bda41cd00ba0f1356fb2",
+          "2e752ea59be92eb9237d02b18a0ef4aee1eef94b46d8f78cac4afea70e94aa50",
+          "34183f251765e9cf8f14ca6e04187a959b7cf938baf054bea5d25280d4594ab3",
+          "350edcd50e8432a99e470072262205abeaa69fc6294a4de3f9e5a645bd603587",
+          "3dd3b7aba796a5f23a5781ecc9b939828d8c6684847e86fcefa585db6f958c41",
+          "3ea67e341037bd8751e6090fb96ec718ef535d2eb9597e449b5d79bae9431ea2",
+          "3f31ba63f425b043148558cb32a2a48d635cdf25d8bd97d41b78edf0ac80cc93",
+          "41e75fc1b7c94632c4a4c49cb14a2a7ea5072f25d63554688f412b7d632d7fbe",
+          "44b209b5fcdfcbad81190293bb71be14a5f4a8769d680dd083c0ac68990dab86",
+          "56c7e3bc73323a72a496b339473e1205abfabc62afef9e9cae390d30d58d7851",
+          "6a3fc7bbeb8a479599fb5e99775314139ecac9338e4a1db97b7d90629e3976b9",
+          "6ced4ad72923fa355c9c01792776f8a06259f47882a91920a8d66b3f9a3ab69d",
+          "6f122b9158017c95a1032f2bdc9905d1c54115cb66f22f4b84c1d8a387950e88",
+          "73a4aea9ddc0b305b57a8d15857684dc635247213ddf4125a68fbd6c4be0bddc",
+          "75423d57bcac447cd90498a198fa96db35a376989d409d87d5601be7c8fdd934",
+          "8803b7d3d200956997533abdd4e184abcef7f4cec81284f6c2fab68b798b2f55",
+          "bf5887f902856dd459b192694e23e62ccd6698b13b993b61ef3a3c2e58c29deb",
+          "c1464990022f6d943a40fdda1f3460d1cddfc726065938cfb4cde3bb2a035d8d",
+          "d3f8a5fa1a6dd2f53851a61031a01495351e74fe9d7852fece1ade0a8443e2c6",
+          "e373b581db615595a8bc56355469046daf177654a4033fd9b16f268dac180829"
+        ],
+        "algorithmVersion": "route-band-v1:m2-ray-bisect-v3",
+        "cost": {
+          "liveRequests": 0,
+          "cacheHits": 0,
+          "pairs": 0,
+          "livePairs": 0
+        },
+        "cacheHit": true,
+        "traceId": "3b10746990484076"
+      }
+    },
+    {
+      "name": "reverse",
+      "result": {
+        "routeHash": "569f198e5aaffd7c6e4dd5215a297e088c95a327c819467f01936039568c7cfd",
+        "thresholdSeconds": 900,
+        "nodes": [
+          {
+            "index": 0,
+            "origin": {
+              "lng": 116.356385,
+              "lat": 40.085716,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 1,
+            "origin": {
+              "lng": 116.351165,
+              "lat": 40.08423,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          },
+          {
+            "index": 2,
+            "origin": {
+              "lng": 116.346787,
+              "lat": 40.08198,
+              "crs": "BD09"
+            },
+            "status": "complete",
+            "cached": true,
+            "failedBearings": [],
+            "skippedBearings": [],
+            "warnings": [
+              "source-mix:live-api+api-cache",
+              "derived-cache-hit:ledger-cost-0"
+            ]
+          }
+        ],
+        "centers": [
+          {
+            "lng": 116.356385,
+            "lat": 40.085716,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.351165,
+            "lat": 40.08423,
+            "crs": "BD09"
+          },
+          {
+            "lng": 116.346787,
+            "lat": 40.08198,
+            "crs": "BD09"
+          }
+        ],
+        "distanceM": 1363.695388242843,
+        "maxGapM": 684.1389354936695,
+        "boundaries": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "fills": [
+          [
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076850580771165,
+              "lng": 116.35160826800491
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07611010914481,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.076661912600656,
+              "lng": 116.35004877289144
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626730237154,
+              "lng": 116.346787
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.078536014571284,
+              "lng": 116.34228578754976
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08198,
+              "lng": 116.34042132430574
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.086317238133574,
+              "lng": 116.34111832610732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0882059203074,
+              "lng": 116.34441330893732
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.0891627399368,
+              "lng": 116.34471780541213
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09120594771829,
+              "lng": 116.351165
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.090518439424464,
+              "lng": 116.3529441618725
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09303583246496,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.09005323813357,
+              "lng": 116.36205398497947
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.085716,
+              "lng": 116.36664952739193
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.08108101096481,
+              "lng": 116.36244316014968
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07626267849443,
+              "lng": 116.356385
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.07842110612579,
+              "lng": 116.35367117725268
+            },
+            {
+              "crs": "BD09",
+              "lat": 40.077047260063196,
+              "lng": 116.35323398152097
+            }
+          ]
+        ],
+        "completeCount": 3,
+        "status": "complete",
+        "sourceKind": "derived",
+        "upstreamResponseHashes": [
+          "041de83815c4e18197438e2096e6f00c415b6fbb4b778bd7bab9df5661dbc9d7",
+          "0cef954fef5851d6d8837f412f5164dad8e06c27f358901031dfe78d7b12cb99",
+          "160b00a8d7e8fbe026a16d83a94a4b07aacea31446721aa04e6419aff0d42dd0",
+          "270a2939dd132bd15ca248ae18bb8974ea64ca953d0af445b8866197d7167318",
+          "27b804aece212410d7648b960719a0a6f7aacc140a93cbf2952a691246536b7f",
+          "29b794c0a485b9c15db0c3b1bf754c6c05647e3cf8d4dd476d6f29acd060f9b9",
+          "2aeebd0e641d73fe0db3e6e37db22d79787645fe5a10bda41cd00ba0f1356fb2",
+          "2e752ea59be92eb9237d02b18a0ef4aee1eef94b46d8f78cac4afea70e94aa50",
+          "34183f251765e9cf8f14ca6e04187a959b7cf938baf054bea5d25280d4594ab3",
+          "350edcd50e8432a99e470072262205abeaa69fc6294a4de3f9e5a645bd603587",
+          "3dd3b7aba796a5f23a5781ecc9b939828d8c6684847e86fcefa585db6f958c41",
+          "3ea67e341037bd8751e6090fb96ec718ef535d2eb9597e449b5d79bae9431ea2",
+          "3f31ba63f425b043148558cb32a2a48d635cdf25d8bd97d41b78edf0ac80cc93",
+          "41e75fc1b7c94632c4a4c49cb14a2a7ea5072f25d63554688f412b7d632d7fbe",
+          "44b209b5fcdfcbad81190293bb71be14a5f4a8769d680dd083c0ac68990dab86",
+          "56c7e3bc73323a72a496b339473e1205abfabc62afef9e9cae390d30d58d7851",
+          "6a3fc7bbeb8a479599fb5e99775314139ecac9338e4a1db97b7d90629e3976b9",
+          "6ced4ad72923fa355c9c01792776f8a06259f47882a91920a8d66b3f9a3ab69d",
+          "6f122b9158017c95a1032f2bdc9905d1c54115cb66f22f4b84c1d8a387950e88",
+          "73a4aea9ddc0b305b57a8d15857684dc635247213ddf4125a68fbd6c4be0bddc",
+          "75423d57bcac447cd90498a198fa96db35a376989d409d87d5601be7c8fdd934",
+          "8803b7d3d200956997533abdd4e184abcef7f4cec81284f6c2fab68b798b2f55",
+          "bf5887f902856dd459b192694e23e62ccd6698b13b993b61ef3a3c2e58c29deb",
+          "c1464990022f6d943a40fdda1f3460d1cddfc726065938cfb4cde3bb2a035d8d",
+          "d3f8a5fa1a6dd2f53851a61031a01495351e74fe9d7852fece1ade0a8443e2c6",
+          "e373b581db615595a8bc56355469046daf177654a4033fd9b16f268dac180829"
+        ],
+        "algorithmVersion": "route-band-v1:m2-ray-bisect-v3",
+        "cost": {
+          "liveRequests": 0,
+          "cacheHits": 0,
+          "pairs": 0,
+          "livePairs": 0
+        },
+        "cacheHit": true,
+        "traceId": "17758e6d84fd4eb6"
+      }
+    }
+  ]
+}

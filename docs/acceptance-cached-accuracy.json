@@ -1,0 +1,91 @@
+{
+  "sourceKind": "historical-readonly-audit",
+  "liveRequests": 0,
+  "livePairs": 0,
+  "note": "历史非均匀缓存留出点，不是新 live 验收或连续路网全量精度；缺探针不插值补真值。",
+  "samples": [
+    {
+      "sample": "北京·回龙观",
+      "historicalSource": "experiments/results/e10_boundary/e10x_huilongguan.json",
+      "status": "partial",
+      "probes": 32,
+      "missingBearings": [
+        45,
+        135,
+        225,
+        315
+      ],
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "historicalEightDirectionAblation": {
+        "note": "历史加密边界只保留八向的形状消融，非当前算法精度",
+        "cachedNonRayPoints": 189,
+        "tp": 97,
+        "fp": 12,
+        "fn": 31,
+        "tn": 49,
+        "sampledIoU": 0.6929
+      }
+    },
+    {
+      "sample": "成都·九眼桥",
+      "historicalSource": "experiments/results/e10_boundary/e10x_chengdu.json",
+      "status": "partial",
+      "probes": 20,
+      "missingBearings": [
+        0,
+        45,
+        135,
+        180,
+        225,
+        270,
+        315
+      ],
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "historicalEightDirectionAblation": {
+        "note": "历史加密边界只保留八向的形状消融，非当前算法精度",
+        "cachedNonRayPoints": 198,
+        "tp": 138,
+        "fp": 4,
+        "fn": 28,
+        "tn": 28,
+        "sampledIoU": 0.8118
+      }
+    },
+    {
+      "sample": "上海·陆家嘴",
+      "historicalSource": "experiments/results/e10_boundary/e10x_shanghai.json",
+      "status": "partial",
+      "probes": 20,
+      "missingBearings": [
+        45,
+        90,
+        135,
+        180,
+        225,
+        270,
+        315
+      ],
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "historicalEightDirectionAblation": {
+        "note": "历史加密边界只保留八向的形状消融，非当前算法精度",
+        "cachedNonRayPoints": 189,
+        "tp": 120,
+        "fp": 14,
+        "fn": 20,
+        "tn": 35,
+        "sampledIoU": 0.7792
+      }
+    }
+  ],
+  "longRoute": {
+    "centers": 5,
+    "distanceM": 17036.051131728236,
+    "maxGapM": 4259.012782932969,
+    "reversedCentersSame": true
+  },
+  "historicalFilesUnchanged": true,
+  "sourceHashes": {
+    "experiments/logs/cache.db": "190655fee7eb321dfd73e57695615bea30744ccb0c31b8888fd88b9a9d0cac14",
+    "experiments/logs/calls.db": "1e3390bfbd353e2e99f5b796037dda6c74f7bf99637d6b22c2e65e4d255eed3a"
+  }
+}

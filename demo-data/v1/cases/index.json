@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "caseId": "harbin",
+      "title": "哈尔滨·道外",
+      "sourcePath": "experiments/results/e10_boundary/e10x_harbin.json",
+      "sourceHash": "099e16003467c67f7bca6f76b1f3c8ad478ad96079819ce13fd3d61f93863063",
+      "centerWgs84": {
+        "lng": 126.63483230240014,
+        "lat": 45.7799007124143,
+        "crs": "WGS84"
+      },
+      "file": "harbin.json"
+    },
+    {
+      "caseId": "guilin",
+      "title": "桂林",
+      "sourcePath": "experiments/results/e10_boundary/e10x_guilin.json",
+      "sourceHash": "50ba4c3c70828ca834bfc65e35cef99ccfe67d30b8ec85230a9dc2fa7835e5cd",
+      "centerWgs84": {
+        "lng": 110.25944995554124,
+        "lat": 25.276263925878162,
+        "crs": "WGS84"
+      },
+      "file": "guilin.json"
+    },
+    {
+      "caseId": "lanzhou",
+      "title": "兰州",
+      "sourcePath": "experiments/results/e10_boundary/e10x_lanzhou.json",
+      "sourceHash": "c3c297fb68b24341063bbc11346711cf4eaec9e1a958f176b850b9632e570d0d",
+      "centerWgs84": {
+        "lng": 103.8145608466336,
+        "lat": 36.06487305252748,
+        "crs": "WGS84"
+      },
+      "file": "lanzhou.json"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-12",
+  "coordinatesRedacted": true,
+  "retrievalScope": "One page per keyword; nearest up to five among returned candidates, not an exhaustive supply survey",
+  "thresholdSeconds": 900,
+  "gridCount": 9,
+  "categories": [
+    {
+      "id": "medical",
+      "candidateCount": 5,
+      "coveredCount": 7
+    },
+    {
+      "id": "education",
+      "candidateCount": 5,
+      "coveredCount": 8
+    },
+    {
+      "id": "shopping",
+      "candidateCount": 5,
+      "coveredCount": 8
+    },
+    {
+      "id": "pharmacy",
+      "candidateCount": 5,
+      "coveredCount": 8
+    },
+    {
+      "id": "elderly",
+      "candidateCount": 0,
+      "coveredCount": 0
+    }
+  ],
+  "weightedCandidateScore": 68,
+  "combinedCoverage": {
+    "before": 8,
+    "afterSimulatedFacility": 9
+  },
+  "recommendations": [
+    {
+      "k": 1,
+      "coveredCount": 8,
+      "gain": 0
+    },
+    {
+      "k": 2,
+      "coveredCount": 8,
+      "gain": 0
+    },
+    {
+      "k": 3,
+      "coveredCount": 8,
+      "gain": 0
+    }
+  ],
+  "nativeChecks": {
+    "allFiveChartsAndReturn": true,
+    "simulatedPointMapPickAndConfirm": true,
+    "newFacilityComparison": true,
+    "limitedRetrievalDisclosure": true,
+    "pathDeleteAndReloadInIsolatedTestContext": true,
+    "globalResetAndReloadInIsolatedTestContext": true
+  },
+  "phaseBudget": {
+    "beforeRequests": 26,
+    "beforeUnits": 125,
+    "afterRequests": 95,
+    "afterUnits": 259,
+    "additionalRequests": 69,
+    "additionalUnits": 134
+  },
+  "cumulativeInterfacesUnits": {
+    "matrix_walking": 228,
+    "poi": 31
+  },
+  "cumulativeFailedAttempts": {
+    "401": 3
+  },
+  "limitations": [
+    "Candidate coverage only; other facilities not included",
+    "One representative community; not population coverage or a universal precision guarantee",
+    "Initial multi-page search and rate-limited attempts included in budget",
+    "New facility is a hypothetical point; actual travel times, not an existing business claim"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-15T06:59:43.528895+00:00",
+  "traceId": "3992103153924271",
+  "target": "50 routes per 3.15 seconds; at most 2 in flight",
+  "maximumRoutes": 150,
+  "noRetries": true,
+  "cachePrecheck": "all probes were missing",
+  "wallSeconds": 6.541,
+  "batches": [
+    {
+      "batch": 1,
+      "dispatchSeconds": 0.0,
+      "completionSeconds": 0.44,
+      "status": 0,
+      "httpStatus": null,
+      "failureKind": null,
+      "latencyMs": 426,
+      "requestedRoutes": 50,
+      "validRoutes": 50
+    },
+    {
+      "batch": 2,
+      "dispatchSeconds": 3.154,
+      "completionSeconds": 3.394,
+      "status": 0,
+      "httpStatus": null,
+      "failureKind": null,
+      "latencyMs": 238,
+      "requestedRoutes": 50,
+      "validRoutes": 50
+    },
+    {
+      "batch": 3,
+      "dispatchSeconds": 6.305,
+      "completionSeconds": 6.536,
+      "status": 0,
+      "httpStatus": null,
+      "failureKind": null,
+      "latencyMs": 231,
+      "requestedRoutes": 50,
+      "validRoutes": 50
+    }
+  ],
+  "httpAttempts": 3,
+  "routeCost": 150,
+  "stoppedOnError": false,
+  "scope": "Short bounded observation; does not prove the account entitlement or long-term ceiling"
+}

@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-10-16T02:12:08.061709+00:00",
+  "traceId": "ebe73a3c574148a1",
+  "pairsPerRequest": 50,
+  "intervalSeconds": 18,
+  "retries": 0,
+  "cacheHits": 0,
+  "maxBudgetPairs": 150,
+  "actualPairs": 150,
+  "requests": [
+    {
+      "batch": 1,
+      "pairs": 50,
+      "validPairs": 50,
+      "status": 0,
+      "latencyMs": 158,
+      "startSeconds": 0.0,
+      "endSeconds": 0.183
+    },
+    {
+      "batch": 2,
+      "pairs": 50,
+      "validPairs": 50,
+      "status": 0,
+      "latencyMs": 113,
+      "startSeconds": 18.0,
+      "endSeconds": 18.114
+    },
+    {
+      "batch": 3,
+      "pairs": 50,
+      "validPairs": 50,
+      "status": 0,
+      "latencyMs": 180,
+      "startSeconds": 36.0,
+      "endSeconds": 36.181
+    }
+  ],
+  "elapsedSeconds": 36.195,
+  "productionConfigChanged": false
+}

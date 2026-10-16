@@ -1,0 +1,668 @@
+{
+  "experiment": "outside-in-2km-grid100-v1",
+  "liveApiCalls": 0,
+  "halfM": 1000,
+  "spacingM": 100,
+  "budget": 300,
+  "sourceDbSha256": "190655fee7eb321dfd73e57695615bea30744ccb0c31b8888fd88b9a9d0cac14",
+  "historicalOriginsAudited": 34,
+  "eligibleCount": 1,
+  "inventory": [
+    {
+      "slug": "shenzhen",
+      "name": "深圳·华强北",
+      "originRoundedLatLngBD09": [
+        22.553184,
+        114.094047
+      ],
+      "storedODRows": 720,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_shenzhen.json"
+    },
+    {
+      "slug": "guangzhou",
+      "name": "广州·上下九",
+      "originRoundedLatLngBD09": [
+        23.121043,
+        113.25467
+      ],
+      "storedODRows": 937,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_guangzhou.json"
+    },
+    {
+      "slug": "zhujiangxincheng",
+      "name": "广州·珠江新城",
+      "originRoundedLatLngBD09": [
+        23.130358,
+        113.368509
+      ],
+      "storedODRows": 904,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_zhujiangxincheng.json"
+    },
+    {
+      "slug": "xiamen",
+      "name": "厦门·中山路",
+      "originRoundedLatLngBD09": [
+        24.459807,
+        118.083209
+      ],
+      "storedODRows": 257,
+      "matched100mGridPositions": 29,
+      "valid100mGridPositions": 29,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 412,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_xiamen.json"
+    },
+    {
+      "slug": "kunming",
+      "name": "昆明·翠湖",
+      "originRoundedLatLngBD09": [
+        25.054743,
+        102.710169
+      ],
+      "storedODRows": 662,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_kunming.json"
+    },
+    {
+      "slug": "guilin",
+      "name": "桂林·东西巷",
+      "originRoundedLatLngBD09": [
+        25.279618,
+        110.270437
+      ],
+      "storedODRows": 1477,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_guilin.json"
+    },
+    {
+      "slug": "fuzhou",
+      "name": "福州·三坊七巷",
+      "originRoundedLatLngBD09": [
+        26.092969,
+        119.302661
+      ],
+      "storedODRows": 512,
+      "matched100mGridPositions": 29,
+      "valid100mGridPositions": 29,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 412,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_fuzhou.json"
+    },
+    {
+      "slug": "zunyi",
+      "name": "遵义·老城",
+      "originRoundedLatLngBD09": [
+        27.697715,
+        106.927307
+      ],
+      "storedODRows": 1485,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_zunyi.json"
+    },
+    {
+      "slug": "changsha",
+      "name": "长沙·五一广场",
+      "originRoundedLatLngBD09": [
+        28.202125,
+        112.983894
+      ],
+      "storedODRows": 1696,
+      "matched100mGridPositions": 217,
+      "valid100mGridPositions": 217,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 224,
+      "historicalReferenceSpacingM": 200,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_changsha.json"
+    },
+    {
+      "slug": "nanchang",
+      "name": "南昌·八一广场",
+      "originRoundedLatLngBD09": [
+        28.680175,
+        115.910978
+      ],
+      "storedODRows": 1109,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_nanchang.json"
+    },
+    {
+      "slug": "yiwu",
+      "name": "义乌·稠城",
+      "originRoundedLatLngBD09": [
+        29.302788,
+        120.07199
+      ],
+      "storedODRows": 1016,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_yiwu.json"
+    },
+    {
+      "slug": "chongqing",
+      "name": "重庆·解放碑",
+      "originRoundedLatLngBD09": [
+        29.55909,
+        106.57544
+      ],
+      "storedODRows": 1628,
+      "matched100mGridPositions": 217,
+      "valid100mGridPositions": 217,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 224,
+      "historicalReferenceSpacingM": 200,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_chongqing.json"
+    },
+    {
+      "slug": "wuhan",
+      "name": "武汉·江汉路",
+      "originRoundedLatLngBD09": [
+        30.583664,
+        114.301638
+      ],
+      "storedODRows": 991,
+      "matched100mGridPositions": 217,
+      "valid100mGridPositions": 217,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 224,
+      "historicalReferenceSpacingM": 200,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_wuhan.json"
+    },
+    {
+      "slug": "yulin_cd",
+      "name": "成都·玉林",
+      "originRoundedLatLngBD09": [
+        30.635677,
+        104.069052
+      ],
+      "storedODRows": 871,
+      "matched100mGridPositions": 134,
+      "valid100mGridPositions": 134,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 307,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_yulin_cd.json"
+    },
+    {
+      "slug": "chengdu",
+      "name": "成都·九眼桥",
+      "originRoundedLatLngBD09": [
+        30.646144,
+        104.096235
+      ],
+      "storedODRows": 750,
+      "matched100mGridPositions": 217,
+      "valid100mGridPositions": 217,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 224,
+      "historicalReferenceSpacingM": 200,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_chengdu.json"
+    },
+    {
+      "slug": "zhangjiang",
+      "name": "上海·张江",
+      "originRoundedLatLngBD09": [
+        31.210825,
+        121.591849
+      ],
+      "storedODRows": 715,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_zhangjiang.json"
+    },
+    {
+      "slug": "shanghai",
+      "name": "上海·陆家嘴",
+      "originRoundedLatLngBD09": [
+        31.247105,
+        121.510707
+      ],
+      "storedODRows": 908,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_shanghai.json"
+    },
+    {
+      "slug": "suzhou",
+      "name": "苏州·观前街",
+      "originRoundedLatLngBD09": [
+        31.317255,
+        120.632409
+      ],
+      "storedODRows": 704,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_suzhou.json"
+    },
+    {
+      "slug": "kunshan",
+      "name": "昆山·人民路",
+      "originRoundedLatLngBD09": [
+        31.366117,
+        120.960188
+      ],
+      "storedODRows": 706,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_kunshan.json"
+    },
+    {
+      "slug": "xian",
+      "name": "西安·钟楼",
+      "originRoundedLatLngBD09": [
+        34.263047,
+        108.946974
+      ],
+      "storedODRows": 1136,
+      "matched100mGridPositions": 217,
+      "valid100mGridPositions": 217,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 224,
+      "historicalReferenceSpacingM": 200,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_xian.json"
+    },
+    {
+      "slug": "luoyang",
+      "name": "洛阳·老城",
+      "originRoundedLatLngBD09": [
+        34.689436,
+        112.485657
+      ],
+      "storedODRows": 1395,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_luoyang.json"
+    },
+    {
+      "slug": "qingdao",
+      "name": "青岛·栈桥",
+      "originRoundedLatLngBD09": [
+        36.065933,
+        120.326454
+      ],
+      "storedODRows": 823,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_qingdao.json"
+    },
+    {
+      "slug": "lanzhou",
+      "name": "兰州·中山桥",
+      "originRoundedLatLngBD09": [
+        36.070779,
+        103.823432
+      ],
+      "storedODRows": 817,
+      "matched100mGridPositions": 97,
+      "valid100mGridPositions": 97,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 344,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_lanzhou.json"
+    },
+    {
+      "slug": "unknown-36.07078-103.82343",
+      "name": "未归档中心 36.07078,103.82343",
+      "originRoundedLatLngBD09": [
+        36.07078,
+        103.82343
+      ],
+      "storedODRows": 441,
+      "matched100mGridPositions": 121,
+      "valid100mGridPositions": 121,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 320,
+      "historicalReferenceSpacingM": null,
+      "eligible": false,
+      "sourceFile": null
+    },
+    {
+      "slug": "tianjin",
+      "name": "天津·五大道",
+      "originRoundedLatLngBD09": [
+        39.116392,
+        117.209997
+      ],
+      "storedODRows": 916,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_tianjin.json"
+    },
+    {
+      "slug": "e4b",
+      "name": "北京·东花市",
+      "originRoundedLatLngBD09": [
+        39.903535,
+        116.440123
+      ],
+      "storedODRows": 1022,
+      "matched100mGridPositions": 165,
+      "valid100mGridPositions": 165,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 276,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e4_sampling/e4b.json"
+    },
+    {
+      "slug": "e4",
+      "name": "北京·王府井",
+      "originRoundedLatLngBD09": [
+        39.922563,
+        116.417592
+      ],
+      "storedODRows": 1876,
+      "matched100mGridPositions": 441,
+      "valid100mGridPositions": 441,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 0,
+      "historicalReferenceSpacingM": 100,
+      "eligible": true,
+      "sourceFile": "experiments/results/e4_sampling/e4.json"
+    },
+    {
+      "slug": "huilongguan",
+      "name": "北京·回龙观",
+      "originRoundedLatLngBD09": [
+        40.070434,
+        116.33111
+      ],
+      "storedODRows": 904,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_huilongguan.json"
+    },
+    {
+      "slug": "shenyang",
+      "name": "沈阳·中街",
+      "originRoundedLatLngBD09": [
+        41.807654,
+        123.466015
+      ],
+      "storedODRows": 696,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_shenyang.json"
+    },
+    {
+      "slug": "changchun",
+      "name": "长春·重庆路",
+      "originRoundedLatLngBD09": [
+        43.897148,
+        125.327187
+      ],
+      "storedODRows": 829,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_changchun.json"
+    },
+    {
+      "slug": "qunli",
+      "name": "哈尔滨·群力",
+      "originRoundedLatLngBD09": [
+        45.744194,
+        126.568628
+      ],
+      "storedODRows": 686,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_qunli.json"
+    },
+    {
+      "slug": "harbin",
+      "name": "哈尔滨·道外",
+      "originRoundedLatLngBD09": [
+        45.787629,
+        126.647361
+      ],
+      "storedODRows": 1723,
+      "matched100mGridPositions": 141,
+      "valid100mGridPositions": 141,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 300,
+      "historicalReferenceSpacingM": 250,
+      "eligible": false,
+      "sourceFile": "experiments/results/e10_boundary/e10x_harbin.json"
+    },
+    {
+      "slug": "unknown-45.788391-126.648454",
+      "name": "未归档中心 45.788391,126.648454",
+      "originRoundedLatLngBD09": [
+        45.788391,
+        126.648454
+      ],
+      "storedODRows": 48,
+      "matched100mGridPositions": 0,
+      "valid100mGridPositions": 0,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 441,
+      "historicalReferenceSpacingM": null,
+      "eligible": false,
+      "sourceFile": null
+    },
+    {
+      "slug": "unknown-45.789534-126.650094",
+      "name": "未归档中心 45.789534,126.650094",
+      "originRoundedLatLngBD09": [
+        45.789534,
+        126.650094
+      ],
+      "storedODRows": 48,
+      "matched100mGridPositions": 0,
+      "valid100mGridPositions": 0,
+      "requiredGridPositions": 441,
+      "missingOrInvalid": 441,
+      "historicalReferenceSpacingM": null,
+      "eligible": false,
+      "sourceFile": null
+    }
+  ],
+  "results": [
+    {
+      "slug": "e4",
+      "name": "北京·王府井",
+      "centerLatLngBD09": [
+        39.92256304162586,
+        116.41759225843734
+      ],
+      "main15": {
+        "uniqueQueries": 300,
+        "querySavingVsFull440": 0.3182,
+        "budgetLimited": true,
+        "unresolvedPositions": 148,
+        "gridScore": {
+          "points": 440,
+          "evaluated": 440,
+          "unknown": 0,
+          "fp": 1,
+          "fn": 8,
+          "iou": 0.9561,
+          "f1": 0.9776
+        },
+        "unqueriedGridScore": {
+          "points": 140,
+          "evaluated": 140,
+          "unknown": 0,
+          "fp": 1,
+          "fn": 8,
+          "iou": 0.8548,
+          "f1": 0.9217
+        },
+        "offGridChecks": {
+          "points": 1366,
+          "evaluated": 1366,
+          "unknown": 0,
+          "fp": 52,
+          "fn": 104,
+          "iou": 0.8398,
+          "f1": 0.9129
+        },
+        "areaIoU": 0.9654,
+        "clipped15min": true,
+        "thresholdGridMistakes": {
+          "300": 3,
+          "600": 4,
+          "900": 9
+        }
+      },
+      "layers": {
+        "uniqueQueries": 300,
+        "querySavingVsFull440": 0.3182,
+        "budgetLimited": true,
+        "unresolvedPositions": 235,
+        "gridScore": {
+          "points": 440,
+          "evaluated": 440,
+          "unknown": 0,
+          "fp": 1,
+          "fn": 8,
+          "iou": 0.9561,
+          "f1": 0.9776
+        },
+        "unqueriedGridScore": {
+          "points": 140,
+          "evaluated": 140,
+          "unknown": 0,
+          "fp": 1,
+          "fn": 8,
+          "iou": 0.8525,
+          "f1": 0.9204
+        },
+        "offGridChecks": {
+          "points": 1366,
+          "evaluated": 1366,
+          "unknown": 0,
+          "fp": 52,
+          "fn": 104,
+          "iou": 0.8398,
+          "f1": 0.9129
+        },
+        "areaIoU": 0.9654,
+        "clipped15min": true,
+        "thresholdGridMistakes": {
+          "300": 3,
+          "600": 4,
+          "900": 9
+        }
+      },
+      "oldRay": {
+        "areaIoU": 0.911505,
+        "gridScore": {
+          "points": 440,
+          "evaluated": 440,
+          "unknown": 0,
+          "fp": 4,
+          "fn": 16,
+          "iou": 0.9038,
+          "f1": 0.9495
+        },
+        "offGridChecks": {
+          "points": 1366,
+          "evaluated": 1366,
+          "unknown": 0,
+          "fp": 29,
+          "fn": 111,
+          "iou": 0.8528,
+          "f1": 0.9205
+        }
+      }
+    }
+  ],
+  "caution": "complete existing 100m grids only; no interpolation used as oracle; original comparison excludes R2; off-grid checks may train old rays"
+}

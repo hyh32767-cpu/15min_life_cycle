@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-12",
+  "coordinatesRedacted": true,
+  "actualDeviceLocation": true,
+  "viewport": {
+    "width": 375,
+    "height": 752
+  },
+  "results": [
+    {
+      "status": "partial",
+      "thresholdSeconds": 300.0,
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "sourceKind": "derived",
+      "failedBearings": [
+        45.0,
+        90.0,
+        180.0,
+        225.0,
+        270.0,
+        315.0
+      ],
+      "skippedBearings": [],
+      "warnings": [
+        "ray_failed:45.0:threshold_below_lo",
+        "ray_failed:90.0:threshold_below_lo",
+        "ray_failed:180.0:threshold_below_lo",
+        "ray_failed:225.0:threshold_below_lo",
+        "ray_failed:270.0:threshold_below_lo",
+        "ray_failed:315.0:threshold_below_lo",
+        "source-mix:live-api+api-cache"
+      ],
+      "measuredDirections": 2,
+      "report": {
+        "approxAreaM2": null,
+        "medianRadiusM": 237.5,
+        "maxRadiusM": 256.25
+      }
+    },
+    {
+      "status": "partial",
+      "thresholdSeconds": 600.0,
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "sourceKind": "derived",
+      "failedBearings": [
+        225.0,
+        315.0
+      ],
+      "skippedBearings": [],
+      "warnings": [
+        "ray_failed:225.0:threshold_below_lo",
+        "ray_failed:315.0:threshold_below_lo",
+        "source-mix:live-api+api-cache"
+      ],
+      "measuredDirections": 6,
+      "report": {
+        "approxAreaM2": null,
+        "medianRadiusM": 500.0,
+        "maxRadiusM": 556.25
+      }
+    },
+    {
+      "status": "complete",
+      "thresholdSeconds": 900.0,
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "sourceKind": "live-api",
+      "failedBearings": [],
+      "skippedBearings": [],
+      "warnings": [],
+      "measuredDirections": 8,
+      "report": {
+        "approxAreaM2": 1163190.6550519788,
+        "medianRadiusM": 687.5,
+        "maxRadiusM": 818.75
+      }
+    },
+    {
+      "status": "complete",
+      "thresholdSeconds": 1200.0,
+      "algorithmVersion": "m2-ray-bisect-v3",
+      "sourceKind": "derived",
+      "failedBearings": [],
+      "skippedBearings": [],
+      "warnings": [
+        "source-mix:live-api+api-cache"
+      ],
+      "measuredDirections": 8,
+      "report": {
+        "approxAreaM2": 1971778.3078831404,
+        "medianRadiusM": 912.5,
+        "maxRadiusM": 1081.25
+      }
+    }
+  ],
+  "nativeChecks": {
+    "completeBoundaryFill": true,
+    "heatShowsOnlyCompleteLayers": true,
+    "manualZoomRetainedOnThresholdSwitch": true,
+    "repeatAndHeatNoAdditionalBusinessRequests": true
+  },
+  "budget": {
+    "beforeRequests": 1,
+    "beforePairs": 8,
+    "afterRequests": 21,
+    "afterPairs": 112,
+    "additionalRequests": 20,
+    "additionalPairs": 104,
+    "rateLimitedCalls": 1
+  },
+  "limitations": [
+    "5/10-minute rays below the fixed 200m inner bound remain partial; no full polygon or area claimed",
+    "20-minute initial attempt rate-limited; completed after cooldown",
+    "Eight-ray approximation is not an exact road-network polygon"
+  ],
+  "v4Retest": {
+    "results": [
+      {
+        "thresholdSeconds": 300.0,
+        "algorithmVersion": "m2-ray-bisect-v4",
+        "status": "complete",
+        "sourceKind": "derived",
+        "failedBearings": [],
+        "skippedBearings": [],
+        "warnings": [
+          "source-mix:live-api+api-cache"
+        ],
+        "measuredDirections": 8,
+        "report": {
+          "approxAreaM2": 61208.930746454316,
+          "medianRadiusM": 125.0,
+          "maxRadiusM": 256.25
+        }
+      },
+      {
+        "thresholdSeconds": 600.0,
+        "algorithmVersion": "m2-ray-bisect-v4",
+        "status": "complete",
+        "sourceKind": "derived",
+        "failedBearings": [],
+        "skippedBearings": [],
+        "warnings": [
+          "source-mix:live-api+api-cache"
+        ],
+        "measuredDirections": 8,
+        "report": {
+          "approxAreaM2": 428131.0589215462,
+          "medianRadiusM": 443.75,
+          "maxRadiusM": 556.25
+        }
+      },
+      {
+        "thresholdSeconds": 900.0,
+        "algorithmVersion": "m2-ray-bisect-v4",
+        "status": "complete",
+        "sourceKind": "api-cache",
+        "failedBearings": [],
+        "skippedBearings": [],
+        "warnings": [],
+        "measuredDirections": 8,
+        "report": {
+          "approxAreaM2": 1163190.6550519788,
+          "medianRadiusM": 687.5,
+          "maxRadiusM": 818.75
+        }
+      },
+      {
+        "thresholdSeconds": 1200.0,
+        "algorithmVersion": "m2-ray-bisect-v4",
+        "status": "complete",
+        "sourceKind": "api-cache",
+        "failedBearings": [],
+        "skippedBearings": [],
+        "warnings": [],
+        "measuredDirections": 8,
+        "report": {
+          "approxAreaM2": 1971778.3078831404,
+          "medianRadiusM": 912.5,
+          "maxRadiusM": 1081.25
+        }
+      }
+    ],
+    "additionalRequests": 5,
+    "additionalPairs": 13,
+    "nativeAllFourHeatLayers": true,
+    "heatNoAdditionalBusinessRequests": true,
+    "backendTests": 171,
+    "algorithmChecks": 11,
+    "coordinatesRedacted": true
+  }
+}

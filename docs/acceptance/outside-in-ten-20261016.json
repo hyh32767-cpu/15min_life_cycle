@@ -1,0 +1,1042 @@
+{
+  "experiment": "outside-in-ten-v1",
+  "liveApiCalls": 0,
+  "groups": [
+    "first",
+    "second"
+  ],
+  "cases": [
+    {
+      "slug": "shanghai",
+      "name": "上海·陆家嘴",
+      "terrain": "内洞与江岸",
+      "centerLatLngBD09": [
+        31.24710452085265,
+        121.51070674394865
+      ],
+      "uniqueQueries": 192,
+      "validQueries": 192,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.5636,
+      "offlineComputeSeconds": 0.0336,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 1,
+        "iou": 0.9976,
+        "f1": 0.9988
+      },
+      "newGridHeldout": {
+        "points": 248,
+        "evaluated": 248,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 248,
+        "evaluated": 248,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.996,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 39,
+      "legacyRecordedPairsNotFinalCost": 442,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_shanghai.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 16,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 16
+        },
+        "600": {
+          "allPointsMistakes": 3,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 3
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 63,
+        "evaluated": 63,
+        "unknown": 0,
+        "fp": 1,
+        "fn": 2,
+        "iou": 0.9444,
+        "f1": 0.9714
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 63,
+        "evaluated": 63,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 1,
+        "iou": 0.9811,
+        "f1": 0.9905
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "yiwu",
+      "name": "义乌·稠城",
+      "terrain": "窄深凹槽",
+      "centerLatLngBD09": [
+        29.302787868497226,
+        120.0719897851324
+      ],
+      "uniqueQueries": 176,
+      "validQueries": 176,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.6,
+      "offlineComputeSeconds": 0.0364,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 2,
+        "fn": 1,
+        "iou": 0.9931,
+        "f1": 0.9965
+      },
+      "newGridHeldout": {
+        "points": 264,
+        "evaluated": 264,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 264,
+        "evaluated": 264,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9974,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 64,
+      "legacyRecordedPairsNotFinalCost": 437,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_yiwu.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 14,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 14
+        },
+        "600": {
+          "allPointsMistakes": 1,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 1
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 82,
+        "evaluated": 82,
+        "unknown": 0,
+        "fp": 2,
+        "fn": 2,
+        "iou": 0.9474,
+        "f1": 0.973
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 82,
+        "evaluated": 82,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "harbin",
+      "name": "哈尔滨·道外",
+      "terrain": "铁路切割与碎片",
+      "centerLatLngBD09": [
+        45.787628862747844,
+        126.64736136918812
+      ],
+      "uniqueQueries": 118,
+      "validQueries": 118,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.7318,
+      "offlineComputeSeconds": 0.018,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 2,
+        "fn": 2,
+        "iou": 0.9908,
+        "f1": 0.9954
+      },
+      "newGridHeldout": {
+        "points": 322,
+        "evaluated": 322,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 322,
+        "evaluated": 322,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9932,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 98,
+      "legacyRecordedPairsNotFinalCost": 480,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_harbin.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 15,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 15
+        },
+        "600": {
+          "allPointsMistakes": 2,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 2
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 136,
+        "evaluated": 136,
+        "unknown": 0,
+        "fp": 6,
+        "fn": 4,
+        "iou": 0.9242,
+        "f1": 0.9606
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 136,
+        "evaluated": 136,
+        "unknown": 0,
+        "fp": 2,
+        "fn": 11,
+        "iou": 0.8984,
+        "f1": 0.9465
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "zunyi",
+      "name": "遵义·老城",
+      "terrain": "桥廊与复通",
+      "centerLatLngBD09": [
+        27.69771454854195,
+        106.92730678410587
+      ],
+      "uniqueQueries": 236,
+      "validQueries": 236,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.4636,
+      "offlineComputeSeconds": 0.0436,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 298,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 5,
+        "fn": 10,
+        "iou": 0.9626,
+        "f1": 0.9809
+      },
+      "newGridHeldout": {
+        "points": 204,
+        "evaluated": 204,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 204,
+        "evaluated": 204,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9611,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 110,
+      "legacyRecordedPairsNotFinalCost": 436,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_zunyi.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 19,
+          "newUnqueriedPoints": 142,
+          "unqueriedMistakes": 19
+        },
+        "600": {
+          "allPointsMistakes": 2,
+          "newUnqueriedPoints": 142,
+          "unqueriedMistakes": 2
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 142,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 429,
+        "evaluated": 429,
+        "unknown": 0,
+        "fp": 50,
+        "fn": 52,
+        "iou": 0.6589,
+        "f1": 0.7944
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 429,
+        "evaluated": 429,
+        "unknown": 0,
+        "fp": 11,
+        "fn": 13,
+        "iou": 0.9077,
+        "f1": 0.9516
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "chongqing",
+      "name": "重庆·解放碑",
+      "terrain": "山城与复通带",
+      "centerLatLngBD09": [
+        29.559090182993803,
+        106.57544006681098
+      ],
+      "uniqueQueries": 300,
+      "validQueries": 300,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.3182,
+      "offlineComputeSeconds": 0.058,
+      "liveApiCalls": 0,
+      "budgetLimited": true,
+      "unresolvedGridPositions": 59,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 6,
+        "fn": 6,
+        "iou": 0.9656,
+        "f1": 0.9825
+      },
+      "newGridHeldout": {
+        "points": 140,
+        "evaluated": 140,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 140,
+        "evaluated": 140,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9564,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 100,
+      "legacyRecordedPairsNotFinalCost": 894,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_chongqing.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 9,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 9
+        },
+        "600": {
+          "allPointsMistakes": 17,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 17
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 463,
+        "evaluated": 463,
+        "unknown": 0,
+        "fp": 58,
+        "fn": 32,
+        "iou": 0.7115,
+        "f1": 0.8315
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 463,
+        "evaluated": 463,
+        "unknown": 0,
+        "fp": 34,
+        "fn": 20,
+        "iou": 0.8125,
+        "f1": 0.8966
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "guilin",
+      "name": "桂林·东西巷",
+      "terrain": "江岸与窄凹",
+      "centerLatLngBD09": [
+        25.279618485669605,
+        110.27043670622179
+      ],
+      "uniqueQueries": 300,
+      "validQueries": 300,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.3182,
+      "offlineComputeSeconds": 0.0546,
+      "liveApiCalls": 0,
+      "budgetLimited": true,
+      "unresolvedGridPositions": 106,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 1,
+        "fn": 0,
+        "iou": 0.997,
+        "f1": 0.9985
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 27,
+        "fn": 4,
+        "iou": 0.9136,
+        "f1": 0.9549
+      },
+      "newGridHeldout": {
+        "points": 140,
+        "evaluated": 140,
+        "unknown": 0,
+        "fp": 1,
+        "fn": 0,
+        "iou": 0.9925,
+        "f1": 0.9962
+      },
+      "oldRayOnSameHeldout": {
+        "points": 140,
+        "evaluated": 140,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9135,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 63,
+      "legacyRecordedPairsNotFinalCost": 543,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_guilin.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 21,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 21
+        },
+        "600": {
+          "allPointsMistakes": 8,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 8
+        },
+        "900": {
+          "allPointsMistakes": 1,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 1
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 328,
+        "evaluated": 328,
+        "unknown": 0,
+        "fp": 22,
+        "fn": 7,
+        "iou": 0.782,
+        "f1": 0.8776
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 328,
+        "evaluated": 328,
+        "unknown": 0,
+        "fp": 7,
+        "fn": 9,
+        "iou": 0.8644,
+        "f1": 0.9273
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "chengdu",
+      "name": "成都·九眼桥",
+      "terrain": "规则路网与桥廊",
+      "centerLatLngBD09": [
+        30.64614350003633,
+        104.09623454958707
+      ],
+      "uniqueQueries": 177,
+      "validQueries": 177,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.5977,
+      "offlineComputeSeconds": 0.0286,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 10,
+        "fn": 0,
+        "iou": 0.9773,
+        "f1": 0.9885
+      },
+      "newGridHeldout": {
+        "points": 263,
+        "evaluated": 263,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 263,
+        "evaluated": 263,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9915,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 24,
+      "legacyRecordedPairsNotFinalCost": 317,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_chengdu.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 17,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 17
+        },
+        "600": {
+          "allPointsMistakes": 3,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 3
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 22,
+        "evaluated": 22,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 22,
+        "evaluated": 22,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "guangzhou",
+      "name": "广州·上下九",
+      "terrain": "老城密路网",
+      "centerLatLngBD09": [
+        23.121043293382936,
+        113.25467049076846
+      ],
+      "uniqueQueries": 96,
+      "validQueries": 96,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.7818,
+      "offlineComputeSeconds": 0.0147,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newGridHeldout": {
+        "points": 344,
+        "evaluated": 344,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 344,
+        "evaluated": 344,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 1.0,
+      "boundarySymmetricVertexDistanceP90M": null,
+      "clipped15min": true,
+      "legacyStoredDirections": 55,
+      "legacyRecordedPairsNotFinalCost": 459,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_guangzhou.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 11,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 11
+        },
+        "600": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 38,
+        "evaluated": 38,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 38,
+        "evaluated": 38,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "wuhan",
+      "name": "武汉·江汉路",
+      "terrain": "滨江商圈",
+      "centerLatLngBD09": [
+        30.583664150179537,
+        114.30163821104237
+      ],
+      "uniqueQueries": 158,
+      "validQueries": 158,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.6409,
+      "offlineComputeSeconds": 0.0274,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 1,
+        "iou": 0.9977,
+        "f1": 0.9989
+      },
+      "newGridHeldout": {
+        "points": 282,
+        "evaluated": 282,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 282,
+        "evaluated": 282,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9984,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 53,
+      "legacyRecordedPairsNotFinalCost": 932,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_wuhan.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 23,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 23
+        },
+        "600": {
+          "allPointsMistakes": 3,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 3
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 46,
+        "evaluated": 46,
+        "unknown": 0,
+        "fp": 1,
+        "fn": 0,
+        "iou": 0.9783,
+        "f1": 0.989
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 46,
+        "evaluated": 46,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    },
+    {
+      "slug": "shenzhen",
+      "name": "深圳·华强北",
+      "terrain": "规则街区与大路切割",
+      "centerLatLngBD09": [
+        22.553183757626208,
+        114.09404653020073
+      ],
+      "uniqueQueries": 184,
+      "validQueries": 184,
+      "fullGridQueriesExcludingAnchor": 440,
+      "querySavingVsFullGrid": 0.5818,
+      "offlineComputeSeconds": 0.0323,
+      "liveApiCalls": 0,
+      "budgetLimited": false,
+      "unresolvedGridPositions": 0,
+      "threeThresholdQueries": 300,
+      "threeThresholdBudgetLimited": true,
+      "knownWindowSideM": 1000,
+      "requestedWindowSideM": 1100,
+      "unknownOuterGridPositions": 88,
+      "newGridAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayAllPoints": {
+        "points": 440,
+        "evaluated": 440,
+        "unknown": 0,
+        "fp": 8,
+        "fn": 0,
+        "iou": 0.9818,
+        "f1": 0.9908
+      },
+      "newGridHeldout": {
+        "points": 256,
+        "evaluated": 256,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "oldRayOnSameHeldout": {
+        "points": 256,
+        "evaluated": 256,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 0,
+        "iou": 1.0,
+        "f1": 1.0
+      },
+      "newAreaIoU": 1.0,
+      "oldAreaIoU": 0.9887,
+      "boundarySymmetricVertexDistanceP90M": 0.0,
+      "clipped15min": true,
+      "legacyStoredDirections": 27,
+      "legacyRecordedPairsNotFinalCost": 317,
+      "legacyScope": "stored ray main polygon plus recorded pockets minus interior gaps; excludes R2 Delaunay union",
+      "sourceFile": "experiments/results/e10_boundary/e10x_shenzhen.json",
+      "evaluationCaution": "all-point score includes sampled points; heldout excludes new queries only, not guaranteed independent of historical ray construction",
+      "jointThresholdScores": {
+        "300": {
+          "allPointsMistakes": 21,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 21
+        },
+        "600": {
+          "allPointsMistakes": 2,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 2
+        },
+        "900": {
+          "allPointsMistakes": 0,
+          "newUnqueriedPoints": 140,
+          "unqueriedMistakes": 0
+        }
+      },
+      "newOffGridHistoricalChecks": {
+        "points": 33,
+        "evaluated": 33,
+        "unknown": 0,
+        "fp": 0,
+        "fn": 2,
+        "iou": 0.9355,
+        "f1": 0.9667
+      },
+      "oldOnSameOffGridChecks": {
+        "points": 33,
+        "evaluated": 33,
+        "unknown": 0,
+        "fp": 1,
+        "fn": 0,
+        "iou": 0.9688,
+        "f1": 0.9841
+      },
+      "offGridCaution": "not used by new grid; may have been used by stored old rays; spatially clustered, not random independent validation"
+    }
+  ],
+  "totalUniqueQueries": 1937,
+  "fullGridReferenceQueries": 4400
+}

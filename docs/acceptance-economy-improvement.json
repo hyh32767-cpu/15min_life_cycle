@@ -1,0 +1,89 @@
+{
+  "scope": "nine sampled grids / one actual observed existing facility / three hypothetical candidates",
+  "sourceKind": "live-api+api-cache+user-input",
+  "baselineHash": "fd9430048da52b8d4f73dfcb47042fa0fa0181a0deb696099388c4db1ec55250",
+  "matrixHttp": 200,
+  "notFullFiveCategoryAcceptance": true,
+  "before": {
+    "coverage": {
+      "grid-0": true,
+      "grid-1": true,
+      "grid-2": false,
+      "grid-3": true,
+      "grid-4": true,
+      "grid-5": true,
+      "grid-6": true,
+      "grid-7": true,
+      "grid-8": true
+    },
+    "coveredCount": 8,
+    "totalGrids": 9,
+    "blindGrids": [
+      "grid-2"
+    ],
+    "delta": null
+  },
+  "candidates": [
+    {
+      "fromGrid": "grid-2",
+      "toFacility": "candidate-0",
+      "durationSeconds": 0,
+      "status": "ok"
+    },
+    {
+      "fromGrid": "grid-2",
+      "toFacility": "candidate-1",
+      "durationSeconds": 191,
+      "status": "ok"
+    },
+    {
+      "fromGrid": "grid-2",
+      "toFacility": "candidate-2",
+      "durationSeconds": 36,
+      "status": "ok"
+    }
+  ],
+  "matrixTraceId": "eab9c97231954f9f",
+  "matrixResponseHashes": [
+    "7057e75c3adfac21e9b0e1e6e5744e20e6d985d04b1f8479939127838b32322f"
+  ],
+  "greedy1": {
+    "knownCovered": 9,
+    "gain": 1,
+    "note": "only one uncovered sampled grid; extra candidates cannot add another grid"
+  },
+  "greedy2": {
+    "knownCovered": 9,
+    "gain": 1,
+    "note": "only one uncovered sampled grid; extra candidates cannot add another grid"
+  },
+  "greedy3": {
+    "knownCovered": 9,
+    "gain": 1,
+    "note": "only one uncovered sampled grid; extra candidates cannot add another grid"
+  },
+  "after": {
+    "coverage": {
+      "grid-0": true,
+      "grid-1": true,
+      "grid-2": false,
+      "grid-3": true,
+      "grid-4": true,
+      "grid-5": true,
+      "grid-6": true,
+      "grid-7": true,
+      "grid-8": true
+    },
+    "coveredCount": 8,
+    "totalGrids": 9,
+    "blindGrids": [
+      "grid-2"
+    ],
+    "delta": {
+      "before": 8,
+      "after": 9
+    }
+  },
+  "positiveImprovement": true,
+  "repeatCacheHit": true
+}

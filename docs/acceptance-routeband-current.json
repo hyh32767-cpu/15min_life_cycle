@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-12",
+  "coordinatesRedacted": true,
+  "algorithmVersion": "m2-ray-bisect-v4",
+  "thresholdSeconds": 900,
+  "completedCenters": 3,
+  "totalCenters": 3,
+  "maxSampleGapMApprox": 684,
+  "candidateCount": 15,
+  "insideCandidateCount": 8,
+  "nativeChecks": {
+    "realMapUnionFill": true,
+    "insideOnlyFilter": true,
+    "actualCandidateDetails": true,
+    "joinButtonEnabled": true,
+    "returnFrom20MinutePreviewRestores15FromCache": true
+  },
+  "planMutation": false,
+  "joinTaskCreationEvidence": "Separate isolated native constructed context; existing executing user plan retained",
+  "phaseBudget": {
+    "beforeRequests": 95,
+    "beforeUnits": 259,
+    "afterRequests": 124,
+    "afterUnits": 434,
+    "additionalRequests": 29,
+    "additionalUnits": 175
+  },
+  "cumulativeInterfaceUnits": {
+    "matrix_walking": 400,
+    "poi": 31,
+    "walking": 3
+  },
+  "geometry": {
+    "fillParts": 1,
+    "boundaryParts": 1
+  },
+  "limitations": [
+    "Eight-ray one-way approximation; actual detour feasibility remains separate",
+    "Current route and supermarket sample only; not all 20 categories",
+    "No task inserted into the existing executing user plan"
+  ]
+}

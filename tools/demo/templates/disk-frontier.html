@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>圆盘前沿 · 地图回放</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,-apple-system,sans-serif;color:#1b2b44;background:#eef3fa}#map{height:100dvh;width:100%}.panel{position:absolute;z-index:10;left:16px;top:16px;width:min(390px,calc(100% - 32px));padding:20px;background:#fffffff5;border:1px solid #e1e8f2;border-radius:22px;box-shadow:0 8px 32px #21355518}h1{font-size:21px;margin:0 0 6px}p{margin:8px 0}.muted{color:#758198;font-size:12px}.metrics{display:flex;gap:24px;margin:16px 0}.metrics strong{font-size:24px;display:block}.controls{display:flex;align-items:center;gap:12px}button{border:0;border-radius:12px;padding:10px 16px;background:#2462f2;color:#fff;font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:wait}button:focus-visible,input:focus-visible{outline:3px solid #78a9ff;outline-offset:3px}input{flex:1;min-width:0;accent-color:#2462f2}.key{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:14px}.key span:before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:5px}.error{color:#b72c35}.tools{position:absolute;right:16px;bottom:42px;z-index:9;display:grid;gap:4px}.tools button{background:white;color:#31435c;box-shadow:0 2px 8px #21355516;font-size:20px}.tag{font-weight:600;color:#2462f2}.foot{margin-top:10px;font-size:11px;color:#758198}a{color:#2462f2}@media(max-width:760px){.panel{top:auto;bottom:20px;padding:16px}.metrics{margin:10px 0}.metrics strong{font-size:21px}h1{font-size:18px}.tools{bottom:auto;top:20px}.foot{line-height:1.4}}
+</style>
+<div id="map" role="region" aria-label="王府井圆盘网格地图"></div>
+<section class="panel">
+  <h1>王府井 · 从圆周向内寻找边界</h1>
+  <p class="muted">100米网格 · 初始测量圆半径1公里</p>
+  <div class="metrics"><div><strong id="count">0</strong><span class="muted">已测位置</span></div><div><strong id="batch">0 / 7</strong><span class="muted">测量批次</span></div><div><strong>15分钟</strong><span class="muted">步行范围</span></div></div>
+  <p id="status" class="tag" aria-live="polite">正在加载地图…</p>
+  <div class="controls"><button id="play" disabled>播放</button><input id="step" aria-label="回放批次" type="range" min="0" value="0" disabled></div>
+  <div class="key"><span style="--c:#159d72">实测可达</span><span style="--c:#8392aa">实测超过15分钟</span><span style="--c:#e5a132">未知 / 无路</span></div>
+  <p class="muted">加载时轮廓逐批平滑变化，完成后切换为三角网拟合；灰线是初始测量圆。</p>
+  <p class="foot">历史实测逐批回放，播放速度不代表真实耗时。拟合线仅作展示；未测内部是有限抽检后的估计。圆周触边处，步行范围可能延伸到圆外。</p>
+</section>
+<div class="tools"><button id="plus" aria-label="放大地图">＋</button><button id="minus" aria-label="缩小地图">−</button><button id="home" aria-label="返回测量中心">⌖</button></div>
+<script>
+const data=__FRONTIER_DATA__;
+if(location.protocol==='file:')location.replace('http://127.0.0.1:5173/frontier-demo.html');
+const step=document.querySelector('#step'),play=document.querySelector('#play'),status=document.querySelector('#status');
+// 第0帧只有固定参考圆，第一批真实测点完成后才出现动态覆盖物。
+const frames=[null,...data.frames];step.max=frames.length-1;
+let map,B,overlays=[],timer=null,outline=null,animation=null;
+const originalCircle=Array.from({length:73},(_,i)=>[1000*Math.sin(i*Math.PI/36),1000*Math.cos(i*Math.PI/36)]);
+let shown=originalCircle;
+const point=([x,y])=>new B.Point(data.center.lng+x/(111320*Math.cos(data.center.lat*Math.PI/180)),data.center.lat+y/111320);
+// 仅绘制时圆角：先合并共线细分点，再以最多25米的局部二次曲线衔接。
+// 曲线留在相邻折线的凸包内，不用会向外过冲的样条；原始坐标不改。
+function roundLine(coords){
+  if(coords.length<3)return coords;
+  const same=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1])<.01;
+  const closed=same(coords[0],coords.at(-1)),compact=[];
+  for(const p of (closed?coords.slice(0,-1):coords)){
+    if(compact.length&&same(compact.at(-1),p))continue;
+    while(compact.length>=2){
+      const a=compact.at(-2),b=compact.at(-1),dx=p[0]-a[0],dy=p[1]-a[1],length=Math.hypot(dx,dy);
+      if(!length||Math.abs(dx*(b[1]-a[1])-dy*(b[0]-a[0]))/length>.25
+        ||(b[0]-a[0])*(p[0]-b[0])+(b[1]-a[1])*(p[1]-b[1])<0)break;
+      compact.pop();
+    }
+    compact.push(p);
+  }
+  if(compact.length<3)return coords;
+  const result=[];
+  for(let i=0;i<compact.length;i++){
+    const p=compact[i];
+    if(!closed&&(i===0||i===compact.length-1)){result.push(p);continue}
+    const a=compact[(i-1+compact.length)%compact.length],b=compact[(i+1)%compact.length];
+    const before=Math.hypot(a[0]-p[0],a[1]-p[1]),after=Math.hypot(b[0]-p[0],b[1]-p[1]);
+    const distance=Math.min(25,before*.35,after*.35);
+    const entry=[p[0]+(a[0]-p[0])*distance/before,p[1]+(a[1]-p[1])*distance/before];
+    const exit=[p[0]+(b[0]-p[0])*distance/after,p[1]+(b[1]-p[1])*distance/after];
+    result.push(entry);
+    for(let j=1;j<=8;j++){
+      const t=j/8,u=1-t;
+      result.push([u*u*entry[0]+2*u*t*p[0]+t*t*exit[0],u*u*entry[1]+2*u*t*p[1]+t*t*exit[1]]);
+    }
+  }
+  if(closed)result.push(result[0]);
+  return result;
+}
+function clearOutline(){if(animation)cancelAnimationFrame(animation);animation=null;if(outline)map.removeOverlay(outline);outline=null}
+function animateOutline(next){
+  clearOutline();
+  const from=shown,begin=performance.now(),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function render(now){
+    const progress=reduced?1:Math.min(1,(now-begin)/500),ease=1-Math.pow(1-progress,3);
+    shown=next.map((p,i)=>[from[i][0]+(p[0]-from[i][0])*ease,from[i][1]+(p[1]-from[i][1])*ease]);
+    if(outline)map.removeOverlay(outline);
+    outline=new B.Polyline(roundLine(shown).map(point),{strokeColor:'#2462f2',strokeWeight:3,strokeOpacity:.95});map.addOverlay(outline);
+    animation=progress<1?requestAnimationFrame(render):null;
+  }
+  animation=requestAnimationFrame(render);
+}
+function draw(){
+  overlays.forEach(o=>map.removeOverlay(o));overlays=[];
+  const frame=frames[+step.value];
+  document.querySelector('#count').textContent=frame?.pairsUsed||0;
+  document.querySelector('#batch').textContent=(frame?.batches.length||0)+' / '+data.summary.diskBatches;
+  status.textContent=!frame?'初始测量圆':frame.done?'本轮完成 · 已切换三角网拟合':frame.phase==='interior-check'?'检查内部缺口':'从外向内 · 距中心 '+frame.batches.at(-1).shellM+' 米';
+  if(!frame||!frame.done)animateOutline(frame?.previewContours[0]||originalCircle);
+  else clearOutline();
+  if(!frame)return;
+  for(const coords of frame.done?frame.previewContours:[]){
+    if(coords.length<2)continue;
+    const line=new B.Polyline(roundLine(coords).map(point),{strokeColor:'#2462f2',strokeWeight:3,strokeOpacity:.95});
+    map.addOverlay(line);overlays.push(line);
+  }
+  for(const sample of frame.samples){
+    const label=new B.Label('',{position:point([sample.x,sample.y])});
+    label.setStyle({width:'7px',height:'7px',borderRadius:'50%',border:'1px solid white',background:sample.state==='reachable'?'#159d72':sample.state==='outside'?'#8392aa':'#e5a132',transform:'translate(-50%,-50%)',pointerEvents:'none'});
+    map.addOverlay(label);overlays.push(label);
+  }
+}
+function stop(){clearInterval(timer);timer=null;play.textContent='播放'}
+play.onclick=()=>{if(timer){stop();return}if(+step.value===frames.length-1)step.value=0;draw();play.textContent='暂停';timer=setInterval(()=>{step.value=Math.min(frames.length-1,+step.value+1);draw();if(+step.value===frames.length-1)stop()},1100)};
+step.oninput=()=>{stop();draw()};
+document.querySelector('#plus').onclick=()=>map?.zoomIn();document.querySelector('#minus').onclick=()=>map?.zoomOut();
+document.querySelector('#home').onclick=()=>map?.panTo(new B.Point(data.center.lng,data.center.lat));
+async function init(){
+  if(location.protocol==='file:')return;
+  const config=await fetch('/api/maps/config').then(r=>{if(!r.ok)throw Error('地图配置暂不可用');return r.json()});
+  if(!config.ak)throw Error('地图尚未配置');
+  await new Promise((resolve,reject)=>{const script=document.createElement('script');const timeout=setTimeout(()=>{delete window.__frontierMapReady;script.remove();reject(Error('地图加载超时，请刷新重试'))},15000);window.__frontierMapReady=()=>{clearTimeout(timeout);delete window.__frontierMapReady;resolve()};script.onerror=()=>{clearTimeout(timeout);delete window.__frontierMapReady;reject(Error('地图加载失败，请刷新重试'))};script.src='https://api.map.baidu.com/api?v=4.0&ak='+encodeURIComponent(config.ak)+'&callback=__frontierMapReady';document.head.appendChild(script)});
+  B=window.BMap;if(!B)throw Error('地图加载未完成');
+  map=new B.Map('map');map.centerAndZoom(new B.Point(data.center.lng,data.center.lat),innerWidth<=760?15:16);map.enableScrollWheelZoom?.();
+  // 固定原始圆与中心，不随回放重建，不对每一帧重新调整视野。
+  map.addOverlay(new B.Polyline(originalCircle.map(point),{strokeColor:'#657997',strokeWeight:2,strokeOpacity:.75}));
+  const center=new B.Label('王府井 · 测量中心',{position:new B.Point(data.center.lng,data.center.lat)});
+  center.setStyle({background:'#1e304c',color:'white',border:'2px solid white',borderRadius:'18px',padding:'6px 12px',fontSize:'13px',transform:'translate(-50%,-100%)'});map.addOverlay(center);
+  // 手机保留上方地图空间；一次性平移，不随批次变动。
+  if(innerWidth<=760)map.panBy(0,-160,{noAnimation:true});
+  else map.panBy(150,0,{noAnimation:true});
+  play.disabled=false;step.disabled=false;draw();window.frontierReplay={map,draw,frames};
+}
+init().catch(error=>{status.textContent=error.message;status.classList.add('error')});
+window.addEventListener('pagehide',()=>{stop();if(animation)cancelAnimationFrame(animation)});
+</script>
+</html>

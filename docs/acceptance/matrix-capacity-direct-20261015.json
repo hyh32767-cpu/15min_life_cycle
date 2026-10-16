@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-10-15T07:07:14.205193+00:00",
+  "maximumRoutes": 750,
+  "maximumHttpAttempts": 15,
+  "retries": 0,
+  "stages": [
+    {
+      "label": "50 routes/1.0s",
+      "traceId": "9aa64e0cc4304dee",
+      "targetIntervalSeconds": 1.0,
+      "observedDispatchIntervals": [
+        1.0051,
+        0.9966
+      ],
+      "peakInFlight": 1,
+      "outcomes": [
+        {
+          "batch": 1,
+          "dispatchSeconds": 0.0001,
+          "completionSeconds": 0.2323,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 224,
+          "ok": true
+        },
+        {
+          "batch": 2,
+          "dispatchSeconds": 1.0052,
+          "completionSeconds": 1.2434,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 237,
+          "ok": true
+        },
+        {
+          "batch": 3,
+          "dispatchSeconds": 2.0018,
+          "completionSeconds": 2.2329,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 230,
+          "ok": true
+        }
+      ],
+      "passed": true,
+      "wallSeconds": 2.238
+    },
+    {
+      "label": "50 routes/0.5s",
+      "traceId": "b324a6d0c8db4434",
+      "targetIntervalSeconds": 0.5,
+      "observedDispatchIntervals": [
+        0.5041,
+        0.4959
+      ],
+      "peakInFlight": 1,
+      "outcomes": [
+        {
+          "batch": 1,
+          "dispatchSeconds": 0.0004,
+          "completionSeconds": 0.2239,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 222,
+          "ok": true
+        },
+        {
+          "batch": 2,
+          "dispatchSeconds": 0.5045,
+          "completionSeconds": 0.7452,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 239,
+          "ok": true
+        },
+        {
+          "batch": 3,
+          "dispatchSeconds": 1.0004,
+          "completionSeconds": 1.2298,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 50,
+          "routeCost": 50,
+          "latencyMs": 228,
+          "ok": true
+        }
+      ],
+      "passed": true,
+      "wallSeconds": 1.239
+    },
+    {
+      "label": "headroom-verification",
+      "traceId": "6f4718bdc7754b93",
+      "targetIntervalSeconds": 1.0,
+      "observedDispatchIntervals": [],
+      "peakInFlight": 1,
+      "outcomes": [
+        {
+          "batch": 1,
+          "dispatchSeconds": 0.0003,
+          "completionSeconds": 0.1901,
+          "status": 401,
+          "httpStatus": null,
+          "failureKind": null,
+          "validRoutes": 0,
+          "routeCost": 50,
+          "latencyMs": 189,
+          "ok": false
+        }
+      ],
+      "passed": false,
+      "wallSeconds": 0.191
+    }
+  ],
+  "note": "Short observations only; dispatch intervals are not entitlement proof or long-term capacity",
+  "transport": "direct-with-default-TLS-verification",
+  "recommendation": {
+    "routesPerWindow": 50,
+    "windowSeconds": 1.0,
+    "verificationPassed": false,
+    "lastSuccessIntervalSeconds": 0.5,
+    "firstFailureIntervalSeconds": null,
+    "rateLimitObserved": true,
+    "ceilingConclusion": "Transient success followed by 401; sustainable exact ceiling not established",
+    "httpAttempts": 7,
+    "routeCost": 350
+  }
+}

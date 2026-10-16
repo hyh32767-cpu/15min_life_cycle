@@ -1,0 +1,5 @@
+# Keep presentation assets and database snapshots byte-for-byte.
+*.pdf binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary

@@ -1,0 +1,29 @@
+[Unit]
+Description=Shunshou life-circle application
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=shunshou
+Group=shunshou
+WorkingDirectory=/opt/shunshou/current
+EnvironmentFile=/etc/shunshou.env
+Environment=SHUNSHOU_SERVE_WEB=1
+Environment=LEDGER_DB=/var/lib/shunshou/ledger.db
+Environment=CACHE_DB=/var/lib/shunshou/cache.db
+Environment=DERIVED_DB=/var/lib/shunshou/derived.db
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/shunshou/venv/bin/python -m uvicorn api.app.main:app --host 127.0.0.1 --port 18080
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/shunshou
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,358 @@
+{
+  "traceId": "ac175fbcb2574477",
+  "transport": "direct",
+  "pairsPerWave": 16,
+  "waveIntervalSeconds": 6.2,
+  "retries": 0,
+  "budgetPairs": 128,
+  "actualPairs": 112,
+  "httpRequests": 22,
+  "elapsedSeconds": 37.355,
+  "stoppedOnError": true,
+  "waves": [
+    {
+      "targetConcurrency": 1,
+      "repetition": 1,
+      "elapsedSeconds": 0.104,
+      "validPairs": 16,
+      "statuses": [
+        0
+      ],
+      "actualPeakInFlight": 1,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 16,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 16,
+          "latencyMs": 79,
+          "startSeconds": 0.000358,
+          "endSeconds": 0.104394
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 1,
+      "repetition": 2,
+      "elapsedSeconds": 0.215,
+      "validPairs": 16,
+      "statuses": [
+        0
+      ],
+      "actualPeakInFlight": 1,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 16,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 16,
+          "latencyMs": 214,
+          "startSeconds": 6.200403,
+          "endSeconds": 6.415312
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 2,
+      "repetition": 1,
+      "elapsedSeconds": 0.108,
+      "validPairs": 16,
+      "statuses": [
+        0,
+        0
+      ],
+      "actualPeakInFlight": 2,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 8,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 8,
+          "latencyMs": 99,
+          "startSeconds": 12.401108,
+          "endSeconds": 12.500907
+        },
+        {
+          "requestIndex": 1,
+          "pairs": 8,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 8,
+          "latencyMs": 107,
+          "startSeconds": 12.400681,
+          "endSeconds": 12.508391
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 2,
+      "repetition": 2,
+      "elapsedSeconds": 0.126,
+      "validPairs": 16,
+      "statuses": [
+        0,
+        0
+      ],
+      "actualPeakInFlight": 2,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 8,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 8,
+          "latencyMs": 95,
+          "startSeconds": 18.601143,
+          "endSeconds": 18.697187
+        },
+        {
+          "requestIndex": 1,
+          "pairs": 8,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 8,
+          "latencyMs": 125,
+          "startSeconds": 18.600716,
+          "endSeconds": 18.726481
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 4,
+      "repetition": 1,
+      "elapsedSeconds": 0.143,
+      "validPairs": 16,
+      "statuses": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actualPeakInFlight": 4,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 121,
+          "startSeconds": 24.802566,
+          "endSeconds": 24.924618
+        },
+        {
+          "requestIndex": 1,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 129,
+          "startSeconds": 24.802199,
+          "endSeconds": 24.932289
+        },
+        {
+          "requestIndex": 2,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 141,
+          "startSeconds": 24.802978,
+          "endSeconds": 24.945015
+        },
+        {
+          "requestIndex": 3,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 118,
+          "startSeconds": 24.801803,
+          "endSeconds": 24.920262
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 4,
+      "repetition": 2,
+      "elapsedSeconds": 0.135,
+      "validPairs": 16,
+      "statuses": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actualPeakInFlight": 4,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 91,
+          "startSeconds": 31.00163,
+          "endSeconds": 31.093476
+        },
+        {
+          "requestIndex": 1,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 134,
+          "startSeconds": 31.001358,
+          "endSeconds": 31.136146
+        },
+        {
+          "requestIndex": 2,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 124,
+          "startSeconds": 31.001901,
+          "endSeconds": 31.126387
+        },
+        {
+          "requestIndex": 3,
+          "pairs": 4,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 4,
+          "latencyMs": 115,
+          "startSeconds": 31.000984,
+          "endSeconds": 31.116673
+        }
+      ]
+    },
+    {
+      "targetConcurrency": 8,
+      "repetition": 1,
+      "elapsedSeconds": 0.119,
+      "validPairs": 12,
+      "statuses": [
+        0,
+        0,
+        401,
+        0,
+        0,
+        401,
+        0,
+        0
+      ],
+      "actualPeakInFlight": 8,
+      "requests": [
+        {
+          "requestIndex": 0,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 106,
+          "startSeconds": 37.205242,
+          "endSeconds": 37.31217
+        },
+        {
+          "requestIndex": 1,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 99,
+          "startSeconds": 37.204657,
+          "endSeconds": 37.303951
+        },
+        {
+          "requestIndex": 2,
+          "pairs": 2,
+          "status": 401,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 0,
+          "latencyMs": 90,
+          "startSeconds": 37.204226,
+          "endSeconds": 37.294756
+        },
+        {
+          "requestIndex": 3,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 116,
+          "startSeconds": 37.204955,
+          "endSeconds": 37.321772
+        },
+        {
+          "requestIndex": 4,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 106,
+          "startSeconds": 37.20572,
+          "endSeconds": 37.312728
+        },
+        {
+          "requestIndex": 5,
+          "pairs": 2,
+          "status": 401,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 0,
+          "latencyMs": 70,
+          "startSeconds": 37.208092,
+          "endSeconds": 37.279198
+        },
+        {
+          "requestIndex": 6,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 96,
+          "startSeconds": 37.205999,
+          "endSeconds": 37.30227
+        },
+        {
+          "requestIndex": 7,
+          "pairs": 2,
+          "status": 0,
+          "httpStatus": null,
+          "failureKind": null,
+          "validPairs": 2,
+          "latencyMs": 119,
+          "startSeconds": 37.202534,
+          "endSeconds": 37.321954
+        }
+      ]
+    }
+  ],
+  "productionConfigChanged": false,
+  "completedAt": "2026-10-16T02:07:26.317522+00:00",
+  "timestampNote": "Wall clock was sampled at completion; per-request start/end offsets and elapsedSeconds use monotonic time."
+}

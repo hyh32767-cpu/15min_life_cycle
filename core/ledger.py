@@ -5,8 +5,10 @@ import sqlite3
 import threading
 import time
 
-_DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                        "experiments", "logs", "calls.db")
+_DEFAULT_DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                "experiments", "logs", "calls.db")
+# 预检/产品级账本可通过环境变量指向独立库，避免写入历史实验台账。
+_DB_PATH = os.environ.get("LEDGER_DB") or _DEFAULT_DB_PATH
 _lock = threading.Lock()
 
 _SCHEMA = """

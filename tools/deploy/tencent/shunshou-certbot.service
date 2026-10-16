@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew Shunshou IP TLS certificate
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/shunshou/certbot-venv/bin/certbot renew --quiet --deploy-hook "/usr/sbin/nginx -t && /bin/systemctl reload nginx"

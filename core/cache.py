@@ -7,8 +7,10 @@ import os
 import sqlite3
 import threading
 
-_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                   "experiments", "logs", "cache.db")
+_DEFAULT_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                           "experiments", "logs", "cache.db")
+# 预检/产品级缓存可通过环境变量指向独立库，避免写入历史实验缓存。
+_DB = os.environ.get("CACHE_DB") or _DEFAULT_DB
 _lock = threading.Lock()
 
 

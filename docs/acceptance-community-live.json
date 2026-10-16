@@ -1,0 +1,78 @@
+{
+  "sample": "北京回龙观小区",
+  "origin": {
+    "lng": 116.362946,
+    "lat": 40.090935,
+    "crs": "BD09"
+  },
+  "categories": {
+    "菜市场": {
+      "status": "unknown",
+      "errorCode": "QUOTA_EXCEEDED"
+    },
+    "药店": {
+      "status": "unknown",
+      "errorCode": "QUOTA_EXCEEDED"
+    },
+    "小学": {
+      "status": "ready",
+      "facilities": 4,
+      "retrieval": {
+        "queryTerms": [
+          "小学"
+        ],
+        "category": "",
+        "windows": 1,
+        "pages": 1,
+        "rawCount": 4,
+        "uniqueCount": 4,
+        "truncated": false,
+        "truncationReason": null,
+        "sourceKind": "derived"
+      }
+    }
+  },
+  "heatLayers": {
+    "300": {
+      "status": "partial",
+      "pairs": 32,
+      "failedBearings": [
+        0.0,
+        45.0,
+        270.0,
+        315.0
+      ],
+      "skippedBearings": [],
+      "repeatCacheHit": true,
+      "repeatLiveRequests": 0,
+      "sameRadii": true
+    },
+    "600": {
+      "status": "partial",
+      "pairs": 44,
+      "failedBearings": [
+        270.0
+      ],
+      "skippedBearings": [],
+      "repeatCacheHit": true,
+      "repeatLiveRequests": 0,
+      "sameRadii": true
+    },
+    "900": {
+      "status": "complete",
+      "pairs": 48,
+      "failedBearings": [],
+      "skippedBearings": [],
+      "repeatCacheHit": true,
+      "repeatLiveRequests": 0,
+      "sameRadii": true
+    }
+  },
+  "historicalLedgerUnchanged": true,
+  "accounting": {
+    "liveRequests": 22,
+    "cacheHits": 0,
+    "pairs": 131,
+    "errors": 7
+  }
+}

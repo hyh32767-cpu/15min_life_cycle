@@ -1,0 +1,884 @@
+{
+  "serial-batch-30x6-20261016.json": {
+    "startedAt": "2026-10-16T02:40:57.706086+00:00",
+    "traceId": "89daba89436d4a8f",
+    "maxRequests": 60,
+    "maxAttemptPairs": 1800,
+    "pairsPerRequest": 30,
+    "stages": [
+      {
+        "intervalSeconds": 6.0,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 124,
+            "sentSeconds": 0.012,
+            "endedSeconds": 0.156
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 130,
+            "sentSeconds": 6.012,
+            "endedSeconds": 6.143
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 97,
+            "sentSeconds": 12.013,
+            "endedSeconds": 12.111
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 96,
+            "sentSeconds": 18.013,
+            "endedSeconds": 18.109
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 127,
+            "sentSeconds": 24.013,
+            "endedSeconds": 24.141
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 118,
+            "sentSeconds": 30.013,
+            "endedSeconds": 30.132
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 97,
+            "sentSeconds": 36.013,
+            "endedSeconds": 36.111
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 115,
+            "sentSeconds": 42.013,
+            "endedSeconds": 42.129
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 107,
+            "sentSeconds": 48.013,
+            "endedSeconds": 48.12
+          },
+          {
+            "index": 10,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 133,
+            "sentSeconds": 54.013,
+            "endedSeconds": 54.147
+          },
+          {
+            "index": 11,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 100,
+            "sentSeconds": 60.013,
+            "endedSeconds": 60.114
+          },
+          {
+            "index": 12,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 132,
+            "sentSeconds": 66.013,
+            "endedSeconds": 66.146
+          },
+          {
+            "index": 13,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 122,
+            "sentSeconds": 72.013,
+            "endedSeconds": 72.136
+          },
+          {
+            "index": 14,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 139,
+            "sentSeconds": 78.013,
+            "endedSeconds": 78.154
+          },
+          {
+            "index": 15,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 102,
+            "sentSeconds": 84.014,
+            "endedSeconds": 84.116
+          },
+          {
+            "index": 16,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 123,
+            "sentSeconds": 90.014,
+            "endedSeconds": 90.138
+          },
+          {
+            "index": 17,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 67,
+            "sentSeconds": 96.014,
+            "endedSeconds": 96.082
+          },
+          {
+            "index": 18,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 60,
+            "sentSeconds": 102.014,
+            "endedSeconds": 102.074
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "status": "complete",
+    "retries": 0,
+    "cacheHits": 0,
+    "productionConfigChanged": false,
+    "requestsUsed": 18,
+    "attemptPairs": 540,
+    "elapsedSeconds": 102.088,
+    "confirmedIntervalSeconds": 6.0,
+    "confirmationRequests": 18
+  },
+  "serial-batch-10x1p8-20261016.json": {
+    "startedAt": "2026-10-16T02:42:39.885579+00:00",
+    "traceId": "e99297b23cca4cdb",
+    "maxRequests": 60,
+    "maxAttemptPairs": 600,
+    "pairsPerRequest": 10,
+    "stages": [
+      {
+        "intervalSeconds": 1.8,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 68,
+            "sentSeconds": 9.911,
+            "endedSeconds": 9.999
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 69,
+            "sentSeconds": 11.711,
+            "endedSeconds": 11.781
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 73,
+            "sentSeconds": 13.511,
+            "endedSeconds": 13.586
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 60,
+            "sentSeconds": 15.312,
+            "endedSeconds": 15.372
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 72,
+            "sentSeconds": 17.112,
+            "endedSeconds": 17.184
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 72,
+            "sentSeconds": 18.912,
+            "endedSeconds": 18.984
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 63,
+            "sentSeconds": 20.712,
+            "endedSeconds": 20.776
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 73,
+            "sentSeconds": 22.512,
+            "endedSeconds": 22.585
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 49,
+            "sentSeconds": 24.312,
+            "endedSeconds": 24.362
+          },
+          {
+            "index": 10,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 68,
+            "sentSeconds": 26.112,
+            "endedSeconds": 26.181
+          },
+          {
+            "index": 11,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 112,
+            "sentSeconds": 27.912,
+            "endedSeconds": 28.025
+          },
+          {
+            "index": 12,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 97,
+            "sentSeconds": 29.712,
+            "endedSeconds": 29.809
+          },
+          {
+            "index": 13,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 120,
+            "sentSeconds": 31.512,
+            "endedSeconds": 31.633
+          },
+          {
+            "index": 14,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 90,
+            "sentSeconds": 33.312,
+            "endedSeconds": 33.403
+          },
+          {
+            "index": 15,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 94,
+            "sentSeconds": 35.112,
+            "endedSeconds": 35.207
+          },
+          {
+            "index": 16,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 111,
+            "sentSeconds": 36.912,
+            "endedSeconds": 37.024
+          },
+          {
+            "index": 17,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 113,
+            "sentSeconds": 38.713,
+            "endedSeconds": 38.826
+          },
+          {
+            "index": 18,
+            "status": 0,
+            "validPairs": 10,
+            "latencyMs": 112,
+            "sentSeconds": 40.513,
+            "endedSeconds": 40.625
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "status": "complete",
+    "retries": 0,
+    "cacheHits": 0,
+    "productionConfigChanged": false,
+    "requestsUsed": 18,
+    "attemptPairs": 180,
+    "elapsedSeconds": 40.639,
+    "confirmedIntervalSeconds": 1.8,
+    "confirmationRequests": 18
+  },
+  "serial-batch-20x3p6-20261016.json": {
+    "startedAt": "2026-10-16T02:43:20.617629+00:00",
+    "traceId": "5b02392252744bd4",
+    "maxRequests": 60,
+    "maxAttemptPairs": 1200,
+    "pairsPerRequest": 20,
+    "stages": [
+      {
+        "intervalSeconds": 3.6,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 108,
+            "sentSeconds": 9.905,
+            "endedSeconds": 10.033
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 91,
+            "sentSeconds": 13.505,
+            "endedSeconds": 13.597
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 127,
+            "sentSeconds": 17.105,
+            "endedSeconds": 17.233
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 121,
+            "sentSeconds": 20.705,
+            "endedSeconds": 20.827
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 94,
+            "sentSeconds": 24.305,
+            "endedSeconds": 24.4
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 110,
+            "sentSeconds": 27.905,
+            "endedSeconds": 28.016
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 129,
+            "sentSeconds": 31.505,
+            "endedSeconds": 31.635
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 125,
+            "sentSeconds": 35.106,
+            "endedSeconds": 35.231
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 109,
+            "sentSeconds": 38.706,
+            "endedSeconds": 38.815
+          },
+          {
+            "index": 10,
+            "status": 401,
+            "validPairs": 0,
+            "latencyMs": 66,
+            "sentSeconds": 42.306,
+            "endedSeconds": 42.372
+          }
+        ],
+        "passed": false
+      },
+      {
+        "intervalSeconds": 4.1,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 73,
+            "sentSeconds": 107.383,
+            "endedSeconds": 107.456
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 73,
+            "sentSeconds": 111.483,
+            "endedSeconds": 111.556
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 58,
+            "sentSeconds": 115.583,
+            "endedSeconds": 115.642
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 70,
+            "sentSeconds": 119.683,
+            "endedSeconds": 119.754
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 68,
+            "sentSeconds": 123.783,
+            "endedSeconds": 123.851
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 80,
+            "sentSeconds": 127.883,
+            "endedSeconds": 127.963
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 70,
+            "sentSeconds": 131.983,
+            "endedSeconds": 132.054
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 73,
+            "sentSeconds": 136.083,
+            "endedSeconds": 136.157
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 66,
+            "sentSeconds": 140.183,
+            "endedSeconds": 140.25
+          },
+          {
+            "index": 10,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 71,
+            "sentSeconds": 144.283,
+            "endedSeconds": 144.355
+          },
+          {
+            "index": 11,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 62,
+            "sentSeconds": 148.383,
+            "endedSeconds": 148.446
+          },
+          {
+            "index": 12,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 73,
+            "sentSeconds": 152.483,
+            "endedSeconds": 152.557
+          },
+          {
+            "index": 13,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 65,
+            "sentSeconds": 156.584,
+            "endedSeconds": 156.649
+          },
+          {
+            "index": 14,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 62,
+            "sentSeconds": 160.684,
+            "endedSeconds": 160.746
+          },
+          {
+            "index": 15,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 100,
+            "sentSeconds": 164.784,
+            "endedSeconds": 164.884
+          },
+          {
+            "index": 16,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 95,
+            "sentSeconds": 168.884,
+            "endedSeconds": 168.979
+          },
+          {
+            "index": 17,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 89,
+            "sentSeconds": 172.984,
+            "endedSeconds": 173.074
+          },
+          {
+            "index": 18,
+            "status": 0,
+            "validPairs": 20,
+            "latencyMs": 79,
+            "sentSeconds": 177.084,
+            "endedSeconds": 177.164
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "status": "complete",
+    "retries": 0,
+    "cacheHits": 0,
+    "productionConfigChanged": false,
+    "requestsUsed": 28,
+    "attemptPairs": 560,
+    "elapsedSeconds": 177.176,
+    "failedIntervalSeconds": 3.6,
+    "confirmedIntervalSeconds": 4.1,
+    "confirmationRequests": 18
+  },
+  "serial-batch-40x7p2-20261016.json": {
+    "startedAt": "2026-10-16T02:46:17.888863+00:00",
+    "traceId": "71c075a3b39b4c1d",
+    "maxRequests": 60,
+    "maxAttemptPairs": 2400,
+    "pairsPerRequest": 40,
+    "stages": [
+      {
+        "intervalSeconds": 7.2,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 85,
+            "sentSeconds": 9.908,
+            "endedSeconds": 10.012
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 83,
+            "sentSeconds": 17.108,
+            "endedSeconds": 17.192
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 80,
+            "sentSeconds": 24.308,
+            "endedSeconds": 24.389
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 70,
+            "sentSeconds": 31.508,
+            "endedSeconds": 31.579
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 81,
+            "sentSeconds": 38.708,
+            "endedSeconds": 38.79
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 110,
+            "sentSeconds": 45.908,
+            "endedSeconds": 46.019
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 135,
+            "sentSeconds": 53.108,
+            "endedSeconds": 53.244
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 138,
+            "sentSeconds": 60.308,
+            "endedSeconds": 60.447
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 134,
+            "sentSeconds": 67.509,
+            "endedSeconds": 67.644
+          },
+          {
+            "index": 10,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 154,
+            "sentSeconds": 74.709,
+            "endedSeconds": 74.864
+          },
+          {
+            "index": 11,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 112,
+            "sentSeconds": 81.909,
+            "endedSeconds": 82.022
+          },
+          {
+            "index": 12,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 111,
+            "sentSeconds": 89.109,
+            "endedSeconds": 89.221
+          },
+          {
+            "index": 13,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 121,
+            "sentSeconds": 96.309,
+            "endedSeconds": 96.431
+          },
+          {
+            "index": 14,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 123,
+            "sentSeconds": 103.509,
+            "endedSeconds": 103.632
+          },
+          {
+            "index": 15,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 112,
+            "sentSeconds": 110.709,
+            "endedSeconds": 110.822
+          },
+          {
+            "index": 16,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 114,
+            "sentSeconds": 117.909,
+            "endedSeconds": 118.024
+          },
+          {
+            "index": 17,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 102,
+            "sentSeconds": 125.109,
+            "endedSeconds": 125.212
+          },
+          {
+            "index": 18,
+            "status": 0,
+            "validPairs": 40,
+            "latencyMs": 112,
+            "sentSeconds": 132.309,
+            "endedSeconds": 132.422
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "status": "complete",
+    "retries": 0,
+    "cacheHits": 0,
+    "productionConfigChanged": false,
+    "requestsUsed": 18,
+    "attemptPairs": 720,
+    "elapsedSeconds": 132.438,
+    "confirmedIntervalSeconds": 7.2,
+    "confirmationRequests": 18
+  },
+  "serial-batch-30x5p4-20261016.json": {
+    "startedAt": "2026-10-16T02:48:30.417583+00:00",
+    "traceId": "fb90c02099a245bf",
+    "maxRequests": 60,
+    "maxAttemptPairs": 1800,
+    "pairsPerRequest": 30,
+    "stages": [
+      {
+        "intervalSeconds": 5.4,
+        "plannedRequests": 18,
+        "kind": "fixed-confirmation",
+        "requests": [
+          {
+            "index": 1,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 131,
+            "sentSeconds": 9.955,
+            "endedSeconds": 10.111
+          },
+          {
+            "index": 2,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 123,
+            "sentSeconds": 15.355,
+            "endedSeconds": 15.48
+          },
+          {
+            "index": 3,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 136,
+            "sentSeconds": 20.756,
+            "endedSeconds": 20.892
+          },
+          {
+            "index": 4,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 128,
+            "sentSeconds": 26.156,
+            "endedSeconds": 26.285
+          },
+          {
+            "index": 5,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 81,
+            "sentSeconds": 31.556,
+            "endedSeconds": 31.638
+          },
+          {
+            "index": 6,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 81,
+            "sentSeconds": 36.956,
+            "endedSeconds": 37.037
+          },
+          {
+            "index": 7,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 64,
+            "sentSeconds": 42.356,
+            "endedSeconds": 42.421
+          },
+          {
+            "index": 8,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 66,
+            "sentSeconds": 47.756,
+            "endedSeconds": 47.822
+          },
+          {
+            "index": 9,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 109,
+            "sentSeconds": 53.156,
+            "endedSeconds": 53.266
+          },
+          {
+            "index": 10,
+            "status": 0,
+            "validPairs": 30,
+            "latencyMs": 115,
+            "sentSeconds": 58.556,
+            "endedSeconds": 58.672
+          },
+          {
+            "index": 11,
+            "status": 302,
+            "validPairs": 0,
+            "latencyMs": 67,
+            "sentSeconds": 63.956,
+            "endedSeconds": 64.024
+          }
+        ],
+        "passed": false
+      }
+    ],
+    "status": "stopped",
+    "retries": 0,
+    "cacheHits": 0,
+    "productionConfigChanged": false,
+    "requestsUsed": 11,
+    "attemptPairs": 330,
+    "elapsedSeconds": 64.032,
+    "stopReason": "non_rate_error_or_incomplete_response"
+  }
+}

@@ -1,0 +1,4305 @@
+{
+  "summary": {
+    "startedAt": "2026-10-16T01:59:33.436478+00:00",
+    "elapsedSeconds": 16.82,
+    "points": 149,
+    "spacingM": 200,
+    "radiusM": 1400,
+    "thresholdSeconds": 900,
+    "statuses": {
+      "ok": 78,
+      "error": 71
+    },
+    "reachablePoints": 34,
+    "cacheCells": 8,
+    "traceIds": [
+      "220f46caf1034ef2",
+      "cafa6d6c532b41f5",
+      "d90d1f4b67d144d7",
+      "925449a18a764cff",
+      "7195c173c4b04bbb"
+    ]
+  },
+  "origin": {
+    "lng": 116.417939,
+    "lat": 39.915062,
+    "crs": "BD09"
+  },
+  "samples": [
+    {
+      "eastM": 0,
+      "northM": -1400,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.90248564355012,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 1414,
+      "distanceM": 1654,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": -600,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 1532,
+      "distanceM": 1793,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 1411,
+      "distanceM": 1651,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 2,
+      "durationSeconds": 1382,
+      "distanceM": 1616,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 3,
+      "durationSeconds": 1214,
+      "distanceM": 1420,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 4,
+      "durationSeconds": 1444,
+      "distanceM": 1689,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 5,
+      "durationSeconds": 1504,
+      "distanceM": 1757,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -1200,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.90428226590011,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 6,
+      "durationSeconds": 1558,
+      "distanceM": 1824,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 7,
+      "durationSeconds": 1590,
+      "distanceM": 1860,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 8,
+      "durationSeconds": 1397,
+      "distanceM": 1635,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 9,
+      "durationSeconds": 1226,
+      "distanceM": 1434,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 10,
+      "durationSeconds": 1218,
+      "distanceM": 1424,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 11,
+      "durationSeconds": 1018,
+      "distanceM": 1191,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 12,
+      "durationSeconds": 1264,
+      "distanceM": 1478,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 13,
+      "durationSeconds": 1521,
+      "distanceM": 1778,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 14,
+      "durationSeconds": 1389,
+      "distanceM": 1626,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": -1000,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.906078888250086,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 15,
+      "durationSeconds": 1533,
+      "distanceM": 1796,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": -800,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 16,
+      "durationSeconds": 1540,
+      "distanceM": 1801,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": -800,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 17,
+      "durationSeconds": 1578,
+      "distanceM": 1846,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": -800,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 18,
+      "durationSeconds": 1215,
+      "distanceM": 1422,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -800,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 19,
+      "durationSeconds": 1051,
+      "distanceM": 1229,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -800,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 20,
+      "durationSeconds": 1109,
+      "distanceM": 1297,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -800,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 22,
+      "durationSeconds": 853,
+      "distanceM": 997,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": 200,
+      "northM": -800,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 21,
+      "durationSeconds": 1133,
+      "distanceM": 1326,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -800,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 22,
+      "durationSeconds": 1321,
+      "distanceM": 1548,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -800,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 1218,
+      "distanceM": 1426,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": -800,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 1422,
+      "distanceM": 1665,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": -800,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.90787551060007,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 2,
+      "durationSeconds": 1364,
+      "distanceM": 1598,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": -600,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 3,
+      "durationSeconds": 2008,
+      "distanceM": 2350,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": -600,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 4,
+      "durationSeconds": 1366,
+      "distanceM": 1597,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": -600,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 5,
+      "durationSeconds": 1223,
+      "distanceM": 1433,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": -600,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 6,
+      "durationSeconds": 1241,
+      "distanceM": 1453,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -600,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 7,
+      "durationSeconds": 880,
+      "distanceM": 1029,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -600,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 8,
+      "durationSeconds": 1010,
+      "distanceM": 1184,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -600,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 9,
+      "durationSeconds": 679,
+      "distanceM": 794,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": -600,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 10,
+      "durationSeconds": 848,
+      "distanceM": 992,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -600,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 11,
+      "durationSeconds": 899,
+      "distanceM": 1053,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -600,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 12,
+      "durationSeconds": 1048,
+      "distanceM": 1227,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": -600,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 13,
+      "durationSeconds": 1172,
+      "distanceM": 1373,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": -600,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 14,
+      "durationSeconds": 1395,
+      "distanceM": 1633,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": -600,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.90967213295005,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 15,
+      "durationSeconds": 1630,
+      "distanceM": 1909,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": -400,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 16,
+      "durationSeconds": 1357,
+      "distanceM": 1588,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": -400,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 17,
+      "durationSeconds": 1192,
+      "distanceM": 1394,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": -400,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 18,
+      "durationSeconds": 1049,
+      "distanceM": 1230,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": -400,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 19,
+      "durationSeconds": 1071,
+      "distanceM": 1254,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -400,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 20,
+      "durationSeconds": 710,
+      "distanceM": 830,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -400,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 21,
+      "durationSeconds": 781,
+      "distanceM": 915,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -400,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 22,
+      "durationSeconds": 508,
+      "distanceM": 595,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": -400,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 23,
+      "durationSeconds": 700,
+      "distanceM": 820,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -400,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 24,
+      "durationSeconds": 738,
+      "distanceM": 865,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -400,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 936,
+      "distanceM": 1096,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": -400,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 1133,
+      "distanceM": 1328,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": -400,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 2,
+      "durationSeconds": 1326,
+      "distanceM": 1553,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": -400,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.911468755300035,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 3,
+      "durationSeconds": 1484,
+      "distanceM": 1737,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": -200,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 4,
+      "durationSeconds": 1243,
+      "distanceM": 1455,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": -200,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 5,
+      "durationSeconds": 1015,
+      "distanceM": 1188,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": -200,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 6,
+      "durationSeconds": 858,
+      "distanceM": 1005,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": -200,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 7,
+      "durationSeconds": 949,
+      "distanceM": 1112,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": -200,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 8,
+      "durationSeconds": 536,
+      "distanceM": 628,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": -200,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 9,
+      "durationSeconds": 715,
+      "distanceM": 839,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": -200,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 10,
+      "durationSeconds": 338,
+      "distanceM": 397,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": -200,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 11,
+      "durationSeconds": 724,
+      "distanceM": 849,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": -200,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 12,
+      "durationSeconds": 558,
+      "distanceM": 655,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": -200,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 13,
+      "durationSeconds": 767,
+      "distanceM": 899,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": -200,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 14,
+      "durationSeconds": 997,
+      "distanceM": 1172,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": -200,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 15,
+      "durationSeconds": 1119,
+      "distanceM": 1314,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": -200,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.91326537765001,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 16,
+      "durationSeconds": 1593,
+      "distanceM": 1865,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1400,
+      "northM": 0,
+      "coord": {
+        "lng": 116.40154211103287,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 17,
+      "durationSeconds": 2468,
+      "distanceM": 2892,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": -1200,
+      "northM": 0,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 18,
+      "durationSeconds": 2318,
+      "distanceM": 2714,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": 0,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 19,
+      "durationSeconds": 1481,
+      "distanceM": 1732,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 0,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 20,
+      "durationSeconds": 820,
+      "distanceM": 961,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": -600,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 21,
+      "durationSeconds": 656,
+      "distanceM": 769,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 22,
+      "durationSeconds": 475,
+      "distanceM": 556,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 23,
+      "durationSeconds": 319,
+      "distanceM": 375,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 0,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 23,
+      "durationSeconds": null,
+      "distanceM": 0,
+      "status": "error",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": 200,
+      "northM": 0,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 261,
+      "distanceM": 307,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": 400,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 419,
+      "distanceM": 492,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 2,
+      "durationSeconds": 646,
+      "distanceM": 758,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 3,
+      "durationSeconds": 939,
+      "distanceM": 1101,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": 1000,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 4,
+      "durationSeconds": 1099,
+      "distanceM": 1290,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": 0,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 5,
+      "durationSeconds": 1284,
+      "distanceM": 1504,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1400,
+      "northM": 0,
+      "coord": {
+        "lng": 116.43433588896714,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 6,
+      "durationSeconds": 1510,
+      "distanceM": 1771,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": 200,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 7,
+      "durationSeconds": 2077,
+      "distanceM": 2431,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": 200,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 8,
+      "durationSeconds": 1403,
+      "distanceM": 1643,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 200,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 9,
+      "durationSeconds": 967,
+      "distanceM": 1133,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 200,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 10,
+      "durationSeconds": 814,
+      "distanceM": 953,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 200,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 11,
+      "durationSeconds": 498,
+      "distanceM": 582,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 200,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 12,
+      "durationSeconds": 331,
+      "distanceM": 387,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 200,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 13,
+      "durationSeconds": 166,
+      "distanceM": 195,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": 200,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 14,
+      "durationSeconds": 353,
+      "distanceM": 413,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 200,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 15,
+      "durationSeconds": 516,
+      "distanceM": 604,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 200,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 16,
+      "durationSeconds": 689,
+      "distanceM": 806,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 200,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 17,
+      "durationSeconds": 871,
+      "distanceM": 1018,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": 200,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 18,
+      "durationSeconds": 1011,
+      "distanceM": 1183,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": 200,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.916858622349984,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 19,
+      "durationSeconds": 1321,
+      "distanceM": 1549,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": 400,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 20,
+      "durationSeconds": 1910,
+      "distanceM": 2236,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": 400,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 21,
+      "durationSeconds": 1404,
+      "distanceM": 1645,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 400,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 22,
+      "durationSeconds": 1116,
+      "distanceM": 1305,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 400,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 23,
+      "durationSeconds": 1017,
+      "distanceM": 1191,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 400,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 24,
+      "durationSeconds": 653,
+      "distanceM": 766,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 400,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 456,
+      "fromIndex": 0,
+      "toIndex": 24,
+      "distanceM": 533,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 400,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 342,
+      "fromIndex": 0,
+      "toIndex": 0,
+      "distanceM": 400,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": 400,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 494,
+      "fromIndex": 0,
+      "toIndex": 1,
+      "distanceM": 581,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 400,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 662,
+      "fromIndex": 0,
+      "toIndex": 2,
+      "distanceM": 774,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 400,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 826,
+      "fromIndex": 0,
+      "toIndex": 3,
+      "distanceM": 966,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 400,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1068,
+      "fromIndex": 0,
+      "toIndex": 4,
+      "distanceM": 1249,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": 400,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1265,
+      "fromIndex": 0,
+      "toIndex": 5,
+      "distanceM": 1479,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": 400,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.91865524469996,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1410,
+      "fromIndex": 0,
+      "toIndex": 6,
+      "distanceM": 1647,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1200,
+      "northM": 600,
+      "coord": {
+        "lng": 116.40388452374246,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1999,
+      "fromIndex": 0,
+      "toIndex": 7,
+      "distanceM": 2340,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": 600,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1562,
+      "fromIndex": 0,
+      "toIndex": 8,
+      "distanceM": 1828,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 600,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1408,
+      "fromIndex": 0,
+      "toIndex": 9,
+      "distanceM": 1649,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 600,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1008,
+      "fromIndex": 0,
+      "toIndex": 10,
+      "distanceM": 1179,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 600,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 823,
+      "fromIndex": 0,
+      "toIndex": 11,
+      "distanceM": 964,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 600,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 673,
+      "fromIndex": 0,
+      "toIndex": 12,
+      "distanceM": 787,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 600,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 511,
+      "fromIndex": 0,
+      "toIndex": 13,
+      "distanceM": 597,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": 600,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 659,
+      "fromIndex": 0,
+      "toIndex": 14,
+      "distanceM": 773,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 600,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 826,
+      "fromIndex": 0,
+      "toIndex": 15,
+      "distanceM": 968,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 600,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1032,
+      "fromIndex": 0,
+      "toIndex": 16,
+      "distanceM": 1207,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 600,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1203,
+      "fromIndex": 0,
+      "toIndex": 17,
+      "distanceM": 1406,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": 600,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1375,
+      "fromIndex": 0,
+      "toIndex": 18,
+      "distanceM": 1607,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1200,
+      "northM": 600,
+      "coord": {
+        "lng": 116.43199347625755,
+        "lat": 39.92045186704995,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1546,
+      "fromIndex": 0,
+      "toIndex": 19,
+      "distanceM": 1806,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -1000,
+      "northM": 800,
+      "coord": {
+        "lng": 116.40622693645206,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 2290,
+      "fromIndex": 0,
+      "toIndex": 20,
+      "distanceM": 2683,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 800,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1283,
+      "fromIndex": 0,
+      "toIndex": 21,
+      "distanceM": 1502,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 800,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 1157,
+      "fromIndex": 0,
+      "toIndex": 22,
+      "distanceM": 1355,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 800,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "status": "ok",
+      "durationSeconds": 981,
+      "fromIndex": 0,
+      "toIndex": 23,
+      "distanceM": 1150,
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 800,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 24,
+      "durationSeconds": 889,
+      "distanceM": 1039,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 800,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 682,
+      "distanceM": 797,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    },
+    {
+      "eastM": 200,
+      "northM": 800,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 0,
+      "durationSeconds": 851,
+      "distanceM": 995,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 800,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 1,
+      "durationSeconds": 1007,
+      "distanceM": 1176,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 800,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 2,
+      "durationSeconds": 1205,
+      "distanceM": 1408,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 800,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 3,
+      "durationSeconds": 1550,
+      "distanceM": 1812,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 1000,
+      "northM": 800,
+      "coord": {
+        "lng": 116.42965106354795,
+        "lat": 39.92224848939993,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 4,
+      "durationSeconds": 1556,
+      "distanceM": 1816,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -800,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.40856934916164,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 5,
+      "durationSeconds": 1466,
+      "distanceM": 1716,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 6,
+      "durationSeconds": 1346,
+      "distanceM": 1573,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 7,
+      "durationSeconds": 1158,
+      "distanceM": 1355,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 8,
+      "durationSeconds": 1003,
+      "distanceM": 1171,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 9,
+      "durationSeconds": 878,
+      "distanceM": 1026,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 10,
+      "durationSeconds": 1044,
+      "distanceM": 1219,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 11,
+      "durationSeconds": 1215,
+      "distanceM": 1419,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 12,
+      "durationSeconds": 1343,
+      "distanceM": 1570,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 800,
+      "northM": 1000,
+      "coord": {
+        "lng": 116.42730865083837,
+        "lat": 39.92404511174991,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 13,
+      "durationSeconds": 1560,
+      "distanceM": 1824,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -600,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.41091176187123,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 14,
+      "durationSeconds": 1594,
+      "distanceM": 1866,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -400,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.41325417458083,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 15,
+      "durationSeconds": 1323,
+      "distanceM": 1550,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": -200,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.41559658729041,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 16,
+      "durationSeconds": 1183,
+      "distanceM": 1383,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 17,
+      "durationSeconds": 1049,
+      "distanceM": 1225,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 200,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.4202814127096,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 18,
+      "durationSeconds": 1219,
+      "distanceM": 1425,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 400,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.42262382541918,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 19,
+      "durationSeconds": 1397,
+      "distanceM": 1633,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 600,
+      "northM": 1200,
+      "coord": {
+        "lng": 116.42496623812877,
+        "lat": 39.92584173409989,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 20,
+      "durationSeconds": 1581,
+      "distanceM": 1847,
+      "status": "ok",
+      "sourceKind": "live-api"
+    },
+    {
+      "eastM": 0,
+      "northM": 1400,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.927638356449876,
+        "crs": "BD09"
+      },
+      "fromIndex": 0,
+      "toIndex": 23,
+      "durationSeconds": 1232,
+      "distanceM": 1439,
+      "status": "ok",
+      "sourceKind": "api-cache"
+    }
+  ],
+  "batches": [
+    {
+      "startIndex": 0,
+      "count": 25,
+      "submittedSeconds": 0.0,
+      "response": {
+        "traceId": "220f46caf1034ef2",
+        "mode": "live",
+        "sourceKind": "api-cache",
+        "cacheHit": true,
+        "expiresAt": "2026-10-16T07:53:53.223169+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 1414,
+            "distanceM": 1654,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 853,
+            "distanceM": 997,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          }
+        ],
+        "warnings": [
+          "matrix batch 降级(RATE_LIMITED)：未完成批次记为 error",
+          "matrix cell 0->1 缺失，记 error",
+          "matrix cell 0->2 缺失，记 error",
+          "matrix cell 0->3 缺失，记 error",
+          "matrix cell 0->4 缺失，记 error",
+          "matrix cell 0->5 缺失，记 error",
+          "matrix cell 0->6 缺失，记 error",
+          "matrix cell 0->7 缺失，记 error",
+          "matrix cell 0->8 缺失，记 error",
+          "matrix cell 0->9 缺失，记 error",
+          "matrix cell 0->10 缺失，记 error",
+          "matrix cell 0->11 缺失，记 error",
+          "matrix cell 0->12 缺失，记 error",
+          "matrix cell 0->13 缺失，记 error",
+          "matrix cell 0->14 缺失，记 error",
+          "matrix cell 0->15 缺失，记 error",
+          "matrix cell 0->16 缺失，记 error",
+          "matrix cell 0->17 缺失，记 error",
+          "matrix cell 0->18 缺失，记 error",
+          "matrix cell 0->19 缺失，记 error",
+          "matrix cell 0->20 缺失，记 error",
+          "matrix cell 0->21 缺失，记 error",
+          "matrix cell 0->23 缺失，记 error",
+          "matrix cell 0->24 缺失，记 error"
+        ],
+        "responseHashes": [
+          "5dfbbd7882e68fe0083c1022db10a79359b2eb218dc056b22a3d6ba080e3be71",
+          "95dc00a58448c53d27b7d5bd235a6e13634114305dbdf3a30186219d4aa89950"
+        ]
+      },
+      "httpStatus": 200,
+      "completedSeconds": 8.675
+    },
+    {
+      "startIndex": 25,
+      "count": 25,
+      "submittedSeconds": 0.001,
+      "response": {
+        "traceId": "cafa6d6c532b41f5",
+        "mode": "live",
+        "sourceKind": "live-api",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T07:59:33.570300+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 1218,
+            "distanceM": 1426,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 1422,
+            "distanceM": 1665,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 1364,
+            "distanceM": 1598,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 2008,
+            "distanceM": 2350,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1366,
+            "distanceM": 1597,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1223,
+            "distanceM": 1433,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 1241,
+            "distanceM": 1453,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 880,
+            "distanceM": 1029,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 1010,
+            "distanceM": 1184,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 679,
+            "distanceM": 794,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 848,
+            "distanceM": 992,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 899,
+            "distanceM": 1053,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 1048,
+            "distanceM": 1227,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 1172,
+            "distanceM": 1373,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 1395,
+            "distanceM": 1633,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 1630,
+            "distanceM": 1909,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 1357,
+            "distanceM": 1588,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 1192,
+            "distanceM": 1394,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 1049,
+            "distanceM": 1230,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1071,
+            "distanceM": 1254,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 710,
+            "distanceM": 830,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": 781,
+            "distanceM": 915,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 508,
+            "distanceM": 595,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": 700,
+            "distanceM": 820,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": 738,
+            "distanceM": 865,
+            "status": "ok",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [],
+        "responseHashes": [
+          "60603c716edd0859c2be493be12fc304abcc94eb6250e34eb60adae51655929e"
+        ]
+      },
+      "httpStatus": 200,
+      "completedSeconds": 0.144
+    },
+    {
+      "startIndex": 50,
+      "count": 25,
+      "submittedSeconds": 0.144,
+      "response": {
+        "traceId": "d90d1f4b67d144d7",
+        "mode": "live",
+        "sourceKind": "mixed",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T07:53:53.223169+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 936,
+            "distanceM": 1096,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 1133,
+            "distanceM": 1328,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 1326,
+            "distanceM": 1553,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 1484,
+            "distanceM": 1737,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1243,
+            "distanceM": 1455,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1015,
+            "distanceM": 1188,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 858,
+            "distanceM": 1005,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 949,
+            "distanceM": 1112,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 536,
+            "distanceM": 628,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 715,
+            "distanceM": 839,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 338,
+            "distanceM": 397,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 724,
+            "distanceM": 849,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 558,
+            "distanceM": 655,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 767,
+            "distanceM": 899,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 997,
+            "distanceM": 1172,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 1119,
+            "distanceM": 1314,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 1593,
+            "distanceM": 1865,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 2468,
+            "distanceM": 2892,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 2318,
+            "distanceM": 2714,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1481,
+            "distanceM": 1732,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 820,
+            "distanceM": 961,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": 656,
+            "distanceM": 769,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 475,
+            "distanceM": 556,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": 319,
+            "distanceM": 375,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": null,
+            "distanceM": 0,
+            "status": "error",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [
+          "来源混合：部分批次命中 API 缓存，部分为实时请求；各 cell 来源见 sourceKind"
+        ],
+        "responseHashes": [
+          "1bc11e4e81327b166cc4cec5ecc99bea5e75dbba3f0f6168477671253460d8b0",
+          "5dfbbd7882e68fe0083c1022db10a79359b2eb218dc056b22a3d6ba080e3be71",
+          "95dc00a58448c53d27b7d5bd235a6e13634114305dbdf3a30186219d4aa89950"
+        ]
+      },
+      "httpStatus": 200,
+      "completedSeconds": 0.34
+    },
+    {
+      "startIndex": 75,
+      "count": 25,
+      "submittedSeconds": 0.34,
+      "response": {
+        "traceId": "925449a18a764cff",
+        "mode": "live",
+        "sourceKind": "mixed",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T07:53:53.223169+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 261,
+            "distanceM": 307,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 419,
+            "distanceM": 492,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 646,
+            "distanceM": 758,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 939,
+            "distanceM": 1101,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1099,
+            "distanceM": 1290,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1284,
+            "distanceM": 1504,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 1510,
+            "distanceM": 1771,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 2077,
+            "distanceM": 2431,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 1403,
+            "distanceM": 1643,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 967,
+            "distanceM": 1133,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 814,
+            "distanceM": 953,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 498,
+            "distanceM": 582,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 331,
+            "distanceM": 387,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 166,
+            "distanceM": 195,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 353,
+            "distanceM": 413,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 516,
+            "distanceM": 604,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 689,
+            "distanceM": 806,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 871,
+            "distanceM": 1018,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 1011,
+            "distanceM": 1183,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1321,
+            "distanceM": 1549,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 1910,
+            "distanceM": 2236,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": 1404,
+            "distanceM": 1645,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 1116,
+            "distanceM": 1305,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": 1017,
+            "distanceM": 1191,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": 653,
+            "distanceM": 766,
+            "status": "ok",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [
+          "来源混合：部分批次命中 API 缓存，部分为实时请求；各 cell 来源见 sourceKind"
+        ],
+        "responseHashes": [
+          "5dfbbd7882e68fe0083c1022db10a79359b2eb218dc056b22a3d6ba080e3be71",
+          "95dc00a58448c53d27b7d5bd235a6e13634114305dbdf3a30186219d4aa89950",
+          "a953ec5608ecf2b1f3cc7a5ea9ecc2936d2855712b40f0efb277d4b991638fba"
+        ]
+      },
+      "httpStatus": 200,
+      "completedSeconds": 8.537
+    },
+    {
+      "startIndex": 100,
+      "count": 25,
+      "submittedSeconds": 8.537,
+      "httpStatus": 503,
+      "response": {
+        "error": {
+          "code": "SERVICE_BUSY",
+          "message": "查询正在排队，请稍后重试",
+          "details": null,
+          "retryable": true,
+          "retryAfterSeconds": 2
+        }
+      },
+      "completedSeconds": 16.819
+    },
+    {
+      "startIndex": 125,
+      "count": 24,
+      "submittedSeconds": 8.675,
+      "response": {
+        "traceId": "7195c173c4b04bbb",
+        "mode": "live",
+        "sourceKind": "api-cache",
+        "cacheHit": true,
+        "expiresAt": "2026-10-16T07:53:53.223169+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 682,
+            "distanceM": 797,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": null,
+            "distanceM": null,
+            "status": "error",
+            "sourceKind": "derived"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": 1232,
+            "distanceM": 1439,
+            "status": "ok",
+            "sourceKind": "api-cache"
+          }
+        ],
+        "warnings": [
+          "matrix batch 降级(RATE_LIMITED)：未完成批次记为 error",
+          "matrix cell 0->0 缺失，记 error",
+          "matrix cell 0->2 缺失，记 error",
+          "matrix cell 0->3 缺失，记 error",
+          "matrix cell 0->4 缺失，记 error",
+          "matrix cell 0->5 缺失，记 error",
+          "matrix cell 0->6 缺失，记 error",
+          "matrix cell 0->7 缺失，记 error",
+          "matrix cell 0->8 缺失，记 error",
+          "matrix cell 0->9 缺失，记 error",
+          "matrix cell 0->10 缺失，记 error",
+          "matrix cell 0->11 缺失，记 error",
+          "matrix cell 0->12 缺失，记 error",
+          "matrix cell 0->13 缺失，记 error",
+          "matrix cell 0->14 缺失，记 error",
+          "matrix cell 0->15 缺失，记 error",
+          "matrix cell 0->16 缺失，记 error",
+          "matrix cell 0->17 缺失，记 error",
+          "matrix cell 0->18 缺失，记 error",
+          "matrix cell 0->19 缺失，记 error",
+          "matrix cell 0->20 缺失，记 error",
+          "matrix cell 0->21 缺失，记 error",
+          "matrix cell 0->22 缺失，记 error"
+        ],
+        "responseHashes": [
+          "5dfbbd7882e68fe0083c1022db10a79359b2eb218dc056b22a3d6ba080e3be71",
+          "95dc00a58448c53d27b7d5bd235a6e13634114305dbdf3a30186219d4aa89950"
+        ]
+      },
+      "httpStatus": 200,
+      "completedSeconds": 8.69
+    }
+  ],
+  "retrySummary": {
+    "startedAt": "2026-10-16T02:01:08.224547+00:00",
+    "elapsedSeconds": 18.139,
+    "retryPoints": 71,
+    "statuses": {
+      "ok": 148,
+      "error": 1
+    },
+    "reachablePoints": 47,
+    "traceIds": [
+      "736930333daa48e7",
+      "555d73f233ed4529",
+      "e5e4aca707604e06"
+    ],
+    "clientBatchIntervalSeconds": 9,
+    "clientWorkers": 1
+  },
+  "retryBatches": [
+    {
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        74,
+        100
+      ],
+      "httpStatus": 200,
+      "response": {
+        "traceId": "736930333daa48e7",
+        "mode": "live",
+        "sourceKind": "mixed",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T07:59:33.763350+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 1532,
+            "distanceM": 1793,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 1411,
+            "distanceM": 1651,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 1382,
+            "distanceM": 1616,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 1214,
+            "distanceM": 1420,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1444,
+            "distanceM": 1689,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1504,
+            "distanceM": 1757,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 1558,
+            "distanceM": 1824,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 1590,
+            "distanceM": 1860,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 1397,
+            "distanceM": 1635,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 1226,
+            "distanceM": 1434,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 1218,
+            "distanceM": 1424,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 1018,
+            "distanceM": 1191,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 1264,
+            "distanceM": 1478,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 1521,
+            "distanceM": 1778,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 1389,
+            "distanceM": 1626,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 1533,
+            "distanceM": 1796,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 1540,
+            "distanceM": 1801,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 1578,
+            "distanceM": 1846,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 1215,
+            "distanceM": 1422,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1051,
+            "distanceM": 1229,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 1109,
+            "distanceM": 1297,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": 1133,
+            "distanceM": 1326,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 1321,
+            "distanceM": 1548,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": null,
+            "distanceM": 0,
+            "status": "error",
+            "sourceKind": "api-cache"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": 456,
+            "distanceM": 533,
+            "status": "ok",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [
+          "来源混合：部分批次命中 API 缓存，部分为实时请求；各 cell 来源见 sourceKind"
+        ],
+        "responseHashes": [
+          "1bc11e4e81327b166cc4cec5ecc99bea5e75dbba3f0f6168477671253460d8b0",
+          "6aa93fc42a382aa0aad546ab0ac4ecd928f1a693c99c7b0f98ae71e50cbe8559"
+        ]
+      },
+      "elapsedSeconds": 0.105
+    },
+    {
+      "indices": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125
+      ],
+      "httpStatus": 200,
+      "response": {
+        "traceId": "555d73f233ed4529",
+        "mode": "live",
+        "sourceKind": "live-api",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T08:01:17.352674+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 342,
+            "distanceM": 400,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 494,
+            "distanceM": 581,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 662,
+            "distanceM": 774,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 826,
+            "distanceM": 966,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1068,
+            "distanceM": 1249,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1265,
+            "distanceM": 1479,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 1410,
+            "distanceM": 1647,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 1999,
+            "distanceM": 2340,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 1562,
+            "distanceM": 1828,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 1408,
+            "distanceM": 1649,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 1008,
+            "distanceM": 1179,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 823,
+            "distanceM": 964,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 673,
+            "distanceM": 787,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 511,
+            "distanceM": 597,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 659,
+            "distanceM": 773,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 826,
+            "distanceM": 968,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 1032,
+            "distanceM": 1207,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 1203,
+            "distanceM": 1406,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 1375,
+            "distanceM": 1607,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1546,
+            "distanceM": 1806,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 2290,
+            "distanceM": 2683,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 21,
+            "durationSeconds": 1283,
+            "distanceM": 1502,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 22,
+            "durationSeconds": 1157,
+            "distanceM": 1355,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 23,
+            "durationSeconds": 981,
+            "distanceM": 1150,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 24,
+            "durationSeconds": 889,
+            "distanceM": 1039,
+            "status": "ok",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [],
+        "responseHashes": [
+          "0aa6aa5aac922a682615b980ea6172f04aec91bd52fcb70b566fccf0a0f251ef"
+        ]
+      },
+      "elapsedSeconds": 9.139
+    },
+    {
+      "indices": [
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "httpStatus": 200,
+      "response": {
+        "traceId": "e5e4aca707604e06",
+        "mode": "live",
+        "sourceKind": "live-api",
+        "cacheHit": false,
+        "expiresAt": "2026-10-16T08:01:26.350527+00:00",
+        "cells": [
+          {
+            "fromIndex": 0,
+            "toIndex": 0,
+            "durationSeconds": 851,
+            "distanceM": 995,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 1,
+            "durationSeconds": 1007,
+            "distanceM": 1176,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 2,
+            "durationSeconds": 1205,
+            "distanceM": 1408,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 3,
+            "durationSeconds": 1550,
+            "distanceM": 1812,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 4,
+            "durationSeconds": 1556,
+            "distanceM": 1816,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 5,
+            "durationSeconds": 1466,
+            "distanceM": 1716,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 6,
+            "durationSeconds": 1346,
+            "distanceM": 1573,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 7,
+            "durationSeconds": 1158,
+            "distanceM": 1355,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 8,
+            "durationSeconds": 1003,
+            "distanceM": 1171,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 9,
+            "durationSeconds": 878,
+            "distanceM": 1026,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 10,
+            "durationSeconds": 1044,
+            "distanceM": 1219,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 11,
+            "durationSeconds": 1215,
+            "distanceM": 1419,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 12,
+            "durationSeconds": 1343,
+            "distanceM": 1570,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 13,
+            "durationSeconds": 1560,
+            "distanceM": 1824,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 14,
+            "durationSeconds": 1594,
+            "distanceM": 1866,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 15,
+            "durationSeconds": 1323,
+            "distanceM": 1550,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 16,
+            "durationSeconds": 1183,
+            "distanceM": 1383,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 17,
+            "durationSeconds": 1049,
+            "distanceM": 1225,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 18,
+            "durationSeconds": 1219,
+            "distanceM": 1425,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 19,
+            "durationSeconds": 1397,
+            "distanceM": 1633,
+            "status": "ok",
+            "sourceKind": "live-api"
+          },
+          {
+            "fromIndex": 0,
+            "toIndex": 20,
+            "durationSeconds": 1581,
+            "distanceM": 1847,
+            "status": "ok",
+            "sourceKind": "live-api"
+          }
+        ],
+        "warnings": [],
+        "responseHashes": [
+          "943ee50250cfadd003282446ae073843b064750a6d8df6803a4903a04c042e6f"
+        ]
+      },
+      "elapsedSeconds": 18.139
+    }
+  ],
+  "ledger": [
+    {
+      "trace_id": "220f46caf1034ef2",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.454593+00:00"
+    },
+    {
+      "trace_id": "220f46caf1034ef2",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.459677+00:00"
+    },
+    {
+      "trace_id": "cafa6d6c532b41f5",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 25,
+      "latency_ms": 114,
+      "created_at": "2026-10-16T01:59:33.575011+00:00"
+    },
+    {
+      "trace_id": "d90d1f4b67d144d7",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.588708+00:00"
+    },
+    {
+      "trace_id": "d90d1f4b67d144d7",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.593599+00:00"
+    },
+    {
+      "trace_id": "d90d1f4b67d144d7",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 23,
+      "latency_ms": 145,
+      "created_at": "2026-10-16T01:59:33.771370+00:00"
+    },
+    {
+      "trace_id": "925449a18a764cff",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.787421+00:00"
+    },
+    {
+      "trace_id": "925449a18a764cff",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:33.792086+00:00"
+    },
+    {
+      "trace_id": "925449a18a764cff",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 23,
+      "latency_ms": 104,
+      "created_at": "2026-10-16T01:59:41.967828+00:00"
+    },
+    {
+      "trace_id": "220f46caf1034ef2",
+      "cache_hit": 0,
+      "status": 401,
+      "requests": 1,
+      "pairs": 23,
+      "latency_ms": 86,
+      "created_at": "2026-10-16T01:59:42.104978+00:00"
+    },
+    {
+      "trace_id": "7195c173c4b04bbb",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:42.114292+00:00"
+    },
+    {
+      "trace_id": "7195c173c4b04bbb",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T01:59:42.120721+00:00"
+    },
+    {
+      "trace_id": "736930333daa48e7",
+      "cache_hit": 1,
+      "status": 0,
+      "requests": 1,
+      "pairs": 1,
+      "latency_ms": 0,
+      "created_at": "2026-10-16T02:01:08.230307+00:00"
+    },
+    {
+      "trace_id": "736930333daa48e7",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 24,
+      "latency_ms": 78,
+      "created_at": "2026-10-16T02:01:08.323611+00:00"
+    },
+    {
+      "trace_id": "555d73f233ed4529",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 25,
+      "latency_ms": 118,
+      "created_at": "2026-10-16T02:01:17.357620+00:00"
+    },
+    {
+      "trace_id": "e5e4aca707604e06",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 21,
+      "latency_ms": 111,
+      "created_at": "2026-10-16T02:01:26.356363+00:00"
+    }
+  ],
+  "totals": {
+    "liveRequests": 7,
+    "livePairs": 164,
+    "successfulLivePairs": 141,
+    "failedLiveRequests": 1,
+    "liveResponseSeconds": 0.756
+  }
+}

@@ -1,0 +1,4011 @@
+{
+  "summary": {
+    "startedAt": "2026-10-16T03:17:27.599172+00:00",
+    "elapsedSeconds": 36.263,
+    "gridPoints": 225,
+    "validPoints": 224,
+    "unknownPoints": 1,
+    "reachableWithin900s": 208,
+    "liveRequests": 5,
+    "attemptPairs": 225,
+    "rateLimitedRequests": 0,
+    "cachePairs": 0,
+    "networkResponseSeconds": 1.294,
+    "pacingWaitSeconds": 34.904,
+    "isolatedEmptyCacheAtStart": true,
+    "productionConfigChanged": false
+  },
+  "origin": {
+    "lng": 116.417939,
+    "lat": 39.915062,
+    "crs": "BD09"
+  },
+  "grid": {
+    "squareSideM": 1100,
+    "spacingM": 75,
+    "offsetMinM": -525,
+    "offsetMaxM": 525,
+    "edgeMarginM": 25,
+    "rows": 15,
+    "columns": 15,
+    "note": "指定方形窗口，不代表完整15分钟等时圈；中心零耗时未当作API有效测值"
+  },
+  "strategy": {
+    "parallelRequests": 1,
+    "batchPairs": 50,
+    "fullBatchStartIntervalSeconds": 9
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "pairs": 50,
+      "valid": 50,
+      "elapsedSeconds": 0.364,
+      "batchSeconds": 0.364
+    },
+    {
+      "batch": 2,
+      "pairs": 50,
+      "valid": 50,
+      "elapsedSeconds": 9.245,
+      "batchSeconds": 8.88
+    },
+    {
+      "batch": 3,
+      "pairs": 50,
+      "valid": 49,
+      "elapsedSeconds": 18.237,
+      "batchSeconds": 8.993
+    },
+    {
+      "batch": 4,
+      "pairs": 50,
+      "valid": 50,
+      "elapsedSeconds": 27.255,
+      "batchSeconds": 9.018
+    },
+    {
+      "batch": 5,
+      "pairs": 25,
+      "valid": 25,
+      "elapsedSeconds": 36.263,
+      "batchSeconds": 9.007
+    }
+  ],
+  "points": [
+    {
+      "eastM": -525,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 0,
+        "durationSeconds": 1019,
+        "distanceM": 1193,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "durationSeconds": 959,
+        "distanceM": 1122,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "durationSeconds": 813,
+        "distanceM": 951,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "durationSeconds": 838,
+        "distanceM": 982,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "durationSeconds": 743,
+        "distanceM": 870,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -525,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 5,
+        "durationSeconds": 715,
+        "distanceM": 839,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -525,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "durationSeconds": 951,
+        "distanceM": 1114,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -525,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "durationSeconds": 616,
+        "distanceM": 721,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -525,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 8,
+        "durationSeconds": 668,
+        "distanceM": 783,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -525,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 9,
+        "durationSeconds": 756,
+        "distanceM": 884,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -525,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "durationSeconds": 859,
+        "distanceM": 1005,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -525,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "durationSeconds": 914,
+        "distanceM": 1071,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -525,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 12,
+        "durationSeconds": 852,
+        "distanceM": 998,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -525,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 13,
+        "durationSeconds": 856,
+        "distanceM": 1004,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -525,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.9103458663313,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 14,
+        "durationSeconds": 925,
+        "distanceM": 1084,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 15,
+        "durationSeconds": 1064,
+        "distanceM": 1246,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 16,
+        "durationSeconds": 1023,
+        "distanceM": 1197,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 17,
+        "durationSeconds": 750,
+        "distanceM": 877,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 18,
+        "durationSeconds": 850,
+        "distanceM": 995,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 19,
+        "durationSeconds": 723,
+        "distanceM": 847,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -450,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 20,
+        "durationSeconds": 665,
+        "distanceM": 780,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -450,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 21,
+        "durationSeconds": 614,
+        "distanceM": 720,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -450,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 22,
+        "durationSeconds": 551,
+        "distanceM": 645,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -450,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 23,
+        "durationSeconds": 832,
+        "distanceM": 974,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -450,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 24,
+        "durationSeconds": 728,
+        "distanceM": 853,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -450,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 25,
+        "durationSeconds": 709,
+        "distanceM": 830,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -450,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 26,
+        "durationSeconds": 856,
+        "distanceM": 1005,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -450,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 27,
+        "durationSeconds": 791,
+        "distanceM": 928,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -450,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 28,
+        "durationSeconds": 818,
+        "distanceM": 960,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -450,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91101959971254,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 29,
+        "durationSeconds": 861,
+        "distanceM": 1009,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 30,
+        "durationSeconds": 1048,
+        "distanceM": 1228,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 31,
+        "durationSeconds": 705,
+        "distanceM": 825,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 32,
+        "durationSeconds": 686,
+        "distanceM": 803,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 33,
+        "durationSeconds": 771,
+        "distanceM": 902,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 34,
+        "durationSeconds": 857,
+        "distanceM": 1003,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -375,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 35,
+        "durationSeconds": 554,
+        "distanceM": 651,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -375,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 36,
+        "durationSeconds": 548,
+        "distanceM": 644,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -375,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 37,
+        "durationSeconds": 487,
+        "distanceM": 570,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -375,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 38,
+        "durationSeconds": 668,
+        "distanceM": 784,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -375,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 39,
+        "durationSeconds": 592,
+        "distanceM": 695,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -375,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 40,
+        "durationSeconds": 657,
+        "distanceM": 771,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -375,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 41,
+        "durationSeconds": 751,
+        "distanceM": 881,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -375,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 42,
+        "durationSeconds": 837,
+        "distanceM": 984,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -375,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 43,
+        "durationSeconds": 800,
+        "distanceM": 939,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -375,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91169333309378,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 44,
+        "durationSeconds": 859,
+        "distanceM": 1007,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 45,
+        "durationSeconds": 1045,
+        "distanceM": 1224,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 46,
+        "durationSeconds": 1110,
+        "distanceM": 1299,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 47,
+        "durationSeconds": 635,
+        "distanceM": 744,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 48,
+        "durationSeconds": 749,
+        "distanceM": 878,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 49,
+        "durationSeconds": 816,
+        "distanceM": 956,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -300,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 0,
+        "durationSeconds": 492,
+        "distanceM": 577,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -300,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "durationSeconds": 486,
+        "distanceM": 569,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -300,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "durationSeconds": 422,
+        "distanceM": 495,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -300,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "durationSeconds": 521,
+        "distanceM": 611,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -300,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "durationSeconds": 634,
+        "distanceM": 743,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -300,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 5,
+        "durationSeconds": 652,
+        "distanceM": 765,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -300,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "durationSeconds": 736,
+        "distanceM": 863,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -300,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "durationSeconds": 703,
+        "distanceM": 826,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -300,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 8,
+        "durationSeconds": 689,
+        "distanceM": 808,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -300,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91236706647503,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 9,
+        "durationSeconds": 753,
+        "distanceM": 883,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "durationSeconds": 983,
+        "distanceM": 1152,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "durationSeconds": 1047,
+        "distanceM": 1227,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 12,
+        "durationSeconds": 540,
+        "distanceM": 633,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 13,
+        "durationSeconds": 748,
+        "distanceM": 876,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 14,
+        "durationSeconds": 803,
+        "distanceM": 942,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -225,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 15,
+        "durationSeconds": 500,
+        "distanceM": 587,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -225,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 16,
+        "durationSeconds": 434,
+        "distanceM": 510,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -225,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 17,
+        "durationSeconds": 359,
+        "distanceM": 421,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -225,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 18,
+        "durationSeconds": 424,
+        "distanceM": 497,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -225,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 19,
+        "durationSeconds": 696,
+        "distanceM": 816,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -225,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 20,
+        "durationSeconds": 619,
+        "distanceM": 729,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -225,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 21,
+        "durationSeconds": 575,
+        "distanceM": 676,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -225,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 22,
+        "durationSeconds": 578,
+        "distanceM": 679,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -225,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 23,
+        "durationSeconds": 755,
+        "distanceM": 886,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -225,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91304079985627,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 24,
+        "durationSeconds": 712,
+        "distanceM": 834,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 25,
+        "durationSeconds": 580,
+        "distanceM": 680,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 26,
+        "durationSeconds": 512,
+        "distanceM": 600,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 27,
+        "durationSeconds": 493,
+        "distanceM": 578,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 28,
+        "durationSeconds": 656,
+        "distanceM": 769,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 29,
+        "durationSeconds": 373,
+        "distanceM": 438,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -150,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 30,
+        "durationSeconds": 370,
+        "distanceM": 433,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -150,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 31,
+        "durationSeconds": 376,
+        "distanceM": 441,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -150,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 32,
+        "durationSeconds": 295,
+        "distanceM": 346,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -150,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 33,
+        "durationSeconds": 354,
+        "distanceM": 417,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -150,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 34,
+        "durationSeconds": 543,
+        "distanceM": 639,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -150,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 35,
+        "durationSeconds": 481,
+        "distanceM": 566,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -150,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 36,
+        "durationSeconds": 501,
+        "distanceM": 589,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -150,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 37,
+        "durationSeconds": 513,
+        "distanceM": 603,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -150,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 38,
+        "durationSeconds": 818,
+        "distanceM": 959,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -150,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91371453323751,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 39,
+        "durationSeconds": 649,
+        "distanceM": 760,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 40,
+        "durationSeconds": 509,
+        "distanceM": 596,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 41,
+        "durationSeconds": 445,
+        "distanceM": 521,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 42,
+        "durationSeconds": 380,
+        "distanceM": 444,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 43,
+        "durationSeconds": 316,
+        "distanceM": 370,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 44,
+        "durationSeconds": 250,
+        "distanceM": 292,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": -75,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 45,
+        "durationSeconds": 188,
+        "distanceM": 220,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": -75,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 46,
+        "durationSeconds": 125,
+        "distanceM": 146,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": -75,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 47,
+        "durationSeconds": 59,
+        "distanceM": 69,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": -75,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 48,
+        "durationSeconds": 121,
+        "distanceM": 142,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": -75,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 49,
+        "durationSeconds": 184,
+        "distanceM": 216,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": -75,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 0,
+        "durationSeconds": 249,
+        "distanceM": 291,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": -75,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "durationSeconds": 411,
+        "distanceM": 483,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": -75,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "durationSeconds": 452,
+        "distanceM": 531,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": -75,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "durationSeconds": 512,
+        "distanceM": 601,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": -75,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91438826661876,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "durationSeconds": 577,
+        "distanceM": 677,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 5,
+        "durationSeconds": 600,
+        "distanceM": 702,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "durationSeconds": 548,
+        "distanceM": 642,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "durationSeconds": 418,
+        "distanceM": 491,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 8,
+        "durationSeconds": 348,
+        "distanceM": 407,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 9,
+        "durationSeconds": 295,
+        "distanceM": 345,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 0,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "durationSeconds": 300,
+        "distanceM": 351,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 0,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "durationSeconds": 377,
+        "distanceM": 441,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 0,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 12,
+        "durationSeconds": null,
+        "distanceM": 0,
+        "status": "error",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 0,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 13,
+        "durationSeconds": 187,
+        "distanceM": 220,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 0,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 14,
+        "durationSeconds": 218,
+        "distanceM": 257,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 0,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 15,
+        "durationSeconds": 269,
+        "distanceM": 316,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 16,
+        "durationSeconds": 333,
+        "distanceM": 391,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 17,
+        "durationSeconds": 398,
+        "distanceM": 467,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 18,
+        "durationSeconds": 462,
+        "distanceM": 542,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 0,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.915062,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 19,
+        "durationSeconds": 574,
+        "distanceM": 671,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 20,
+        "durationSeconds": 631,
+        "distanceM": 739,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 21,
+        "durationSeconds": 554,
+        "distanceM": 648,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 22,
+        "durationSeconds": 380,
+        "distanceM": 447,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 23,
+        "durationSeconds": 316,
+        "distanceM": 371,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 24,
+        "durationSeconds": 257,
+        "distanceM": 303,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 75,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 25,
+        "durationSeconds": 188,
+        "distanceM": 222,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 75,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 26,
+        "durationSeconds": 125,
+        "distanceM": 147,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 75,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 27,
+        "durationSeconds": 62,
+        "distanceM": 73,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 75,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 28,
+        "durationSeconds": 129,
+        "distanceM": 152,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 75,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 29,
+        "durationSeconds": 211,
+        "distanceM": 248,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 75,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 30,
+        "durationSeconds": 284,
+        "distanceM": 334,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 75,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 31,
+        "durationSeconds": 365,
+        "distanceM": 430,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 75,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 32,
+        "durationSeconds": 442,
+        "distanceM": 520,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 75,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 33,
+        "durationSeconds": 518,
+        "distanceM": 610,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 75,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91573573338124,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 34,
+        "durationSeconds": 587,
+        "distanceM": 688,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 35,
+        "durationSeconds": 709,
+        "distanceM": 829,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 36,
+        "durationSeconds": 556,
+        "distanceM": 650,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 37,
+        "durationSeconds": 459,
+        "distanceM": 540,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 38,
+        "durationSeconds": 490,
+        "distanceM": 575,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 39,
+        "durationSeconds": 318,
+        "distanceM": 374,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 150,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 40,
+        "durationSeconds": 217,
+        "distanceM": 256,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 150,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 41,
+        "durationSeconds": 218,
+        "distanceM": 255,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 150,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 42,
+        "durationSeconds": 125,
+        "distanceM": 147,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 150,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 43,
+        "durationSeconds": 172,
+        "distanceM": 203,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 150,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 44,
+        "durationSeconds": 242,
+        "distanceM": 285,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 150,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 45,
+        "durationSeconds": 327,
+        "distanceM": 386,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 150,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 46,
+        "durationSeconds": 392,
+        "distanceM": 461,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 150,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 47,
+        "durationSeconds": 490,
+        "distanceM": 577,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 150,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 48,
+        "durationSeconds": 553,
+        "distanceM": 651,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 150,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91640946676249,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 49,
+        "durationSeconds": 661,
+        "distanceM": 775,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 0,
+        "durationSeconds": 776,
+        "distanceM": 907,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "durationSeconds": 546,
+        "distanceM": 638,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "durationSeconds": 478,
+        "distanceM": 560,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "durationSeconds": 421,
+        "distanceM": 492,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "durationSeconds": 375,
+        "distanceM": 439,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 225,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 5,
+        "durationSeconds": 295,
+        "distanceM": 345,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 225,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "durationSeconds": 315,
+        "distanceM": 370,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 225,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "durationSeconds": 190,
+        "distanceM": 222,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 225,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 8,
+        "durationSeconds": 270,
+        "distanceM": 318,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 225,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 9,
+        "durationSeconds": 305,
+        "distanceM": 357,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 225,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "durationSeconds": 387,
+        "distanceM": 453,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 225,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "durationSeconds": 434,
+        "distanceM": 508,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 225,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 12,
+        "durationSeconds": 513,
+        "distanceM": 600,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 225,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 13,
+        "durationSeconds": 664,
+        "distanceM": 776,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 225,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91708320014373,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 14,
+        "durationSeconds": 620,
+        "distanceM": 725,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 15,
+        "durationSeconds": 849,
+        "distanceM": 993,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 16,
+        "durationSeconds": 638,
+        "distanceM": 746,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 17,
+        "durationSeconds": 540,
+        "distanceM": 633,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 18,
+        "durationSeconds": 555,
+        "distanceM": 651,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 19,
+        "durationSeconds": 440,
+        "distanceM": 514,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 300,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 20,
+        "durationSeconds": 347,
+        "distanceM": 407,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 300,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 21,
+        "durationSeconds": 270,
+        "distanceM": 317,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 300,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 22,
+        "durationSeconds": 255,
+        "distanceM": 298,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 300,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 23,
+        "durationSeconds": 443,
+        "distanceM": 519,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 300,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 24,
+        "durationSeconds": 402,
+        "distanceM": 472,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 300,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 25,
+        "durationSeconds": 424,
+        "distanceM": 496,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 300,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 26,
+        "durationSeconds": 631,
+        "distanceM": 739,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 300,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 27,
+        "durationSeconds": 571,
+        "distanceM": 668,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 300,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 28,
+        "durationSeconds": 635,
+        "distanceM": 743,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 300,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91775693352497,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 29,
+        "durationSeconds": 742,
+        "distanceM": 868,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 30,
+        "durationSeconds": 998,
+        "distanceM": 1166,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 31,
+        "durationSeconds": 1031,
+        "distanceM": 1205,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 32,
+        "durationSeconds": 620,
+        "distanceM": 726,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 33,
+        "durationSeconds": 556,
+        "distanceM": 651,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 34,
+        "durationSeconds": 485,
+        "distanceM": 567,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 375,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 35,
+        "durationSeconds": 428,
+        "distanceM": 501,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 375,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 36,
+        "durationSeconds": 364,
+        "distanceM": 426,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 375,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 37,
+        "durationSeconds": 330,
+        "distanceM": 386,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 375,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 38,
+        "durationSeconds": 444,
+        "distanceM": 520,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 375,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 39,
+        "durationSeconds": 459,
+        "distanceM": 537,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 375,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 40,
+        "durationSeconds": 490,
+        "distanceM": 576,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 375,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 41,
+        "durationSeconds": 659,
+        "distanceM": 772,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 375,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 42,
+        "durationSeconds": 641,
+        "distanceM": 749,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 375,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 43,
+        "durationSeconds": 698,
+        "distanceM": 818,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 375,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91843066690622,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 44,
+        "durationSeconds": 800,
+        "distanceM": 936,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 45,
+        "durationSeconds": 933,
+        "distanceM": 1091,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 46,
+        "durationSeconds": 699,
+        "distanceM": 817,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 47,
+        "durationSeconds": 690,
+        "distanceM": 809,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 48,
+        "durationSeconds": 604,
+        "distanceM": 708,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 49,
+        "durationSeconds": 575,
+        "distanceM": 672,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 450,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 0,
+        "durationSeconds": 523,
+        "distanceM": 612,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 450,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "durationSeconds": 447,
+        "distanceM": 523,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 450,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 2,
+        "durationSeconds": 408,
+        "distanceM": 477,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 450,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "durationSeconds": 463,
+        "distanceM": 541,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 450,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "durationSeconds": 526,
+        "distanceM": 618,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 450,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 5,
+        "durationSeconds": 827,
+        "distanceM": 966,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 450,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 6,
+        "durationSeconds": 623,
+        "distanceM": 731,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 450,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 7,
+        "durationSeconds": 714,
+        "distanceM": 835,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 450,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 8,
+        "durationSeconds": 778,
+        "distanceM": 909,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 450,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.91910440028746,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 9,
+        "durationSeconds": 863,
+        "distanceM": 1010,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -525,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41179016663733,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 10,
+        "durationSeconds": 883,
+        "distanceM": 1033,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -450,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41266857140343,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 11,
+        "durationSeconds": 818,
+        "distanceM": 956,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -375,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41354697616953,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 12,
+        "durationSeconds": 731,
+        "distanceM": 857,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -300,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41442538093563,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 13,
+        "durationSeconds": 753,
+        "distanceM": 881,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -225,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41530378570171,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 14,
+        "durationSeconds": 640,
+        "distanceM": 749,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -150,
+      "northM": 525,
+      "coord": {
+        "lng": 116.41618219046781,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 15,
+        "durationSeconds": 520,
+        "distanceM": 608,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": -75,
+      "northM": 525,
+      "coord": {
+        "lng": 116.4170605952339,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 16,
+        "durationSeconds": 473,
+        "distanceM": 555,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 0,
+      "northM": 525,
+      "coord": {
+        "lng": 116.417939,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 17,
+        "durationSeconds": 446,
+        "distanceM": 521,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 75,
+      "northM": 525,
+      "coord": {
+        "lng": 116.4188174047661,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 18,
+        "durationSeconds": 590,
+        "distanceM": 690,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 150,
+      "northM": 525,
+      "coord": {
+        "lng": 116.4196958095322,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 19,
+        "durationSeconds": 598,
+        "distanceM": 702,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 225,
+      "northM": 525,
+      "coord": {
+        "lng": 116.4205742142983,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 20,
+        "durationSeconds": 602,
+        "distanceM": 707,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 300,
+      "northM": 525,
+      "coord": {
+        "lng": 116.42145261906438,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 21,
+        "durationSeconds": 664,
+        "distanceM": 780,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 375,
+      "northM": 525,
+      "coord": {
+        "lng": 116.42233102383048,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 22,
+        "durationSeconds": 758,
+        "distanceM": 886,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 450,
+      "northM": 525,
+      "coord": {
+        "lng": 116.42320942859658,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 23,
+        "durationSeconds": 856,
+        "distanceM": 1004,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    },
+    {
+      "eastM": 525,
+      "northM": 525,
+      "coord": {
+        "lng": 116.42408783336268,
+        "lat": 39.9197781336687,
+        "crs": "BD09"
+      },
+      "measurement": {
+        "fromIndex": 0,
+        "toIndex": 24,
+        "durationSeconds": 927,
+        "distanceM": 1084,
+        "status": "ok",
+        "sourceKind": "live-api"
+      }
+    }
+  ],
+  "ledger": [
+    {
+      "id": 1,
+      "trace_id": "grid75-square1100",
+      "stage": "grid75-benchmark",
+      "interface": "matrix_walking",
+      "request_hash": "8a857be3c99ceb1bb0dee99fc74aff34e00ba4afac99684976d2ffefcff5e5f5",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 50,
+      "latency_ms": 361,
+      "budget_remaining": null,
+      "message": "",
+      "response_hash": "4f704006179e36975cd45ffc43c684e76266b5de3ab21089785f17adc735107e",
+      "created_at": "2026-10-16T03:17:27.963439+00:00"
+    },
+    {
+      "id": 2,
+      "trace_id": "grid75-square1100",
+      "stage": "grid75-benchmark",
+      "interface": "matrix_walking",
+      "request_hash": "41b5823a5d58337d783b85e889a27f4e36f758187926b6ff2337aa1ace6f02a4",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 50,
+      "latency_ms": 235,
+      "budget_remaining": null,
+      "message": "",
+      "response_hash": "1407b48aa01648bae8bdb62cfe61ff1144a65cdb7675090a7e69f7136ddf6910",
+      "created_at": "2026-10-16T03:17:36.842790+00:00"
+    },
+    {
+      "id": 3,
+      "trace_id": "grid75-square1100",
+      "stage": "grid75-benchmark",
+      "interface": "matrix_walking",
+      "request_hash": "589a24dca83d7839b756390e9bab61a8f2c26747bfab3d480d363790f7b7c0be",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 50,
+      "latency_ms": 223,
+      "budget_remaining": null,
+      "message": "",
+      "response_hash": "4ba8ff09d6a71c0fc887f4f65e550fc75d39e7f48661f64bfc665c70ffc60548",
+      "created_at": "2026-10-16T03:17:45.835587+00:00"
+    },
+    {
+      "id": 4,
+      "trace_id": "grid75-square1100",
+      "stage": "grid75-benchmark",
+      "interface": "matrix_walking",
+      "request_hash": "a25aed87e03f812c7fb958dc801d94aa5cf0eea2dae6d68665fd2b9b53030ad0",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 50,
+      "latency_ms": 236,
+      "budget_remaining": null,
+      "message": "",
+      "response_hash": "e85a5c74f90de4fc1b300c09fe78f50414815f97c91c0c35090fdbcbb0ecf56b",
+      "created_at": "2026-10-16T03:17:54.853434+00:00"
+    },
+    {
+      "id": 5,
+      "trace_id": "grid75-square1100",
+      "stage": "grid75-benchmark",
+      "interface": "matrix_walking",
+      "request_hash": "baf937ba8aa64272a87a1832ddc409d3ef31f103c0638ba416c8e17598f85c11",
+      "cache_hit": 0,
+      "status": 0,
+      "requests": 1,
+      "pairs": 25,
+      "latency_ms": 239,
+      "budget_remaining": null,
+      "message": "",
+      "response_hash": "3c9c1755548f738c83d96e822fa133000221a75fb685dc6e2852f28daec4c43c",
+      "created_at": "2026-10-16T03:18:03.860862+00:00"
+    }
+  ],
+  "pacingEvents": [
+    {
+      "pairs": 50,
+      "waitSeconds": 0,
+      "backoffFactor": 1.0
+    },
+    {
+      "pairs": 50,
+      "waitSeconds": 8.634923,
+      "backoffFactor": 1.0
+    },
+    {
+      "pairs": 50,
+      "waitSeconds": 8.753224,
+      "backoffFactor": 1.0
+    },
+    {
+      "pairs": 50,
+      "waitSeconds": 8.764022,
+      "backoffFactor": 1.0
+    },
+    {
+      "pairs": 25,
+      "waitSeconds": 8.751896,
+      "backoffFactor": 1.0
+    }
+  ]
+}

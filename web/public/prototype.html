@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>顺手 · 15分钟生活圈与顺路办点事</title>
+<style>
+  :root {
+    --bg-glass: rgba(255, 255, 255, 0.93);
+    --bg-glass-strong: rgba(255, 255, 255, 0.97);
+    --border-subtle: rgba(148, 163, 184, 0.26);
+    --shadow-float: 0 14px 36px -4px rgba(15, 23, 42, 0.14), 0 4px 14px -2px rgba(15, 23, 42, 0.08);
+    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.09);
+    --primary: #2563eb;
+    --text-main: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--text-main);
+    background: #eef2f6;
+    user-select: none;
+  }
+
+  /* 1. 100% 全屏百度地图底图视口 */
+  #map-stage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 1;
+    background: #f1f5f9;
+  }
+  #baidu-map-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  /* 当处于纯静态文件离线环境时的兜底画布（在线时自动隐藏，完全使用真实百度地图覆盖物） */
+  #fallback-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+  }
+
+  /* 2. 桌面端：左侧悬浮工作台 | 手机端：顶部悬浮搜索胶囊 + 底部三档可拖拽抽屉 */
+  .left-dock {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    bottom: 14px;
+    width: 408px;
+    max-width: calc(100vw - 28px);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .left-dock.collapsed {
+    transform: translateX(-426px);
+  }
+  .left-dock > * {
+    pointer-events: auto;
+  }
+
+  .omni-card {
+    background: var(--bg-glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    box-shadow: var(--shadow-float);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex-shrink: 0;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .brand-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.28);
+  }
+  .brand-title h1 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  .brand-title span {
+    font-size: 11px;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .collapse-btn {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+    border-radius: 8px;
+    padding: 4px 9px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    padding: 6px 10px;
+    transition: all 0.18s;
+  }
+  .search-box:focus-within {
+    background: #fff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  }
+  .search-box input {
+    border: 0;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    font-size: 13px;
+    color: #0f172a;
+    font-weight: 500;
+  }
+  .pick-map-btn {
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .pick-map-btn.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  .city-scroller {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .city-scroller::-webkit-scrollbar { display: none; }
+  .city-chip {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #334155;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .city-chip.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+
+  .mode-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: #f1f5f9;
+    padding: 3px;
+    border-radius: 11px;
+    gap: 3px;
+  }
+  .mode-tab {
+    border: 0;
+    background: transparent;
+    padding: 7px 6px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+  }
+  .mode-tab.active {
+    background: #fff;
+    color: #2563eb;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  }
+
+  /* 抽屉面板主体 */
+  .panel-drawer {
+    flex: 1;
+    min-height: 0;
+    background: var(--bg-glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    box-shadow: var(--shadow-float);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 0.26s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .mobile-sheet-handle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px 4px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    touch-action: none;
+  }
+  .grab-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    margin-bottom: 4px;
+  }
+  .handle-bar-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .panel-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 13px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    overscroll-behavior: contain;
+  }
+  .panel-body::-webkit-scrollbar { width: 5px; }
+  .panel-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+
+  .control-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    padding: 9px 10px;
+  }
+  .control-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .transport-pills, .time-pills { display: flex; gap: 4px; }
+  .TimeBtn {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #334155;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .TimeBtn.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+  }
+  .status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .status-bar.l2 { background: #fef3c7; color: #92400e; }
+  .status-bar.probing { background: #dbeafe; color: #1e40af; }
+  .status-bar.complete { background: #dcfce7; color: #166534; }
+
+  .score-hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 11px;
+    align-items: center;
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+    border: 1px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 11px;
+  }
+  .score-ring {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #2563eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-ring strong { font-size: 20px; line-height: 1; color: #0f172a; }
+  .score-ring small { font-size: 9.5px; color: #64748b; font-weight: 700; margin-top: 2px; }
+  .score-meta h3 { font-size: 13.5px; font-weight: 800; color: #0f172a; margin-bottom: 3px; }
+  .score-meta p { font-size: 11.5px; color: #475569; line-height: 1.42; }
+  .metric-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .m-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+  }
+  .m-badge.green { border-color: #a7f3d0; background: #ecfdf5; color: #065f46; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+  .section-head small { font-size: 11px; font-weight: 600; color: #64748b; }
+  .facility-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .fac-chip {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #64748b;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .fac-chip.selected { background: #eff6ff; border-color: #93c5fd; color: #1d4ed8; }
+  .fac-chip.focused { box-shadow: 0 0 0 2px #2563eb; }
+
+  .fac-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .fac-card {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 11px;
+    padding: 7px 9px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fac-card.active {
+    border-color: #2563eb;
+    background: #f8fbff;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.12);
+  }
+  .fac-card__top { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 700; }
+  .fac-pct { font-weight: 800; color: #059669; }
+  .fac-pct.warn { color: #d97706; }
+  .fac-bar { height: 5px; background: #f1f5f9; border-radius: 999px; overflow: hidden; }
+  .fac-fill { display: block; height: 100%; background: #10b981; border-radius: 999px; }
+  .fac-fill.warn { background: #f59e0b; }
+  .fac-sub { display: flex; justify-content: space-between; font-size: 10px; color: #64748b; }
+
+  .sim-box {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border: 1px solid #a7f3d0;
+    border-radius: 13px;
+    padding: 10px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .sim-box h4 { font-size: 12px; font-weight: 800; color: #065f46; }
+  .sim-box p { font-size: 11px; color: #047857; line-height: 1.4; }
+  .sim-actions { display: flex; gap: 6px; }
+  .sim-btn {
+    flex: 1;
+    border: 1px solid #059669;
+    background: #fff;
+    color: #059669;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sim-btn.active { background: #059669; color: #fff; }
+
+  /* 3. 右上角：精简产品显示控制胶囊 */
+  .top-right-bar {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+  }
+  .top-right-bar > * { pointer-events: auto; }
+  .layer-pill {
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #334155;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .layer-pill.active { background: #eff6ff; border-color: #60a5fa; color: #1d4ed8; }
+
+  /* 4. 右下角：温度热力图例 + 地图缩放控制 */
+  .bottom-right-dock {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 30;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    pointer-events: none;
+  }
+  .bottom-right-dock > * { pointer-events: auto; }
+
+  .mini-legend {
+    background: var(--bg-glass-strong);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 9px 12px;
+    box-shadow: var(--shadow-float);
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .mini-legend__title {
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 11.5px;
+  }
+  .heat-scale {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .heat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #334155;
+    font-weight: 600;
+  }
+  .heat-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .zoom-controls {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-glass-strong);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    box-shadow: var(--shadow-float);
+    overflow: hidden;
+  }
+  .zoom-btn {
+    border: 0;
+    border-bottom: 1px solid #e2e8f0;
+    background: transparent;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+  .zoom-btn:last-child { border-bottom: 0; }
+
+  .expand-SideBtn {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 25;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0f172a;
+    box-shadow: var(--shadow-float);
+    cursor: pointer;
+    display: none;
+  }
+  .left-dock.collapsed ~ .expand-SideBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .commute-card {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 9px 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .commute-card.active { border-color: #2563eb; background: #eff6ff; }
+  .commute-btn {
+    border: 0;
+    background: #2563eb;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .commute-btn.added { background: #059669; }
+
+  /* ==========================================================================
+     移动端适配（参考高德/百度/Apple Maps手机端：顶部悬浮搜索胶囊 + 底部三档可拖拽抽屉）
+     ========================================================================== */
+  @media (max-width: 820px) {
+    .left-dock {
+      inset: 0;
+      width: 100vw;
+      max-width: 100vw;
+      justify-content: space-between;
+      padding: max(8px, env(safe-area-inset-top)) 10px 0;
+      gap: 0;
+    }
+    .left-dock.collapsed {
+      transform: none;
+    }
+    .collapse-btn { display: none; }
+    .omni-card {
+      border-radius: 16px;
+      padding: 9px 11px;
+      gap: 7px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+    }
+    .brand-row { display: none; }
+    .top-right-bar {
+      top: auto;
+      bottom: calc(var(--mobile-sheet-h, 48dvh) + 12px);
+      right: 10px;
+      transition: bottom 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .bottom-right-dock {
+      bottom: calc(var(--mobile-sheet-h, 48dvh) + 52px);
+      right: 10px;
+      transition: bottom 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mini-legend { display: none; }
+    .panel-drawer {
+      margin: 0 -10px;
+      border-radius: 22px 22px 0 0;
+      height: var(--mobile-sheet-h, 48dvh);
+      max-height: var(--mobile-sheet-h, 48dvh);
+      flex: none;
+      box-shadow: 0 -10px 32px rgba(15, 23, 42, 0.16);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-sheet-handle {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- 1. 100% 全屏百度地图底图 -->
+  <div id="map-stage">
+    <div id="baidu-map-container"></div>
+    <canvas id="fallback-canvas"></canvas>
+  </div>
+
+  <!-- 2. 桌面左侧悬浮坞 / 手机端顶部搜索胶囊 + 底部三档抽屉 -->
+  <aside class="left-dock" id="left-dock">
+    <div class="omni-card">
+      <div class="brand-row">
+        <div class="brand-title">
+          <div class="brand-logo">⌁</div>
+          <h1>顺手 · 15分钟生活圈</h1>
+          <span>便民生活与顺路助手</span>
+        </div>
+        <button class="collapse-btn" onclick="toggleDock()">◀ 收起面板</button>
+      </div>
+
+      <div class="search-box">
+        <span>🔍</span>
+        <input id="search-input" type="text" placeholder="搜索社区、地标，或点击地图任意位置…" oninput="onSearchInput(this.value)" />
+        <button id="pick-btn" class="pick-map-btn" onclick="togglePickMode()">📍 地图选点</button>
+      </div>
+
+      <div class="city-scroller" id="city-scroller"></div>
+
+      <div class="mode-tabs" role="tablist">
+        <button class="mode-tab active" id="tab-life" onclick="switchMode('life')">🫧 15分钟生活圈</button>
+        <button class="mode-tab" id="tab-commute" onclick="switchMode('commute')">🚀 顺路办点事</button>
+      </div>
+    </div>
+
+    <div class="panel-drawer" id="panel-drawer">
+      <div class="mobile-sheet-handle" id="mobile-handle" onclick="cycleMobileSnap()">
+        <span class="grab-bar"></span>
+        <div class="handle-bar-row">
+          <span id="mobile-sheet-title">生活圈详情</span>
+          <span id="mobile-snap-label">切换高度 ↕</span>
+        </div>
+      </div>
+      <div class="panel-body" id="panel-body"></div>
+    </div>
+  </aside>
+
+  <button class="expand-SideBtn" onclick="toggleDock()">▶ 展开面板</button>
+  <nav class="top-right-bar" id="top-right-bar"></nav>
+
+  <div class="bottom-right-dock">
+    <div class="mini-legend">
+      <div class="mini-legend__title">🌈 步行生活圈时间热力分布</div>
+      <div class="heat-scale">
+        <span class="heat-badge"><i class="heat-dot" style="background:#10b981"></i>5分钟核心圈</span>
+        <span class="heat-badge"><i class="heat-dot" style="background:#0ea5e9"></i>10分钟便捷圈</span>
+        <span class="heat-badge"><i class="heat-dot" style="background:#2563eb"></i>15分钟生活圈</span>
+        <span class="heat-badge"><i class="heat-dot" style="background:#f59e0b"></i>20分钟扩展圈</span>
+      </div>
+    </div>
+
+    <div class="zoom-controls">
+      <button class="zoom-btn" onclick="zoomMap(1)" title="放大">＋</button>
+      <button class="zoom-btn" onclick="zoomMap(-1)" title="缩小">－</button>
+      <button class="zoom-btn" onclick="resetView()" title="回到中心">⌖</button>
+    </div>
+  </div>
+
+<script>
+const PRESETS = [{"id":"A","name":"北京·王府井东华门","shortName":"北京·王府井","desc":"核心历史街区 · 东侧商业与医疗便利度高，西侧紧邻故宫护城河需绕行","bd09Center":[39.922563,116.417592],"radii":{"0.0":935.9,"11.25":809.4,"22.5":767.2,"45.0":664.1,"67.5":795.3,"90.0":823.4,"112.5":710.9,"135.0":757.8,"157.5":860.9,"180.0":973.4,"191.25":846.9,"202.5":804.7,"225.0":682.8,"247.5":823.4,"270.0":776.6,"292.5":729.7,"315.0":757.8,"337.5":823.4}},{"id":"B","name":"北京·东花市社区","shortName":"北京·东花市","desc":"成熟宜居生活街区 · 周边生鲜商超、社区医院与公园绿地均衡覆盖","bd09Center":[39.903535,116.440123],"radii":{"0.0":523.4,"22.5":673.4,"28.15":641.0,"33.8":523.4,"45.0":467.2,"50.6":476.6,"53.4":490.6,"54.8":696.9,"56.2":692.2,"59.05":697.0,"61.9":589.1,"67.5":626.6,"90.0":645.3,"112.5":710.9,"135.0":720.3,"137.8":753.0,"140.6":626.6,"146.2":617.2,"151.9":598.4,"157.5":654.7,"168.8":626.6,"174.4":598.4,"177.2":607.8,"180.0":673.4,"191.2":654.7,"202.5":785.9,"213.8":710.9,"219.4":701.6,"225.0":739.1,"247.5":842.2,"258.8":917.2,"264.4":978.0,"270.0":1057.8,"272.8":791.0,"275.6":959.4,"281.2":898.4,"292.5":814.1,"315.0":710.9,"337.5":570.3,"348.8":504.7}},{"id":"shanghai","name":"上海·陆家嘴滨江社区","shortName":"上海·陆家嘴","desc":"滨江现代街区 · 东南向世纪大道走廊连通度高，西侧临黄浦江滨水步道","bd09Center":[31.247105,121.510707],"radii":{"0.0":617.2,"11.25":739.1,"14.06":772.0,"16.88":828.1,"22.5":935.9,"33.75":870.3,"45.0":907.8,"67.5":757.8,"90.0":814.1,"101.25":729.7,"112.5":757.8,"135.0":823.4,"146.25":903.1,"149.06":884.4,"151.88":734.4,"157.5":654.7,"168.75":560.9,"174.38":528.1,"177.19":509.4,"178.59":509.4,"180.0":804.7,"191.25":710.9,"196.88":696.9,"198.28":846.9,"199.69":865.6,"202.5":879.7,"213.75":851.6,"225.0":889.1,"236.25":795.3,"247.5":898.4,"258.75":851.6,"270.0":926.6,"275.62":865.6,"278.44":734.0,"281.25":748.4,"292.5":664.1,"315.0":532.8,"337.5":495.3,"348.75":514.1}},{"id":"chongqing","name":"重庆·解放碑社区","shortName":"重庆·解放碑","desc":"山地立体步道街区 · 商圈餐饮与药店密集，南北向受台阶高差影响步行圈略收敛","bd09Center":[29.55909,106.57544],"radii":{"0.0":514.1,"2.81":491.0,"5.62":603.1,"8.44":641.0,"11.25":682.8,"22.5":795.3,"33.75":851.6,"45.0":907.8,"56.25":879.7,"61.88":866.0,"67.5":879.7,"73.12":884.0,"75.94":828.0,"78.75":804.7,"81.56":772.0,"84.38":757.8,"87.19":884.0,"90.0":860.9,"95.62":828.0,"101.25":804.7,"102.0":804.7,"102.66":804.7,"103.36":598.4,"104.06":579.7,"104.78":584.0,"105.5":579.7,"106.19":584.0,"106.88":579.7,"108.28":566.0,"109.69":579.7,"111.09":566.0,"112.5":598.4,"115.3":603.0,"118.1":612.5,"118.81":584.0,"119.51":434.4,"120.22":434.0,"120.92":434.4,"122.34":434.0,"123.75":420.3,"129.38":378.0,"132.19":378.0,"135.0":289.1,"137.8":284.4,"139.2":284.4,"139.9":284.0,"140.6":579.7,"146.25":551.6,"149.06":528.0,"151.88":528.1,"153.28":509.0,"154.69":509.4,"155.39":509.0,"156.09":303.1,"156.8":303.0,"157.5":298.4,"158.2":303.0,"158.9":471.9,"160.3":471.9,"161.7":472.0,"163.1":457.8,"165.93":434.0,"168.75":439.1,"174.38":410.9,"180.0":420.3,"185.62":416.0,"191.25":410.9,"202.5":420.3,"213.75":401.6,"225.0":410.9,"230.62":416.0,"236.25":439.1,"241.88":453.0,"244.69":434.0,"247.5":364.1,"253.12":378.0,"258.75":429.7,"270.0":457.8,"272.81":453.1,"273.51":809.0,"274.22":809.4,"274.92":809.0,"275.62":828.1,"281.25":776.6,"286.88":809.0,"292.5":889.1,"298.12":832.8,"300.94":847.0,"303.75":889.1,"306.56":847.0,"309.38":804.7,"315.0":776.6,"317.81":622.0,"320.62":603.0,"326.25":626.6,"337.5":645.3,"343.12":622.0,"348.75":635.9,"354.38":603.0,"357.19":603.0}},{"id":"chengdu","name":"成都·九眼桥锦江社区","shortName":"成都·九眼桥","desc":"滨水休闲宜居街区 · 沿锦江绿道与廊桥方向步行舒畅，便民餐饮生鲜丰富","bd09Center":[30.646144,104.096235],"radii":{"0.0":814.1,"11.25":842.2,"22.5":907.8,"45.0":785.9,"56.25":795.3,"67.5":907.8,"90.0":785.9,"112.5":804.7,"135.0":870.3,"146.25":823.4,"149.06":771.9,"150.47":790.6,"151.88":1015.6,"157.5":1001.6,"168.75":870.3,"180.0":842.2,"202.5":823.4,"225.0":823.4,"247.5":898.4,"270.0":851.6,"292.5":926.6,"303.75":992.2,"315.0":879.7,"337.5":851.6}},{"id":"harbin","name":"哈尔滨·道外巴洛克街区","shortName":"哈尔滨·道外","desc":"传统高密度生活街坊 · 街巷细密连通，便民超市与早点铺密集，北侧临松花江畔","bd09Center":[45.787629,126.647361],"radii":{"0.0":776.6,"2.81":734.0,"5.62":739.1,"8.44":716.0,"11.25":748.4,"22.5":692.2,"25.31":697.0,"28.12":570.3,"30.94":734.0,"33.75":560.9,"36.56":809.0,"39.38":809.0,"42.19":809.0,"45.0":607.8,"47.81":753.0,"50.62":607.8,"53.44":734.0,"56.25":748.4,"61.88":710.9,"67.5":776.6,"73.12":922.0,"78.75":898.4,"81.6":889.1,"82.99":866.0,"84.38":851.6,"87.19":847.0,"90.0":889.1,"91.4":884.0,"92.8":889.1,"94.21":847.0,"95.62":832.8,"97.01":828.0,"98.4":851.6,"99.83":866.0,"101.25":870.3,"112.5":767.2,"118.1":842.2,"123.75":879.7,"126.56":922.0,"129.38":982.8,"135.0":982.8,"140.62":907.8,"142.01":903.0,"143.4":776.6,"144.82":903.0,"146.25":889.1,"157.5":823.4,"163.12":804.7,"168.75":898.4,"180.0":842.2,"191.25":701.6,"194.06":603.0,"196.88":598.4,"199.69":603.0,"202.5":748.4,"208.12":865.6,"210.94":884.0,"213.75":926.6,"216.56":884.0,"219.38":846.9,"222.19":809.4,"223.59":716.0,"225.0":673.4,"230.62":607.8,"233.44":678.0,"236.25":701.6,"241.88":664.1,"244.69":772.0,"247.5":776.6,"258.75":823.4,"264.38":729.7,"270.0":804.7,"272.81":791.0,"275.62":795.3,"278.44":753.0,"281.25":842.2,"292.5":851.6,"298.12":729.7,"299.53":734.0,"300.94":865.6,"302.35":884.0,"303.75":926.6,"306.56":997.0,"309.38":1071.9,"312.19":1165.6,"315.0":1264.1,"320.62":1222.0,"326.25":1189.1,"329.06":1166.0,"331.88":1184.4,"333.28":1165.6,"333.99":1184.0,"334.69":1015.6,"337.5":935.9,"343.12":790.6,"348.75":673.4,"351.56":772.0,"354.38":772.0}},{"id":"huilongguan","name":"北京·回龙观文化居住区","shortName":"北京·回龙观","desc":"大型生活居住社区 · 社区商业与早餐快递充足，跨地铁13号线方向需经天桥通行","bd09Center":[40.070434,116.33111],"radii":{"0.0":589.1,"11.25":560.9,"22.5":607.8,"33.75":654.7,"45.0":579.7,"56.25":673.4,"67.5":823.4,"78.75":926.6,"90.0":701.6,"101.25":692.2,"106.88":528.1,"112.5":523.4,"123.75":645.3,"135.0":673.4,"140.62":678.1,"146.25":832.8,"157.5":907.8,"168.75":729.7,"180.0":664.1,"185.62":621.9,"191.25":673.4,"202.5":467.2,"208.12":659.4,"213.75":654.7,"225.0":645.3,"230.62":603.1,"236.25":635.9,"247.5":514.1,"253.12":340.6,"258.75":410.9,"270.0":410.9,"281.25":523.4,"286.88":471.9,"292.5":485.9,"303.75":635.9,"315.0":860.9,"326.25":739.1,"331.88":659.4,"337.5":645.3,"348.75":523.4}}];
+const DEFAULT_AK = "SCr1xKoEANlZEegidICoKLEnCzHoxlSc";
+
+const SERVICES = [
+  { id: "convenience", label: "便利店", icon: "🏪", priority: true, baseCount: 9, baseCov: 96, blind: "步行5分钟内随处可达", gain: 4, site: "北侧社区底商建议点", brg: 18, dist: 330 },
+  { id: "market", label: "菜市场/生鲜", icon: "🥬", priority: true, baseCount: 4, baseCov: 82, blind: "西北片区需跨主干道", gain: 14, site: "西区社区生鲜微菜场", brg: 308, dist: 450 },
+  { id: "pharmacy", label: "24h药店", icon: "💊", priority: true, baseCount: 6, baseCov: 91, blind: "东北角步行约14分钟", gain: 8, site: "东区青年公寓底商药房", brg: 56, dist: 510 },
+  { id: "breakfast", label: "早餐餐饮", icon: "🥟", priority: true, baseCount: 12, baseCov: 95, blind: "沿街分布充足", gain: 5, site: "北门便民早点亭", brg: 348, dist: 290 },
+  { id: "postal", label: "快递驿站", icon: "📦", priority: true, baseCount: 8, baseCov: 88, blind: "西侧组团步行略远", gain: 10, site: "西苑3号楼便民快递柜", brg: 278, dist: 380 },
+  { id: "elderly", label: "养老助餐", icon: "🏡", priority: true, baseCount: 2, baseCov: 64, blind: "北侧与西南侧存在缺口", gain: 24, site: "中心花园社区长者食堂", brg: 215, dist: 410 },
+  { id: "childcare", label: "托育托管", icon: "🧸", priority: true, baseCount: 2, baseCov: 58, blind: "北侧片区步行超过15分钟", gain: 28, site: "文化路普惠托育中心", brg: 332, dist: 340 },
+  { id: "medical", label: "社区卫生站", icon: "🏥", priority: false, baseCount: 2, baseCov: 76, blind: "东侧步行约13分钟", gain: 16, site: "东区社区卫生服务站", brg: 108, dist: 490 }
+];
+
+const COMMUTE_STOPS = [
+  { id: "c1", cat: "药店", icon: "💊", name: "同仁堂24h便民药房（主干道顺路店）", detourMin: 1.2, extraM: 85, open: "24小时营业", tag: "最顺路 · 无需过街等待", brg: 235, dist: 320 },
+  { id: "c2", cat: "生鲜", icon: "🥬", name: "钱大妈社区生鲜（地铁C口店）", detourMin: 2.4, extraM: 175, open: "营业中 · 22:30打烊", tag: "沿途5分钟走廊内", brg: 120, dist: 180 },
+  { id: "c3", cat: "驿站", icon: "📦", name: "菜鸟驿站（社区东门自提柜）", detourMin: 0.8, extraM: 55, open: "24小时自提", tag: "回家必经动线 · 极速取件", brg: 55, dist: 360 },
+  { id: "c4", cat: "便利店", icon: "🏪", name: "罗森便利店（中心广场店）", detourMin: 3.5, extraM: 250, open: "24小时营业", tag: "鲜食齐全 · 轻微绕行", brg: 310, dist: 280 }
+];
+
+const state = {
+  presetId: "chongqing",
+  mode: "life",
+  transport: "walk",
+  thresholdSec: 900,
+  stage: "complete", // 'l2' | 'probing' | 'complete'
+  probeProgress: 100,
+  pickMode: false,
+  originCenter: null, // [lat, lng] in BD09
+  customOriginLabel: "",
+  showHeatRings: true,
+  showPois: true,
+  selectedServiceIds: ["convenience", "market", "pharmacy", "breakfast", "postal", "elderly", "childcare"],
+  focusedServiceId: "pharmacy",
+  simNewSiteActive: false,
+  selectedStopIds: ["c1", "c3"],
+  mobileSnap: "half" // 'peek' (20dvh) | 'half' (48dvh) | 'full' (84dvh)
+};
+
+window.currentPreset = PRESETS.find(p => p.id === state.presetId) || PRESETS[0];
+state.originCenter = [...window.currentPreset.bd09Center];
+
+// 极坐标平滑插值生成最终等时圈点集（直接遍历键值数组 + 余弦平滑 + 环形滤波，彻底消除 NaN 尖刺与折角）
+function parseSortedRays(radii) {
+  const entries = Object.entries(radii || {})
+    .map(([k, v]) => ({ b: ((Number(k) % 360) + 360) % 360, r: Number(v) }))
+    .filter(item => Number.isFinite(item.b) && Number.isFinite(item.r) && item.r > 20)
+    .sort((a, b) => a.b - b.b);
+  if (entries.length < 3) return [{ b: 0, r: 650 }, { b: 120, r: 650 }, { b: 240, r: 650 }];
+  // 对过密突变射线做一次邻域中值/均值平滑，消除细刺，只保留平滑自然的产品级等时圈轮廓
+  return entries.map((item, i) => {
+    const prev = entries[(i - 1 + entries.length) % entries.length].r;
+    const next = entries[(i + 1) % entries.length].r;
+    return { b: item.b, r: item.r * 0.6 + (prev + next) * 0.2 };
+  });
+}
+
+function rAt(brg, radii) {
+  const valid = parseSortedRays(radii);
+  const bNorm = ((brg % 360) + 360) % 360;
+  let idx = valid.findIndex(item => item.b > bNorm);
+  if (idx === -1) idx = 0;
+  const prevIdx = (idx - 1 + valid.length) % valid.length;
+  const b0 = valid[prevIdx].b;
+  const b1 = valid[idx].b;
+  const r0 = valid[prevIdx].r;
+  const r1 = valid[idx].r;
+  const db = ((b1 - b0 + 360) % 360) || 360;
+  const t = ((bNorm - b0 + 360) % 360) / db;
+  const smoothT = (1 - Math.cos(t * Math.PI)) / 2;
+  const val = r0 * (1 - smoothT) + r1 * smoothT;
+  return Number.isFinite(val) && val > 20 ? val : 650;
+}
+
+function destAtBd09(lat, lng, bearingDeg, distanceM) {
+  const safeDist = Number.isFinite(distanceM) && distanceM > 0 ? distanceM : 500;
+  const rad = (bearingDeg * Math.PI) / 180;
+  const dLat = (safeDist * Math.cos(rad)) / 111320;
+  const dLng = (safeDist * Math.sin(rad)) / (111320 * Math.cos((lat * Math.PI) / 180));
+  return { lat: lat + dLat, lng: lng + dLng };
+}
+
+function buildSmoothPolygonCoords(centerLat, centerLng, radii, scaleRatio = 1.0, samples = 180) {
+  const rawR = [];
+  for (let i = 0; i < samples; i++) {
+    const brg = (i * 360) / samples;
+    rawR.push((state.stage === "l2" ? 680 : rAt(brg, radii)) * scaleRatio);
+  }
+  const pts = [];
+  for (let i = 0; i < samples; i++) {
+    const brg = (i * 360) / samples;
+    const rPrev = rawR[(i - 1 + samples) % samples];
+    const rCurr = rawR[i];
+    const rNext = rawR[(i + 1) % samples];
+    const rSmooth = rCurr * 0.6 + (rPrev + rNext) * 0.2;
+    const pt = destAtBd09(centerLat, centerLng, brg, rSmooth);
+    if (Number.isFinite(pt.lat) && Number.isFinite(pt.lng)) {
+      pts.push(pt);
+    }
+  }
+  return pts;
+}
+
+function timeModeMultiplier() {
+  return (state.thresholdSec / 900) * (state.transport === "bike" ? 2.25 : 1.0);
+}
+
+// ============================================================================
+// 百度地图 JSAPI 加载与覆盖物渲染
+// ============================================================================
+let bmap = null;
+let bmapReady = false;
+
+async function initBaiduMap() {
+  let ak = DEFAULT_AK;
+  try {
+    const resp = await fetch("/api/maps/config");
+    if (resp.ok) {
+      const cfg = await resp.json();
+      if (cfg && cfg.ak) ak = cfg.ak;
+    }
+  } catch (e) {}
+
+  if (!ak) {
+    enableFallbackCanvas();
+    return;
+  }
+
+  window.__protoBaiduInit = function() {
+    try {
+      const BMap = window.BMap;
+      if (!BMap) { enableFallbackCanvas(); return; }
+      bmap = new BMap.Map("baidu-map-container", { enableMapClick: false });
+      const [lat, lng] = state.originCenter;
+      bmap.centerAndZoom(new BMap.Point(lng, lat), 15);
+      bmap.enableScrollWheelZoom(true);
+      bmapReady = true;
+
+      bmap.addEventListener("click", async function(e) {
+        if (!state.pickMode || !e.point) return;
+        const clickLat = e.point.lat, clickLng = e.point.lng;
+        state.originCenter = [clickLat, clickLng];
+        state.customOriginLabel = "正在解析所选地址…";
+        state.pickMode = false;
+        document.getElementById("pick-btn").classList.remove("active");
+        window.triggerIsochrone(state.thresholdSec);
+
+        // 调用后端真实逆地理编码与等时圈接口（含 L2 先行与后台实测升级）
+        try {
+          const rGeo = await fetch("/api/places/resolve", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lng: clickLng, lat: clickLat, crs: "BD09" })
+          });
+          if (rGeo.ok) {
+            const gData = await rGeo.json();
+            if (gData.place && gData.place.name) {
+              state.customOriginLabel = gData.place.name;
+              renderAll();
+            }
+          }
+        } catch (err) {
+          state.customOriginLabel = `${window.currentPreset.shortName}·地图选点`;
+        }
+
+        try {
+          const rIso = await fetch("/api/isochrones", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              origin: { lng: clickLng, lat: clickLat, crs: "BD09" },
+              thresholdSeconds: state.thresholdSec,
+              l2First: true
+            })
+          });
+          if (rIso.ok) {
+            const isoData = await rIso.json();
+            if (isoData.radiiM && Object.keys(isoData.radiiM).length >= 3) {
+              window.currentPreset.radii = isoData.radiiM;
+              renderAll();
+            }
+            if (isoData.backgroundStatus === "running" && isoData.taskId) {
+              for (let i = 0; i < 12; i++) {
+                await new Promise(r => setTimeout(r, 600));
+                const poll = await fetch(`/api/isochrones/${isoData.taskId}`);
+                if (poll.ok) {
+                  const pData = await poll.json();
+                  if (pData.backgroundStatus !== "running") {
+                    if (pData.radiiM && Object.keys(pData.radiiM).length >= 3) {
+                      window.currentPreset.radii = pData.radiiM;
+                    }
+                    state.stage = "complete";
+                    state.probeProgress = 100;
+                    renderAll();
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        } catch (err) {}
+      });
+
+      centerMapWithDockOffset();
+      drawBaiduOverlays();
+    } catch (err) {
+      enableFallbackCanvas();
+    }
+  };
+
+  const script = document.createElement("script");
+  script.src = `https://api.map.baidu.com/api?v=3.0&ak=${encodeURIComponent(ak)}&callback=__protoBaiduInit`;
+  script.async = true;
+  script.onerror = () => enableFallbackCanvas();
+  document.head.appendChild(script);
+}
+
+function centerMapWithDockOffset() {
+  if (!bmap || !window.BMap) return;
+  const [lat, lng] = state.originCenter;
+  const isMobile = window.innerWidth <= 820;
+  const dockCollapsed = document.getElementById("left-dock").classList.contains("collapsed");
+  let targetLat = lat;
+  let targetLng = lng;
+  if (!isMobile && !dockCollapsed) {
+    // 桌面端左侧工作台宽 408px，将地图中心微调使等时圈处于右侧可视区正中心
+    targetLng -= 0.0032;
+  } else if (isMobile && state.mobileSnap !== "peek") {
+    targetLat -= 0.0022;
+  }
+  bmap.panTo(new window.BMap.Point(targetLng, targetLat));
+}
+
+function drawBaiduOverlays() {
+  if (!bmapReady || !bmap || !window.BMap) {
+    drawFallbackCanvas();
+    return;
+  }
+  const BMap = window.BMap;
+  bmap.clearOverlays();
+
+  const preset = window.currentPreset;
+  const [cLat, cLng] = state.originCenter;
+  const mult = timeModeMultiplier();
+
+  if (state.mode === "commute") {
+    const startPt = destAtBd09(cLat, cLng, 225, 620);
+    const endPt = { lat: cLat, lng: cLng };
+    const chosen = COMMUTE_STOPS.filter(s => state.selectedStopIds.includes(s.id));
+
+    // 原通勤基准线
+    const baseLine = new BMap.Polyline([
+      new BMap.Point(startPt.lng, startPt.lat),
+      new BMap.Point(endPt.lng, endPt.lat)
+    ], { strokeColor: "#94a3b8", strokeWeight: 4, strokeOpacity: 0.7, strokeStyle: "dashed" });
+    bmap.addOverlay(baseLine);
+
+    // 顺路串联路线
+    const planPts = [
+      new BMap.Point(startPt.lng, startPt.lat),
+      ...chosen.map(st => {
+        const p = destAtBd09(cLat, cLng, st.brg, st.dist);
+        return new BMap.Point(p.lng, p.lat);
+      }),
+      new BMap.Point(endPt.lng, endPt.lat)
+    ];
+    const planLine = new BMap.Polyline(planPts, { strokeColor: "#2563eb", strokeWeight: 6, strokeOpacity: 0.92 });
+    bmap.addOverlay(planLine);
+
+    COMMUTE_STOPS.forEach(st => {
+      const p = destAtBd09(cLat, cLng, st.brg, st.dist);
+      const isAdded = state.selectedStopIds.includes(st.id);
+      addBaiduPillMarker(BMap, p.lat, p.lng, `${st.icon} ${st.name.slice(0, 6)} (+${st.detourMin}分)`, isAdded ? "#059669" : "#2563eb", isAdded ? "#ecfdf5" : "#ffffff");
+    });
+
+    addBaiduPillMarker(BMap, startPt.lat, startPt.lng, "🏢 出发地", "#0f172a", "#ffffff");
+    addBaiduPillMarker(BMap, endPt.lat, endPt.lng, `🏠 ${preset.shortName}`, "#059669", "#ecfdf5");
+    return;
+  }
+
+  // 1. 绘制最终多级等时圈热力图（5 / 10 / 15 / 20分钟柔和渐变层，无任何算法射线/散点杂音）
+  const bands = state.showHeatRings
+    ? [
+        { ratio: 1.32, stroke: "#f59e0b", fill: "#fde68a", fillOp: 0.18, strokeOp: 0.65, weight: 1.4 },
+        { ratio: 1.00, stroke: "#2563eb", fill: "#93c5fd", fillOp: 0.20, strokeOp: 0.92, weight: 2.8 },
+        { ratio: 0.68, stroke: "#0d9488", fill: "#6ee7b7", fillOp: 0.20, strokeOp: 0.72, weight: 1.5 },
+        { ratio: 0.36, stroke: "#059669", fill: "#34d399", fillOp: 0.25, strokeOp: 0.80, weight: 1.5 }
+      ]
+    : [{ ratio: 1.00, stroke: "#2563eb", fill: "#60a5fa", fillOp: 0.22, strokeOp: 0.92, weight: 2.8 }];
+
+  bands.forEach(b => {
+    const coords = buildSmoothPolygonCoords(cLat, cLng, preset.radii, mult * b.ratio, 180);
+    const bPoints = coords.map(c => new BMap.Point(c.lng, c.lat));
+    const poly = new BMap.Polygon(bPoints, {
+      strokeColor: b.stroke,
+      strokeWeight: b.weight,
+      strokeOpacity: b.strokeOp,
+      fillColor: b.fill,
+      fillOpacity: b.fillOp
+    });
+    bmap.addOverlay(poly);
+  });
+
+  // 2. 绘制当前选中类别的周边便民设施气泡（分布在外圈3个不同扇区，避免与中心起点标签重叠）
+  if (state.showPois) {
+    const activeSrvs = getActiveServices();
+    const focused = activeSrvs.find(x => x.id === state.focusedServiceId) || activeSrvs[0];
+    if (focused) {
+      [48, 155, 285].forEach((ang, idx) => {
+        const rM = rAt(ang, preset.radii) * mult * (0.64 + idx * 0.11);
+        const p = destAtBd09(cLat, cLng, ang, rM);
+        const walkMin = Math.max(3, Math.round(rM / 72));
+        addBaiduPillMarker(BMap, p.lat, p.lng, `${focused.icon} ${focused.label} · 步行${walkMin}分`, "#1e293b", "rgba(255,255,255,0.95)");
+      });
+
+      if (state.simNewSiteActive) {
+        const sp = destAtBd09(cLat, cLng, focused.brg, focused.dist * mult * 0.85);
+        addBaiduPillMarker(BMap, sp.lat, sp.lng, `✨ 建议增设：${focused.site} (+${focused.gain}%)`, "#065f46", "#ecfdf5");
+      }
+    }
+  }
+
+  // 3. 起点中心标记
+  addBaiduPillMarker(BMap, cLat, cLng, `📍 ${state.customOriginLabel || preset.name}`, "#ffffff", "#0f172a");
+}
+
+function addBaiduPillMarker(BMap, lat, lng, text, color, bg) {
+  if (!BMap.Label) return;
+  const pt = new BMap.Point(lng, lat);
+  const label = new BMap.Label(text, { position: pt, offset: new BMap.Size(-45, -14) });
+  label.setStyle({
+    color: color,
+    backgroundColor: bg,
+    border: `1.5px solid ${color === "#ffffff" ? "#1d4ed8" : color}`,
+    borderRadius: "999px",
+    padding: "4px 10px",
+    fontSize: "11.5px",
+    fontWeight: "700",
+    boxShadow: "0 3px 10px rgba(15,23,42,0.14)",
+    whiteSpace: "nowrap",
+    cursor: "pointer"
+  });
+  bmap.addOverlay(label);
+}
+
+// 离线无网兜底渲染（同样只绘制最终平滑热力等时圈，无算法调试线条）
+function enableFallbackCanvas() {
+  const cv = document.getElementById("fallback-canvas");
+  cv.style.display = "block";
+  drawFallbackCanvas();
+}
+
+function drawFallbackCanvas() {
+  const cv = document.getElementById("fallback-canvas");
+  if (cv.style.display === "none") return;
+  const dpr = window.devicePixelRatio || 1;
+  const W = window.innerWidth, H = window.innerHeight;
+  cv.width = W * dpr; cv.height = H * dpr;
+  const ctx = cv.getContext("2d");
+  ctx.save();
+  ctx.scale(dpr, dpr);
+  ctx.fillStyle = "#f1f5f9";
+  ctx.fillRect(0, 0, W, H);
+
+  const isMobile = W <= 820;
+  const cx = isMobile ? W / 2 : 408 + (W - 408) / 2;
+  const cy = isMobile ? H * 0.32 : H / 2;
+  const scale = 0.28 * timeModeMultiplier();
+  const preset = window.currentPreset;
+
+  const bands = [
+    { ratio: 1.33, fill: "rgba(251, 191, 36, 0.20)", stroke: "#f59e0b" },
+    { ratio: 1.00, fill: "rgba(59, 130, 246, 0.22)", stroke: "#2563eb" },
+    { ratio: 0.67, fill: "rgba(14, 165, 233, 0.22)", stroke: "#0ea5e9" },
+    { ratio: 0.35, fill: "rgba(16, 185, 129, 0.28)", stroke: "#10b981" }
+  ];
+  bands.forEach(b => {
+    ctx.beginPath();
+    for (let i = 0; i <= 180; i++) {
+      const brg = (i * 360) / 180;
+      const rPx = rAt(brg, preset.radii) * scale * b.ratio;
+      const rad = (brg * Math.PI) / 180;
+      const x = cx + rPx * Math.sin(rad);
+      const y = cy - rPx * Math.cos(rad);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = b.fill;
+    ctx.fill();
+    ctx.strokeStyle = b.stroke;
+    ctx.lineWidth = b.ratio === 1.0 ? 2.8 : 1.4;
+    ctx.stroke();
+  });
+  ctx.restore();
+}
+
+// ============================================================================
+// 产品面板渲染（零算法术语，纯正消费级地图体验）
+// ============================================================================
+function getActiveServices() {
+  const mult = timeModeMultiplier();
+  return SERVICES.filter(s => state.selectedServiceIds.includes(s.id)).map(s => {
+    const raw = Math.min(100, Math.max(28, Math.round(s.baseCov * Math.pow(mult, 0.38))));
+    const cov = (state.simNewSiteActive && state.focusedServiceId === s.id) ? Math.min(100, raw + s.gain) : raw;
+    return { ...s, cov, raw, count: Math.max(1, Math.round(s.baseCount * Math.pow(mult, 0.7))) };
+  });
+}
+
+function renderAll() {
+  const preset = PRESETS.find(p => p.id === state.presetId) || PRESETS[0];
+  window.currentPreset = preset;
+
+  document.getElementById("city-scroller").innerHTML = PRESETS.map(p => `
+    <button class="city-chip ${p.id === state.presetId ? "active" : ""}" onclick="selectPreset('${p.id}')">
+      📍 ${p.shortName}
+    </button>
+  `).join("");
+
+  ["life", "commute"].forEach(m => {
+    document.getElementById(`tab-${m}`).classList.toggle("active", state.mode === m);
+  });
+
+  document.getElementById("top-right-bar").innerHTML = `
+    <button class="layer-pill ${state.showHeatRings ? "active" : ""}" onclick="toggleLayer('showHeatRings')">
+      🌈 多级步行热力圈 ${state.showHeatRings ? "已开启" : "已关闭"}
+    </button>
+    <button class="layer-pill ${state.showPois ? "active" : ""}" onclick="toggleLayer('showPois')">
+      📍 周边设施气泡 ${state.showPois ? "显示" : "隐藏"}
+    </button>
+  `;
+
+  // 同步手机端底部抽屉高度变量
+  const snapMap = { peek: "20dvh", half: "48dvh", full: "84dvh" };
+  const snapLabelMap = { peek: "展开面板 ↑", half: "全屏查看 ↑", full: "收起看图 ↓" };
+  document.documentElement.style.setProperty("--mobile-sheet-h", snapMap[state.mobileSnap] || "48dvh");
+  document.getElementById("mobile-snap-label").textContent = snapLabelMap[state.mobileSnap];
+  document.getElementById("mobile-sheet-title").textContent = state.mode === "life"
+    ? `${state.customOriginLabel || preset.name} · ${state.thresholdSec / 60}分钟生活圈`
+    : `顺路办点事 · ${preset.shortName}`;
+
+  const bodyEl = document.getElementById("panel-body");
+  if (state.mode === "life") bodyEl.innerHTML = renderLifePanel(preset);
+  else bodyEl.innerHTML = renderCommutePanel(preset);
+
+  drawBaiduOverlays();
+}
+
+function renderLifePanel(preset) {
+  const activeSrvs = getActiveServices();
+  const focused = activeSrvs.find(s => s.id === state.focusedServiceId) || activeSrvs[0] || SERVICES[0];
+  const avgScore = Math.round(activeSrvs.reduce((acc, s) => acc + s.cov, 0) / activeSrvs.length);
+  const vals = Object.values(preset.radii).map(Number).sort((a, b) => a - b);
+  const medianM = Math.round((vals[Math.floor(vals.length / 2)] || 680) * timeModeMultiplier());
+  const areaKm2 = ((Math.PI * medianM * medianM * 0.92) / 1e6).toFixed(2);
+
+  return `
+    <div class="control-strip">
+      <div class="control-row">
+        <div class="transport-pills">
+          <button class="TimeBtn ${state.transport === 'walk' ? 'active' : ''}" onclick="setTransport('walk')">🚶 步行</button>
+          <button class="TimeBtn ${state.transport === 'bike' ? 'active' : ''}" onclick="setTransport('bike')">🚲 骑行</button>
+        </div>
+        <div class="time-pills">
+          ${[300, 600, 900, 1200].map(sec => `
+            <button class="TimeBtn ${state.thresholdSec === sec ? 'active' : ''}" onclick="triggerIsochrone(${sec})">
+              ${sec / 60}分钟
+            </button>
+          `).join("")}
+        </div>
+      </div>
+      <div class="status-bar ${state.stage}">
+        ${state.stage === "l2"
+          ? `<span>⚡ 已快速生成预估范围，正在实测周边步行路线…</span><span>快速预览</span>`
+          : state.stage === "probing"
+            ? `<span>🔄 正在按真实街道路网更新边界 (${state.probeProgress}%)…</span><span>更新中</span>`
+            : `<span>✅ 已完成周边步行路线实测 · 约 ${areaKm2} km²</span><span>中位可达 ${medianM}m</span>`
+        }
+      </div>
+    </div>
+
+    <div class="score-hero">
+      <div class="score-ring">
+        <strong>${avgScore}</strong>
+        <small>便利度评分</small>
+      </div>
+      <div class="score-meta">
+        <h3>${state.customOriginLabel || preset.name}</h3>
+        <p>${preset.desc}</p>
+        <div class="metric-badges">
+          <span class="m-badge green">可达面积 ${areaKm2} km²</span>
+          <span class="m-badge">步行半径约 ${medianM} 米</span>
+          <span class="m-badge">已评估 ${activeSrvs.length} 类民生设施</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-head" style="margin-bottom:6px">
+        <span>我的日常关注设施（点击增减，自动记住偏好）</span>
+        <small>已选 ${activeSrvs.length} 类</small>
+      </div>
+      <div class="facility-chips">
+        ${SERVICES.map(s => `
+          <button class="fac-chip ${state.selectedServiceIds.includes(s.id) ? 'selected' : ''} ${focused.id === s.id ? 'focused' : ''}"
+                  onclick="toggleService('${s.id}')">
+            ${s.icon} ${s.label}
+          </button>
+        `).join("")}
+      </div>
+    </div>
+
+    <div class="fac-grid">
+      ${activeSrvs.map(s => `
+        <button class="fac-card ${focused.id === s.id ? 'active' : ''}" onclick="focusService('${s.id}')">
+          <div class="fac-card__top">
+            <span>${s.icon} ${s.label}</span>
+            <span class="fac-pct ${s.cov < 75 ? 'warn' : ''}">${s.cov}%</span>
+          </div>
+          <div class="fac-bar"><span class="fac-fill ${s.cov < 75 ? 'warn' : ''}" style="width:${s.cov}%"></span></div>
+          <div class="fac-sub">
+            <span>圈内 ${s.count} 家</span>
+            <span>${s.blind}</span>
+          </div>
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="sim-box">
+      <h4>💡 社区便民短板与新增点预览</h4>
+      <p>当前查看 <strong>${focused.icon} ${focused.label}</strong>：${focused.blind}。若在 <strong>${focused.site}</strong> 新增 1 处服务点，周边居民步行可达率预计提升 <strong>+${focused.gain}%</strong>。</p>
+      <div class="sim-actions">
+        <button class="sim-btn ${state.simNewSiteActive ? 'active' : ''}" onclick="toggleSim('simNewSiteActive')">
+          ${state.simNewSiteActive ? `✓ 已在地图显示建议位置` : `✨ 在百度地图预览建议位置`}
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function renderCommutePanel(preset) {
+  const chosen = COMMUTE_STOPS.filter(s => state.selectedStopIds.includes(s.id));
+  const totalDetour = chosen.reduce((a, b) => a + b.detourMin, 0).toFixed(1);
+  return `
+    <div class="score-hero">
+      <div class="score-ring" style="border-color:#059669">
+        <strong>+${totalDetour}</strong>
+        <small>顺路绕行(分)</small>
+      </div>
+      <div class="score-meta">
+        <h3>下班顺路办点事 · ${preset.shortName}</h3>
+        <p>为您筛选回家沿途最顺路、无需折返的便民店铺，点击即可加入今日顺路行程。</p>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <span>沿途顺路好店推荐</span>
+      <small>已加入 ${chosen.length} 处</small>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${COMMUTE_STOPS.map(st => {
+        const added = state.selectedStopIds.includes(st.id);
+        return `
+          <div class="commute-card ${added ? 'active' : ''}" onclick="toggleCommuteStop('${st.id}')">
+            <div>
+              <div style="font-size:12.5px;font-weight:800;color:#0f172a">${st.icon} ${st.name}</div>
+              <div style="font-size:11px;color:#475569;margin-top:2px">
+                仅多走 <strong>${st.detourMin} 分钟</strong> (${st.extraM}米) · ${st.open}
+              </div>
+              <div style="font-size:10.5px;color:#2563eb;font-weight:600;margin-top:2px">${st.tag}</div>
+            </div>
+            <button class="commute-btn ${added ? 'added' : ''}">
+              ${added ? "✓ 已加入" : "+ 顺路去"}
+            </button>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+let probeTimer = null;
+
+window.selectPreset = function(id) {
+  state.presetId = id;
+  const p = PRESETS.find(x => x.id === id) || PRESETS[0];
+  window.currentPreset = p;
+  state.originCenter = [...p.bd09Center];
+  state.customOriginLabel = "";
+  centerMapWithDockOffset();
+  window.triggerIsochrone(state.thresholdSec);
+};
+
+window.triggerIsochrone = function(sec) {
+  state.thresholdSec = sec;
+  state.stage = "l2";
+  state.probeProgress = 25;
+  if (probeTimer) clearInterval(probeTimer);
+  renderAll();
+
+  setTimeout(() => {
+    state.stage = "probing";
+    state.probeProgress = 60;
+    renderAll();
+    probeTimer = setInterval(() => {
+      if (state.probeProgress < 92) {
+        state.probeProgress += 30;
+        renderAll();
+      } else {
+        clearInterval(probeTimer);
+        state.probeProgress = 100;
+        state.stage = "complete";
+        renderAll();
+      }
+    }, 140);
+  }, 180);
+};
+
+window.setTransport = function(mode) {
+  state.transport = mode;
+  window.triggerIsochrone(state.thresholdSec);
+};
+
+window.switchMode = function(mode) {
+  state.mode = mode;
+  renderAll();
+};
+
+window.toggleLayer = function(key) {
+  state[key] = !state[key];
+  renderAll();
+};
+
+window.toggleService = function(id) {
+  if (state.selectedServiceIds.includes(id)) {
+    if (state.selectedServiceIds.length > 1) {
+      state.selectedServiceIds = state.selectedServiceIds.filter(x => x !== id);
+    }
+  } else {
+    state.selectedServiceIds.push(id);
+  }
+  state.focusedServiceId = id;
+  renderAll();
+};
+
+window.focusService = function(id) {
+  state.focusedServiceId = id;
+  renderAll();
+};
+
+window.toggleSim = function(key) {
+  state[key] = !state[key];
+  renderAll();
+};
+
+window.toggleCommuteStop = function(id) {
+  if (state.selectedStopIds.includes(id)) {
+    state.selectedStopIds = state.selectedStopIds.filter(x => x !== id);
+  } else {
+    state.selectedStopIds.push(id);
+  }
+  renderAll();
+};
+
+window.toggleDock = function() {
+  document.getElementById("left-dock").classList.toggle("collapsed");
+  setTimeout(() => centerMapWithDockOffset(), 290);
+};
+
+window.cycleMobileSnap = function() {
+  const order = ["half", "full", "peek"];
+  const nextIdx = (order.indexOf(state.mobileSnap) + 1) % order.length;
+  state.mobileSnap = order[nextIdx];
+  renderAll();
+  setTimeout(() => centerMapWithDockOffset(), 260);
+};
+
+window.togglePickMode = function() {
+  state.pickMode = !state.pickMode;
+  document.getElementById("pick-btn").classList.toggle("active", state.pickMode);
+  if (window.innerWidth <= 820 && state.pickMode) {
+    state.mobileSnap = "peek";
+    renderAll();
+  }
+};
+
+window.onSearchInput = function(val) {
+  const q = val.trim();
+  if (!q) return;
+  const hit = PRESETS.find(p => p.name.includes(q) || p.shortName.includes(q));
+  if (hit && hit.id !== state.presetId) {
+    window.selectPreset(hit.id);
+  }
+};
+
+window.zoomMap = function(dir) {
+  if (bmap) {
+    if (dir > 0) bmap.zoomIn();
+    else bmap.zoomOut();
+  }
+};
+
+window.resetView = function() {
+  centerMapWithDockOffset();
+};
+
+// 手机端底部抽屉手势上下拖拽支持
+(function setupMobileTouchDrag() {
+  const handle = document.getElementById("mobile-handle");
+  if (!handle) return;
+  let startY = null;
+  handle.addEventListener("pointerdown", e => {
+    startY = e.clientY;
+    handle.setPointerCapture?.(e.pointerId);
+  });
+  handle.addEventListener("pointerup", e => {
+    if (startY == null) return;
+    const dy = e.clientY - startY;
+    startY = null;
+    if (Math.abs(dy) < 28) return;
+    if (dy < 0) {
+      state.mobileSnap = state.mobileSnap === "peek" ? "half" : "full";
+    } else {
+      state.mobileSnap = state.mobileSnap === "full" ? "half" : "peek";
+    }
+    renderAll();
+  });
+})();
+
+window.addEventListener("resize", () => {
+  renderAll();
+});
+
+renderAll();
+initBaiduMap();
+</script>
+</body>
+</html>

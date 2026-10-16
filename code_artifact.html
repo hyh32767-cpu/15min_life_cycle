@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>「顺手」全产品原型 - 通勤规划、等时圈与社区体检</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Inter', 'Noto Sans SC', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* Custom scrollbar for mobile drawers */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .sheet-transition {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* Leaflet popup styling override */
+    .leaflet-popup-content-wrapper {
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      padding: 4px;
+    }
+    .leaflet-popup-content {
+      margin: 8px 12px;
+      line-height: 1.4;
+    }
+    .pulsing-dot {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+      animation: pulse 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    @keyframes pulse {
+      to {
+        box-shadow: 0 0 0 14px rgba(59, 130, 246, 0);
+      }
+    }
+    .custom-phone-frame {
+      max-width: 430px;
+      height: 92vh;
+      max-height: 900px;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-800 flex items-center justify-center min-h-screen p-0 sm:p-4 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- Outer Mobile Device Frame Wrapper -->
+  <div id="phone-container" class="relative w-full custom-phone-frame bg-slate-50 sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col border sm:border-slate-800 border-0">
+    
+    <!-- Top Status Bar Mockup -->
+    <header class="relative z-30 bg-slate-900/90 backdrop-blur text-white px-5 pt-3 pb-2 text-xs flex justify-between items-center select-none border-b border-slate-800">
+      <div class="flex items-center space-x-1 font-semibold tracking-tight">
+        <span id="virtual-clock">18:15</span>
+        <span class="text-[10px] text-blue-400 font-normal ml-1">周二下班</span>
+      </div>
+      
+      <!-- Top dynamic indicators & source badges -->
+      <div class="flex items-center space-x-1.5">
+        <span class="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-medium border border-emerald-500/30 flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>百度API接入
+        </span>
+        <button id="btn-device-toggle" title="切换全屏或手机尺寸" class="text-slate-400 hover:text-white px-1">
+          <i class="fa-solid fa-expand text-xs"></i>
+        </button>
+        <button id="btn-reset-all" title="全局复位" class="text-slate-400 hover:text-amber-400 px-1">
+          <i class="fa-solid fa-arrow-rotate-left text-xs"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- App Sub-Header: Title & Source Legend -->
+    <div class="relative z-30 bg-white/95 backdrop-blur px-4 py-2 border-b border-slate-200 shadow-sm flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-sm shadow-md">
+          <i class="fa-solid fa-route"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-bold text-slate-900 leading-tight">顺手 <span class="text-xs text-blue-600 font-normal">SHUNSHOU</span></h1>
+          <p id="page-subtitle" class="text-[10px] text-slate-500">通勤沿途 · 顺路办事有向可达性</p>
+        </div>
+      </div>
+      
+      <!-- Source Badge Filter & Modal Trigger -->
+      <div class="flex items-center space-x-1">
+        <button id="btn-open-ledger" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] rounded-md font-medium flex items-center gap-1 border border-slate-200">
+          <i class="fa-solid fa-receipt text-blue-600"></i>
+          <span>调用账本</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Map Canvas Container (Center Area) -->
+    <div class="relative flex-1 w-full bg-slate-200 overflow-hidden">
+      <!-- Leaflet Interactive Map Div -->
+      <div id="leaflet-map" class="w-full h-full z-10"></div>
+
+      <!-- Map Floating Fast-Action Controls -->
+      <div class="absolute top-3 right-3 z-20 flex flex-col space-y-2">
+        <button id="btn-locate-me" class="w-9 h-9 bg-white text-slate-700 rounded-xl shadow-md border border-slate-200 flex items-center justify-center active:scale-95 transition">
+          <i class="fa-solid fa-location-crosshairs text-sm text-blue-600"></i>
+        </button>
+        <button id="btn-toggle-layers" class="w-9 h-9 bg-white text-slate-700 rounded-xl shadow-md border border-slate-200 flex items-center justify-center active:scale-95 transition" title="图层控制">
+          <i class="fa-solid fa-layer-group text-sm"></i>
+        </button>
+        <button id="btn-open-report" class="w-9 h-9 bg-blue-600 text-white rounded-xl shadow-md flex items-center justify-center active:scale-95 transition" title="深度报告">
+          <i class="fa-solid fa-file-lines text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Map Point Selection Prompt (idle -> selecting -> candidate-confirm) -->
+      <div id="selection-confirm-banner" class="hidden absolute top-3 left-3 right-14 z-20 bg-slate-900/95 backdrop-blur text-white p-2.5 rounded-xl shadow-lg border border-slate-700 text-xs flex items-center justify-between animate-fade-in">
+        <div class="truncate pr-2">
+          <p class="text-[10px] text-blue-400 font-semibold">📍 地图选点就绪</p>
+          <p id="selection-coords" class="truncate font-mono text-[11px] text-slate-300">39.9841, 116.3075</p>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button id="btn-cancel-select" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-[11px]">取消</button>
+          <button id="btn-confirm-select" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded font-medium text-[11px]">以此计算</button>
+        </div>
+      </div>
+
+      <!-- Map Layer Legend -->
+      <div id="map-legend" class="absolute bottom-2 left-2 z-20 bg-white/90 backdrop-blur px-2.5 py-1.5 rounded-lg shadow-sm border border-slate-200 text-[10px] text-slate-600 flex items-center gap-2">
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-600"></span>基准路线</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>10m等时圈</span>
+        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-500"></span>沿途POI</span>
+      </div>
+    </div>
+
+    <!-- Bottom Sheet / Interactive Drawer (Expandable) -->
+    <div id="bottom-sheet" class="relative z-30 bg-white rounded-t-3xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] border-t border-slate-100 flex flex-col sheet-transition max-h-[72%] min-h-[170px]" style="height: 380px;">
+      
+      <!-- Drawer Drag Handle & Quick Peek Header -->
+      <div id="sheet-handle" class="w-full pt-2 pb-1.5 flex flex-col items-center cursor-grab active:cursor-grabbing select-none border-b border-slate-100">
+        <div class="w-10 h-1 bg-slate-300 rounded-full mb-1"></div>
+        <div class="w-full px-4 flex items-center justify-between text-xs">
+          <span id="sheet-title" class="font-bold text-slate-800 flex items-center gap-1.5">
+            <span>沿途顺路候选</span>
+            <span id="badge-viable-count" class="px-1.5 py-0.2 text-[10px] bg-emerald-100 text-emerald-700 rounded-full font-bold">3个可行</span>
+          </span>
+          <div class="flex items-center space-x-2 text-slate-500">
+            <span id="sheet-height-indicator" class="text-[10px] text-slate-400">上下拖动切换详情</span>
+            <button id="btn-toggle-sheet-height" class="p-1 hover:text-slate-700">
+              <i class="fa-solid fa-chevron-up text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drawer Tab Content Wrapper (Scrollable) -->
+      <div id="sheet-scroll-body" class="flex-1 overflow-y-auto px-4 py-2 space-y-3">
+        
+        <!-- ================= VIEW 1: 通勤沿途 (Commute) ================= -->
+        <div id="view-commute" class="view-panel space-y-3">
+          <!-- Baseline Route Card -->
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50/50 p-3 rounded-2xl border border-blue-100 text-xs">
+            <div class="flex items-center justify-between text-slate-500 text-[11px] mb-1.5">
+              <span class="font-semibold text-blue-900 flex items-center gap-1">
+                <i class="fa-solid fa-compass text-blue-600"></i> 基准路线
+              </span>
+              <span class="text-slate-400">百度步行矩阵测算</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="flex flex-col items-center">
+                  <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                  <span class="w-0.5 h-4 bg-slate-300"></span>
+                  <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                </div>
+                <div class="text-xs">
+                  <p class="font-semibold text-slate-800">中关村软件园 <span class="text-[10px] text-slate-400 font-normal">(公司)</span></p>
+                  <p class="font-semibold text-slate-800 mt-1">望京新城西园 <span class="text-[10px] text-slate-400 font-normal">(家)</span></p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-base font-bold text-slate-900">32 <span class="text-xs font-normal text-slate-500">分钟</span></p>
+                <p class="text-[10px] text-slate-500">截止到家: <strong class="text-slate-700">19:30</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter categories chip selector -->
+          <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
+            <button class="poi-cat-btn px-2.5 py-1 rounded-full bg-blue-600 text-white font-medium shadow-sm shrink-0" data-cat="all">全部顺路</button>
+            <button class="poi-cat-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-medium shrink-0 hover:bg-slate-200" data-cat="pharmacy">💊 药店</button>
+            <button class="poi-cat-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-medium shrink-0 hover:bg-slate-200" data-cat="market">🛒 超市买菜</button>
+            <button class="poi-cat-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-medium shrink-0 hover:bg-slate-200" data-cat="courier">📦 快递取件</button>
+            <button class="poi-cat-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 font-medium shrink-0 hover:bg-slate-200" data-cat="cafe">☕ 咖啡</button>
+          </div>
+
+          <!-- POI Candidate Cards List -->
+          <div id="commute-poi-list" class="space-y-2">
+            <!-- Dynamically injected via JS -->
+          </div>
+        </div>
+
+        <!-- ================= VIEW 2: 独立等时圈 (Isochrone) ================= -->
+        <div id="view-isochrone" class="view-panel hidden space-y-3">
+          <!-- Isochrone Origin and Threshold Selector -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-xs space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-800 text-xs flex items-center gap-1.5">
+                <i class="fa-solid fa-bullseye text-blue-600"></i> 探测中心:
+                <span id="iso-origin-name" class="font-normal text-slate-600 truncate max-w-[160px]">望京南地铁站A口</span>
+              </span>
+              <button id="btn-iso-repick" class="text-blue-600 hover:text-blue-700 text-[11px] font-medium">点选换点</button>
+            </div>
+            
+            <!-- Threshold pills -->
+            <div class="flex items-center justify-between gap-1 pt-1">
+              <span class="text-[11px] text-slate-500">步行阈值:</span>
+              <div class="flex gap-1">
+                <button class="iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-300" data-min="5">5 分钟</button>
+                <button class="iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm" data-min="10">10 分钟</button>
+                <button class="iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600" data-min="15">15 分钟</button>
+                <button class="iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600" data-min="20">20 分钟</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boundary metrics card -->
+          <div class="grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-[10px] text-slate-400">重建近似面积</p>
+              <p id="iso-stat-area" class="text-sm font-bold text-slate-900 mt-0.5">0.72 <span class="text-[10px] font-normal">km²</span></p>
+              <span class="text-[9px] text-emerald-600 font-mono">8向射线收敛</span>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-[10px] text-slate-400">实测道路边界</p>
+              <p id="iso-stat-radius" class="text-sm font-bold text-slate-900 mt-0.5">780 <span class="text-[10px] font-normal">米中位</span></p>
+              <span class="text-[9px] text-blue-600">非直线假圆</span>
+            </div>
+            <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-[10px] text-slate-400">圈内可达服务</p>
+              <p id="iso-stat-pois" class="text-sm font-bold text-slate-900 mt-0.5">46 <span class="text-[10px] font-normal">家</span></p>
+              <span class="text-[9px] text-purple-600">真实有向过滤</span>
+            </div>
+          </div>
+
+          <!-- Inside Isochrone POI Category Filter & List -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span class="font-medium text-slate-700">圈内可达重点服务设施</span>
+              <span class="text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-500">来源: live-api</span>
+            </div>
+            <div id="iso-poi-list" class="space-y-2">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= VIEW 3: 今天安排与执行重排 (Plan & Run) ================= -->
+        <div id="view-plan" class="view-panel hidden space-y-3">
+          <!-- Timeline Status Bar (Harmonious Light Card) -->
+          <div class="bg-gradient-to-br from-blue-50/70 via-white to-slate-50 p-3.5 rounded-2xl border border-blue-100 shadow-sm text-xs space-y-2.5">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="px-2 py-0.5 rounded-full text-[10px] bg-blue-100/70 text-blue-700 font-medium inline-flex items-center gap-1">
+                  <i class="fa-solid fa-bolt text-[9px]"></i> 规划引擎 · 综合耗时最少
+                </span>
+                <h3 class="font-bold text-sm text-slate-800 mt-1">今日下班多任务动线</h3>
+              </div>
+              <div class="text-right bg-emerald-50 px-2.5 py-1 rounded-xl border border-emerald-100">
+                <p class="text-xs text-emerald-700 font-bold">19:14 到家</p>
+                <p class="text-[10px] text-emerald-600/90 font-medium">余量 +16分钟</p>
+              </div>
+            </div>
+
+            <!-- Virtual scenario delay or closed injection -->
+            <div class="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <span class="text-[11px] text-slate-500 flex items-center gap-1 font-medium">
+                <i class="fa-solid fa-flask-vial text-blue-600"></i> 情景事件模拟注入:
+              </span>
+              <div class="flex gap-1.5 shrink-0">
+                <button id="btn-inject-closed" class="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-medium rounded-lg text-[10px] transition active:scale-95 flex items-center gap-1">
+                  <i class="fa-solid fa-store-slash text-[9px] text-amber-600"></i> 首选药店关店
+                </button>
+                <button id="btn-inject-delay" class="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-medium rounded-lg text-[10px] transition active:scale-95 flex items-center gap-1">
+                  <i class="fa-solid fa-triangle-exclamation text-[9px] text-rose-600"></i> 施工延误15分
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Re-planning diff alert (hidden initially, shown on inject) -->
+          <div id="replan-diff-alert" class="hidden bg-amber-50 border border-amber-300 p-3 rounded-2xl text-xs space-y-1 animate-fade-in">
+            <div class="flex items-center justify-between font-bold text-amber-900">
+              <span class="flex items-center gap-1">
+                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> 触发重排差异 (Re-planning Delta)
+              </span>
+              <span class="text-[10px] bg-amber-200 text-amber-800 px-1.5 py-0.5 rounded">情景模拟</span>
+            </div>
+            <p id="replan-diff-text" class="text-slate-700 text-[11px] leading-relaxed">
+              因「同仁堂药店」触发临时闭店事件，系统已自动重排为备选「海王星辰健康药房」。预计到家时间延后 4 分钟至 19:18，余量仍然充足 (+12分)。
+            </p>
+          </div>
+
+          <!-- Tasks ordered list -->
+          <div id="plan-tasks-container" class="space-y-2 text-xs">
+            <!-- Dynamically populated task list -->
+          </div>
+        </div>
+
+        <!-- ================= VIEW 4: 社区生活体检 (Community MCLP) ================= -->
+        <div id="view-community" class="view-panel hidden space-y-3">
+          <!-- Community summary card (Modern Light Health Scorecard) -->
+          <div class="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm text-xs space-y-2.5">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-mono inline-block">15分钟生活圈体检模型 v1.0</span>
+                <h3 class="text-sm font-bold text-slate-800 mt-1">望京街道 · 西园社区样本体检</h3>
+              </div>
+              <div class="text-right flex items-baseline gap-1 bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-200/80">
+                <span class="text-2xl font-black text-blue-600">76</span>
+                <span class="text-[10px] text-slate-500 font-medium">/100 综合分</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-1.5 pt-2 border-t border-slate-100 text-center">
+              <div class="bg-rose-50/60 p-1.5 rounded-xl border border-rose-100">
+                <p class="text-[9px] text-slate-500">医疗卫生</p>
+                <p class="text-xs font-bold text-rose-600 mt-0.5">58分</p>
+              </div>
+              <div class="bg-rose-50/60 p-1.5 rounded-xl border border-rose-100">
+                <p class="text-[9px] text-slate-500">养老助残</p>
+                <p class="text-xs font-bold text-rose-600 mt-0.5">46分</p>
+              </div>
+              <div class="bg-emerald-50/60 p-1.5 rounded-xl border border-emerald-100">
+                <p class="text-[9px] text-slate-500">商超生鲜</p>
+                <p class="text-xs font-bold text-emerald-600 mt-0.5">92分</p>
+              </div>
+              <div class="bg-emerald-50/60 p-1.5 rounded-xl border border-emerald-100">
+                <p class="text-[9px] text-slate-500">药店药房</p>
+                <p class="text-xs font-bold text-emerald-600 mt-0.5">88分</p>
+              </div>
+              <div class="bg-blue-50/60 p-1.5 rounded-xl border border-blue-100">
+                <p class="text-[9px] text-slate-500">基础教育</p>
+                <p class="text-xs font-bold text-blue-600 mt-0.5">80分</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blind Spot Diagnosis -->
+          <div class="bg-amber-50/70 border border-amber-200/80 p-3 rounded-2xl text-xs space-y-1.5">
+            <div class="flex items-center justify-between font-bold text-amber-900">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-exclamation text-amber-600"></i> 盲区诊断发现 (Blind Spots)
+              </span>
+              <span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-normal">混合型障碍</span>
+            </div>
+            <p class="text-slate-700 text-[11px] leading-snug">
+              社区西北象限受京密路主辅路阻隔，32%居民格网到就近社区诊所步行超过 18 分钟；同时缺乏嵌入式日间养老服务供给。
+            </p>
+          </div>
+
+          <!-- MCLP Greedy Prescription Action Card -->
+          <div class="bg-slate-50 border border-slate-200 p-3 rounded-2xl text-xs space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-800 flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-blue-600"></i> MCLP 贪心选址处方
+              </span>
+              <span class="text-[10px] bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-500">最大覆盖算法</span>
+            </div>
+            
+            <p class="text-[11px] text-slate-600">
+              计算推荐在 <strong class="text-slate-800">花家地北里空置物业</strong> 增设 1 处综合嵌入式养老微站点：
+            </p>
+
+            <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-slate-200">
+              <div>
+                <p class="text-[10px] text-slate-400">覆盖率改善</p>
+                <p class="text-xs font-bold text-emerald-600">46% → 82% <span class="text-[9px] text-slate-500 font-normal">(+36%)</span></p>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-400">直接受益居民</p>
+                <p class="text-xs font-bold text-blue-700">+420 户</p>
+              </div>
+              <button id="btn-toggle-mclp-marker" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-xs shadow-sm transition active:scale-95">
+                <span id="mclp-btn-text">应用处方</span>
+              </button>
+            </div>
+            <p class="text-[9px] text-slate-400">注：新增点属于比赛规划情景模拟，非现实物理设施。</p>
+          </div>
+        </div>
+
+        <!-- ================= VIEW 5: 时间空档 (Time Gap) ================= -->
+        <div id="view-gap" class="view-panel hidden space-y-3">
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-xs space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-800">空档时间预算与闭环</span>
+              <span class="text-[10px] text-blue-600 font-mono">去程 + 停留 + 回程 ≤ 预算</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] text-slate-500">可用空档:</span>
+              <div class="flex gap-1.5 flex-1">
+                <button class="gap-time-btn flex-1 py-1 text-center font-bold text-xs rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200" data-time="20">20分</button>
+                <button class="gap-time-btn flex-1 py-1 text-center font-bold text-xs rounded-lg bg-blue-600 text-white shadow-sm" data-time="35">35分</button>
+                <button class="gap-time-btn flex-1 py-1 text-center font-bold text-xs rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200" data-time="50">50分</button>
+              </div>
+            </div>
+
+            <p class="text-[11px] text-slate-500">
+              当前位置: <strong class="text-slate-700">望京SOHO T3楼下</strong> · 需按时返回
+            </p>
+          </div>
+
+          <!-- Reachable round-trip options -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs text-slate-500">
+              <span class="font-medium text-slate-700">35分钟内可行往返目标</span>
+              <span class="text-[10px] text-emerald-600 font-semibold">往返非对称真实耗时</span>
+            </div>
+            <div id="gap-poi-list" class="space-y-2 text-xs">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="relative z-30 bg-white border-t border-slate-200 px-2 py-1.5 flex justify-around items-center select-none text-slate-400">
+      <button class="nav-tab-btn flex flex-col items-center py-1 px-2 text-blue-600 transition" data-target="view-commute">
+        <i class="fa-solid fa-route text-lg"></i>
+        <span class="text-[10px] font-semibold mt-0.5">通勤沿途</span>
+      </button>
+
+      <button class="nav-tab-btn flex flex-col items-center py-1 px-2 hover:text-slate-700 transition" data-target="view-isochrone">
+        <i class="fa-solid fa-bullseye text-lg"></i>
+        <span class="text-[10px] font-semibold mt-0.5">独立等时圈</span>
+      </button>
+
+      <button class="nav-tab-btn flex flex-col items-center py-1 px-2 hover:text-slate-700 transition" data-target="view-plan">
+        <div class="relative">
+          <i class="fa-solid fa-list-check text-lg"></i>
+          <span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-blue-600"></span>
+        </div>
+        <span class="text-[10px] font-semibold mt-0.5">今天安排</span>
+      </button>
+
+      <button class="nav-tab-btn flex flex-col items-center py-1 px-2 hover:text-slate-700 transition" data-target="view-community">
+        <i class="fa-solid fa-heart-pulse text-lg"></i>
+        <span class="text-[10px] font-semibold mt-0.5">社区体检</span>
+      </button>
+
+      <button class="nav-tab-btn flex flex-col items-center py-1 px-2 hover:text-slate-700 transition" data-target="view-gap">
+        <i class="fa-solid fa-hourglass-half text-lg"></i>
+        <span class="text-[10px] font-semibold mt-0.5">时间空档</span>
+      </button>
+    </nav>
+
+    <!-- ================= MODALS & DRAWERS ================= -->
+    <!-- 1. Deep Report Modal -->
+    <div id="modal-report" class="hidden absolute inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex flex-col justify-end">
+      <div class="bg-white rounded-t-3xl max-h-[85%] flex flex-col overflow-hidden shadow-2xl p-4 animate-slide-up">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-file-contract"></i>
+            </span>
+            <div>
+              <h3 class="font-bold text-sm text-slate-900">可解释性综合深度报告</h3>
+              <p class="text-[10px] text-slate-500 font-mono">TraceID: sn-20260922-bd88f2</p>
+            </div>
+          </div>
+          <button id="btn-close-report" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-xs"></i>
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto py-3 space-y-3 text-xs text-slate-700">
+          <!-- Summary Section -->
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 mb-1">测算摘要与口径</h4>
+            <p class="text-[11px] text-slate-600 leading-relaxed">
+              本报告基于百度 Walking Direction Matrix 实测生成。等时圈边界采用 8 向起步二分探测算法重构，绝非理想化直线假圆。服务停留时间采用情景设定（固定seed），营业时间与POI状态通过实名接口校验。
+            </p>
+          </div>
+
+          <!-- Ledger Table -->
+          <div>
+            <h4 class="font-bold text-slate-900 mb-1.5 flex items-center justify-between">
+              <span>调用与指标账本</span>
+              <span class="text-[10px] text-emerald-600">缓存命中率 67%</span>
+            </h4>
+            <table class="w-full text-[10px] text-left border border-slate-200 rounded-lg overflow-hidden">
+              <thead class="bg-slate-100 text-slate-700 font-semibold">
+                <tr>
+                  <th class="p-1.5">要素</th>
+                  <th class="p-1.5">数值</th>
+                  <th class="p-1.5">来源标签</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 font-mono">
+                <tr><td class="p-1.5">基准距离/耗时</td><td class="p-1.5">2.4km / 32min</td><td class="p-1.5 text-blue-600">live-api</td></tr>
+                <tr><td class="p-1.5">探测射线总数</td><td class="p-1.5">8向 (有效7/受阻1)</td><td class="p-1.5 text-blue-600">live-api</td></tr>
+                <tr><td class="p-1.5">等时圈多边形面积</td><td class="p-1.5">0.72 km²</td><td class="p-1.5 text-purple-600">derived</td></tr>
+                <tr><td class="p-1.5">店内办理模拟停留</td><td class="p-1.5">8 min</td><td class="p-1.5 text-amber-600">synthetic-assumption</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Export buttons -->
+          <div class="pt-2 flex gap-2">
+            <button id="btn-export-json" class="flex-1 py-2 bg-slate-800 text-white rounded-xl font-semibold text-xs flex items-center justify-center gap-1">
+              <i class="fa-solid fa-code text-[11px]"></i> 导出 JSON
+            </button>
+            <button id="btn-export-md" class="flex-1 py-2 bg-blue-600 text-white rounded-xl font-semibold text-xs flex items-center justify-center gap-1">
+              <i class="fa-solid fa-download text-[11px]"></i> 导出 Markdown
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Toast Notification Box -->
+    <div id="toast-box" class="hidden absolute top-14 left-1/2 -translate-x-1/2 z-50 bg-slate-900/90 backdrop-blur text-white px-3.5 py-2 rounded-xl text-xs shadow-xl border border-slate-700 flex items-center gap-2 transition-all">
+      <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+      <span id="toast-msg" class="font-medium">操作已更新</span>
+    </div>
+
+  </div>
+
+  <script>
+    /* ==========================================================================
+       DATA MODELS & STATE MANAGEMENT (PRD-COMPLIANT)
+       ========================================================================== */
+    const APP_STATE = {
+      currentTab: 'view-commute',
+      virtualTime: '18:15',
+      mapMode: 'commute', // 'commute' | 'isochrone' | 'plan' | 'community' | 'gap'
+      selectingPoint: false,
+      tempSelectedLatLng: null,
+      mclpApplied: false,
+      scenarioEvent: null, // null | 'closed' | 'delay'
+      selectedIsoThreshold: 10, // 5, 10, 15, 20
+      selectedGapBudget: 35, // 20, 35, 50
+      
+      // Coordinates (Wangjing area, Beijing - BD09 transformed)
+      origin: { name: "中关村软件园 (公司)", lat: 39.9922, lng: 116.3120 },
+      dest: { name: "望京新城西园 (家)", lat: 39.9985, lng: 116.4712 },
+      isoCenter: { name: "望京南地铁站A口", lat: 39.9880, lng: 116.4735 },
+      communityCenter: { name: "望京西园三区居民会所", lat: 39.9940, lng: 116.4680 }
+    };
+
+    // Commute Waypoint POI Options (Live API + Synthetic Assumption)
+    const COMMUTE_POIS = [
+      {
+        id: 'poi-1',
+        name: '同仁堂知春路药房',
+        cat: 'pharmacy',
+        catName: '药店',
+        openStatus: '营业中 (至21:30)',
+        isOpen: true,
+        detourMin: 4,
+        serviceMin: 8,
+        eta: '19:14',
+        bufferMin: 16,
+        source: 'live-api',
+        assumptionSource: 'synthetic-assumption',
+        lat: 39.9890,
+        lng: 116.3350,
+        tags: ['顺路指数 98%', '备选现货充足']
+      },
+      {
+        id: 'poi-2',
+        name: '盒马鲜生 (亚运村店)',
+        cat: 'market',
+        catName: '超市',
+        openStatus: '营业中 (至22:00)',
+        isOpen: true,
+        detourMin: 7,
+        serviceMin: 15,
+        eta: '19:24',
+        bufferMin: 6,
+        source: 'live-api',
+        assumptionSource: 'synthetic-assumption',
+        lat: 39.9930,
+        lng: 116.4150,
+        tags: ['顺路指数 91%', '晚间熟食折扣']
+      },
+      {
+        id: 'poi-3',
+        name: '丰巢快递柜 (南湖中园)',
+        cat: 'courier',
+        catName: '快递',
+        openStatus: '24小时自助',
+        isOpen: true,
+        detourMin: 2,
+        serviceMin: 4,
+        eta: '19:08',
+        bufferMin: 22,
+        source: 'live-api',
+        assumptionSource: 'synthetic-assumption',
+        lat: 39.9960,
+        lng: 116.4630,
+        tags: ['步行无绕行感', '自提码就绪']
+      },
+      {
+        id: 'poi-4',
+        name: '瑞幸咖啡 (五道口店)',
+        cat: 'cafe',
+        catName: '咖啡',
+        openStatus: '营业中 (至20:00)',
+        isOpen: true,
+        detourMin: 3,
+        serviceMin: 5,
+        eta: '19:10',
+        bufferMin: 20,
+        source: 'live-api',
+        assumptionSource: 'synthetic-assumption',
+        lat: 39.9910,
+        lng: 116.3380,
+        tags: ['免排队自提']
+      }
+    ];
+
+    // Independent Isochrone Reachable Services
+    const ISO_SERVICES = [
+      { name: '海王星辰健康药房', cat: '药店', walkMin: 6, dist: '420m', status: '营业中', viable: true },
+      { name: '便民生鲜生鲜超市', cat: '商超', walkMin: 8, dist: '590m', status: '营业中', viable: true },
+      { name: '社区卫生服务站', cat: '医疗', walkMin: 9, dist: '680m', status: '营业中', viable: true },
+      { name: '南湖邮政所取件点', cat: '生活', walkMin: 4, dist: '290m', status: '营业中', viable: true },
+      { name: '日间照料便民驿站', cat: '养老', walkMin: 14, dist: '1100m', status: '营业中', viable: false, reason: '单程超10分阈值' }
+    ];
+
+    // Plan Tasks (Initial baseline state)
+    let TODAY_TASKS = [
+      { id: 't-1', name: '离开中关村软件园公司', time: '18:15', status: 'done', icon: 'fa-building' },
+      { id: 't-2', name: '同仁堂药店购买感冒药', time: '18:32', status: 'current', icon: 'fa-capsules', duration: '停留8分', poiId: 'poi-1' },
+      { id: 't-3', name: '丰巢智能柜领取急件', time: '18:55', status: 'pending', icon: 'fa-box', duration: '停留4分', poiId: 'poi-3' },
+      { id: 't-4', name: '顺利到家 (望京西园)', time: '19:14', status: 'pending', icon: 'fa-house', duration: '目标点' }
+    ];
+
+    // Time Gap Candidates
+    const GAP_ACTIVITIES = [
+      { name: '瑞幸咖啡自提', cat: '餐饮', roundTripWalk: 12, serviceMin: 5, totalMin: 17, viable: true, note: '剩余 18 分钟安全余量' },
+      { name: '便利蜂采买轻食', cat: '商超', roundTripWalk: 16, serviceMin: 8, totalMin: 24, viable: true, note: '往返路线有向闭环安全' },
+      { name: '快剪理发店', cat: '生活服务', roundTripWalk: 18, serviceMin: 20, totalMin: 38, viable: false, note: '总耗时超35分限制 (需38分)' }
+    ];
+
+    let map = null;
+    let mapLayers = {
+      route: null,
+      isochronePolygons: [],
+      poiMarkers: [],
+      rays: [],
+      communityGrid: [],
+      mclpMarker: null
+    };
+
+    function initMap() {
+      // Initialize centered at Wangjing corridor
+      map = L.map('leaflet-map', {
+        zoomControl: false,
+        attributionControl: false
+      }).setView([39.9920, 116.4400], 13);
+
+      // CartoDB Positron clean map tiles
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19
+      }).addTo(map);
+
+      // Setup click listener for point picking (PRD: idle -> selecting -> candidate-confirm)
+      map.on('click', function(e) {
+        handleMapClickSelection(e.latlng);
+      });
+
+      renderCommuteMap();
+    }
+
+    function renderCommuteMap() {
+      clearMapLayers();
+      APP_STATE.mapMode = 'commute';
+
+      // 1. Commute Baseline polyline (Company -> Waypoints -> Home)
+      const latlngs = [
+        [APP_STATE.origin.lat, APP_STATE.origin.lng],
+        [39.9900, 116.3500],
+        [39.9930, 116.4000],
+        [39.9950, 116.4400],
+        [APP_STATE.dest.lat, APP_STATE.dest.lng]
+      ];
+
+      mapLayers.route = L.polyline(latlngs, {
+        color: '#2563eb',
+        weight: 5,
+        opacity: 0.85,
+        dashArray: null
+      }).addTo(map);
+
+      // 2. Add Start and End Pins
+      const startIcon = L.divIcon({
+        className: 'custom-pin',
+        html: `<div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white"><i class="fa-solid fa-building"></i></div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14]
+      });
+      L.marker([APP_STATE.origin.lat, APP_STATE.origin.lng], { icon: startIcon }).addTo(map)
+        .bindPopup("<b>起: 中关村软件园 (公司)</b><br>18:15 出发");
+
+      const endIcon = L.divIcon({
+        className: 'custom-pin',
+        html: `<div class="w-7 h-7 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white"><i class="fa-solid fa-house"></i></div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14]
+      });
+      L.marker([APP_STATE.dest.lat, APP_STATE.dest.lng], { icon: endIcon }).addTo(map)
+        .bindPopup("<b>终: 望京新城西园 (家)</b><br>最晚截止 19:30");
+
+      // 3. Render Commute POI candidates markers
+      COMMUTE_POIS.forEach(poi => {
+        const markerIcon = L.divIcon({
+          className: 'poi-pin',
+          html: `<div class="px-2 py-0.5 rounded-full bg-slate-900 text-white text-[10px] font-bold shadow-md border border-white flex items-center gap-1 hover:scale-110 transition">
+                  <span>${poi.catName}</span>
+                  <span class="text-emerald-400">+${poi.detourMin}m</span>
+                 </div>`,
+          iconSize: [60, 24],
+          iconAnchor: [30, 12]
+        });
+
+        const m = L.marker([poi.lat, poi.lng], { icon: markerIcon }).addTo(map);
+        m.bindPopup(`
+          <div class="text-xs">
+            <b class="text-slate-900">${poi.name}</b><br>
+            <span class="text-emerald-600 font-semibold">绕行 +${poi.detourMin} 分钟 · 停留 ${poi.serviceMin} 分钟</span><br>
+            <span class="text-slate-500">预计到家: ${poi.eta} (余量 ${poi.bufferMin}m)</span><br>
+            <button onclick="addToPlan('${poi.id}')" class="mt-1.5 w-full bg-blue-600 text-white py-1 rounded text-[10px] font-bold">加入今天安排</button>
+          </div>
+        `);
+        mapLayers.poiMarkers.push(m);
+      });
+
+      map.fitBounds(mapLayers.route.getBounds(), { padding: [40, 40] });
+    }
+
+    function renderIsochroneMap(thresholdMin = 10) {
+      clearMapLayers();
+      APP_STATE.mapMode = 'isochrone';
+      const center = [APP_STATE.isoCenter.lat, APP_STATE.isoCenter.lng];
+
+      // Center Pin with pulsing effect
+      const centerIcon = L.divIcon({
+        className: 'center-pin',
+        html: `<div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-xl border-2 border-white pulsing-dot">
+                <i class="fa-solid fa-bullseye text-[11px]"></i>
+               </div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+      const centerMarker = L.marker(center, { icon: centerIcon }).addTo(map);
+      centerMarker.bindPopup(`<b>等时圈原点: ${APP_STATE.isoCenter.name}</b><br>8向步行矩阵实测`);
+      mapLayers.poiMarkers.push(centerMarker);
+
+      // Generate irregular 8-ray polygon simulating true road walk (PRD Section 4.3)
+      const stepFactor = thresholdMin / 10;
+      const basePoints = [
+        [center[0] + 0.0070 * stepFactor, center[1] + 0.0030 * stepFactor],
+        [center[0] + 0.0055 * stepFactor, center[1] + 0.0080 * stepFactor],
+        [center[0] + 0.0010 * stepFactor, center[1] + 0.0090 * stepFactor],
+        [center[0] - 0.0060 * stepFactor, center[1] + 0.0060 * stepFactor],
+        [center[0] - 0.0085 * stepFactor, center[1] - 0.0010 * stepFactor],
+        [center[0] - 0.0050 * stepFactor, center[1] - 0.0075 * stepFactor],
+        [center[0] + 0.0010 * stepFactor, center[1] - 0.0090 * stepFactor],
+        [center[0] + 0.0065 * stepFactor, center[1] - 0.0040 * stepFactor]
+      ];
+
+      // Draw directional probing rays (8-ray probe demonstration)
+      basePoints.forEach((pt, i) => {
+        const isFailed = (i === 4 && thresholdMin >= 15); // simulate river/railway barrier on ray 4
+        const rayLine = L.polyline([center, pt], {
+          color: isFailed ? '#ef4444' : '#3b82f6',
+          weight: 1.5,
+          dashArray: '3, 4',
+          opacity: 0.6
+        }).addTo(map);
+        mapLayers.rays.push(rayLine);
+      });
+
+      // Draw Isochrone Polygon
+      const polygon = L.polygon(basePoints, {
+        color: '#10b981',
+        fillColor: '#10b981',
+        fillOpacity: 0.22,
+        weight: 2.5
+      }).addTo(map);
+      mapLayers.isochronePolygons.push(polygon);
+
+      map.setView(center, 14);
+    }
+
+    function renderCommunityMap() {
+      clearMapLayers();
+      APP_STATE.mapMode = 'community';
+      const center = [APP_STATE.communityCenter.lat, APP_STATE.communityCenter.lng];
+
+      // Draw Residential sampling grids with coverage color-coding
+      const gridOffsets = [
+        { dLat: 0.003, dLng: 0.003, score: 'good', color: '#10b981' },
+        { dLat: -0.003, dLng: 0.003, score: 'medium', color: '#f59e0b' },
+        { dLat: 0.003, dLng: -0.003, score: 'blind', color: '#ef4444' }, // Blind spot
+        { dLat: -0.003, dLng: -0.003, score: 'good', color: '#10b981' },
+        { dLat: 0.005, dLng: 0.001, score: 'medium', color: '#f59e0b' }
+      ];
+
+      gridOffsets.forEach(g => {
+        const rect = L.rectangle([
+          [center[0] + g.dLat - 0.0015, center[1] + g.dLng - 0.0015],
+          [center[0] + g.dLat + 0.0015, center[1] + g.dLng + 0.0015]
+        ], {
+          color: g.color,
+          weight: 1,
+          fillColor: g.color,
+          fillOpacity: 0.35
+        }).addTo(map);
+        rect.bindPopup(`<b>居民采样格网</b><br>服务可达状态: ${g.score === 'blind' ? '<span class="text-red-600 font-bold">重度盲区 (路网阻隔)</span>' : '基本达标'}`);
+        mapLayers.communityGrid.push(rect);
+      });
+
+      // Community Center Pin (Refined Indigo/Blue theme)
+      const commIcon = L.divIcon({
+        className: 'comm-pin',
+        html: `<div class="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-xs shadow-lg border-2 border-white">
+                <i class="fa-solid fa-building-circle-check"></i>
+               </div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14]
+      });
+      const commMarker = L.marker(center, { icon: commIcon }).addTo(map);
+      commMarker.bindPopup("<b>社区中心: 望京西园三区</b><br>15分钟生活圈体检基准点");
+      mapLayers.poiMarkers.push(commMarker);
+
+      // If MCLP is already applied, render the prescription facility
+      if (APP_STATE.mclpApplied) {
+        renderMCLPMarker();
+      }
+
+      map.setView(center, 15);
+    }
+
+    function renderMCLPMarker() {
+      if (mapLayers.mclpMarker) {
+        map.removeLayer(mapLayers.mclpMarker);
+      }
+      const mclpPos = [APP_STATE.communityCenter.lat + 0.003, APP_STATE.communityCenter.lng - 0.003];
+      const mclpIcon = L.divIcon({
+        className: 'mclp-pin',
+        html: `<div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-2xl border-2 border-white animate-bounce">
+                <i class="fa-solid fa-star"></i>
+               </div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
+      });
+      mapLayers.mclpMarker = L.marker(mclpPos, { icon: mclpIcon }).addTo(map);
+      mapLayers.mclpMarker.bindPopup(`
+        <div class="text-xs">
+          <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[10px] font-bold">MCLP 算法模拟新增</span>
+          <p class="font-bold text-slate-900 mt-1">花家地嵌入式养老微站点</p>
+          <p class="text-emerald-600 font-semibold mt-0.5">盲区覆盖率直接跃升至 82%</p>
+        </div>
+      `);
+    }
+
+    function clearMapLayers() {
+      if (mapLayers.route) { map.removeLayer(mapLayers.route); mapLayers.route = null; }
+      mapLayers.isochronePolygons.forEach(p => map.removeLayer(p));
+      mapLayers.isochronePolygons = [];
+      mapLayers.poiMarkers.forEach(m => map.removeLayer(m));
+      mapLayers.poiMarkers = [];
+      mapLayers.rays.forEach(r => map.removeLayer(r));
+      mapLayers.rays = [];
+      mapLayers.communityGrid.forEach(g => map.removeLayer(g));
+      mapLayers.communityGrid = [];
+      if (mapLayers.mclpMarker) {
+        map.removeLayer(mapLayers.mclpMarker);
+        mapLayers.mclpMarker = null;
+      }
+    }
+
+    function handleMapClickSelection(latlng) {
+      APP_STATE.tempSelectedLatLng = latlng;
+      const banner = document.getElementById('selection-confirm-banner');
+      const coordsText = document.getElementById('selection-coords');
+      coordsText.innerText = `${latlng.lat.toFixed(4)}, ${latlng.lng.toFixed(4)} (BD09已映射)`;
+      banner.classList.remove('hidden');
+    }
+
+    function renderCommuteList(category = 'all') {
+      const container = document.getElementById('commute-poi-list');
+      container.innerHTML = '';
+
+      const filtered = category === 'all' 
+        ? COMMUTE_POIS 
+        : COMMUTE_POIS.filter(p => p.cat === category);
+
+      document.getElementById('badge-viable-count').innerText = `${filtered.length}个候选`;
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = "bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition text-xs space-y-2";
+        card.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-slate-900 text-sm">${item.name}</span>
+                <span class="px-1.5 py-0.2 rounded text-[10px] bg-blue-50 text-blue-600 font-medium">${item.catName}</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mt-0.5">${item.openStatus}</p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-bold text-emerald-600">+${item.detourMin} 分钟绕行</span>
+              <p class="text-[10px] text-slate-400">服务停留 ${item.serviceMin}m</p>
+            </div>
+          </div>
+
+          <!-- Feasibility & ETA line -->
+          <div class="flex items-center justify-between bg-slate-50 px-2.5 py-1.5 rounded-xl border border-slate-100 text-[11px]">
+            <span class="text-slate-600">预计到家: <strong class="text-slate-900">${item.eta}</strong></span>
+            <span class="text-emerald-700 font-medium">截止余量: +${item.bufferMin}分钟</span>
+          </div>
+
+          <!-- Footer & Add Action -->
+          <div class="flex items-center justify-between pt-1">
+            <div class="flex items-center gap-1">
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">${item.source}</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-mono">${item.assumptionSource}</span>
+            </div>
+            <button onclick="addToPlan('${item.id}')" class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-xs shadow-sm transition active:scale-95">
+              加入今天安排
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderIsochroneList() {
+      const container = document.getElementById('iso-poi-list');
+      container.innerHTML = '';
+      ISO_SERVICES.forEach(item => {
+        const row = document.createElement('div');
+        row.className = "flex items-center justify-between p-2.5 bg-white rounded-xl border border-slate-200 text-xs shadow-sm";
+        row.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg ${item.viable ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-400'} flex items-center justify-center font-bold text-[11px]">
+              ${item.cat}
+            </span>
+            <div>
+              <p class="font-bold text-slate-900">${item.name}</p>
+              <p class="text-[10px] text-slate-400">${item.dist} · 真实步行 ${item.walkMin} 分钟</p>
+            </div>
+          </div>
+          <div class="text-right">
+            ${item.viable 
+              ? `<span class="text-[10px] bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-full border border-emerald-200">圈内可达</span>`
+              : `<span class="text-[10px] bg-slate-100 text-slate-400 font-medium px-2 py-0.5 rounded-full">${item.reason}</span>`}
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function renderPlanTasks() {
+      const container = document.getElementById('plan-tasks-container');
+      container.innerHTML = '';
+
+      TODAY_TASKS.forEach((t, index) => {
+        const item = document.createElement('div');
+        const isDone = t.status === 'done';
+        const isCurrent = t.status === 'current';
+
+        item.className = `flex items-center justify-between p-3 rounded-2xl border transition ${
+          isCurrent 
+            ? 'bg-blue-50/70 border-blue-300 shadow-sm' 
+            : isDone 
+              ? 'bg-slate-50/80 border-slate-200 opacity-75' 
+              : 'bg-white border-slate-200 shadow-sm'
+        }`;
+
+        item.innerHTML = `
+          <div class="flex items-center space-x-2.5">
+            <span class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${
+              isDone 
+                ? 'bg-slate-300 text-slate-600' 
+                : isCurrent 
+                  ? 'bg-blue-600 text-white shadow-md' 
+                  : 'bg-slate-100 text-slate-500'
+            }">
+              <i class="fa-solid ${t.icon}"></i>
+            </span>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-slate-900">${t.name}</span>
+                ${isCurrent ? '<span class="text-[9px] bg-blue-600 text-white px-1.5 py-0.2 rounded-full font-bold">进行中</span>' : ''}
+              </div>
+              <p class="text-[10px] text-slate-500 mt-0.5">${t.time} · ${t.duration}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-1.5">
+            ${isCurrent ? `
+              <button onclick="markTaskDone('${t.id}')" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-[11px] font-bold">
+                办结
+              </button>
+            ` : isDone ? `
+              <span class="text-[11px] text-slate-400 font-semibold"><i class="fa-solid fa-check text-emerald-600"></i> 已完成</span>
+            ` : `
+              <button onclick="skipTask('${t.id}')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-500 rounded-lg text-[10px]">
+                跳过
+              </button>
+            `}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function renderGapList() {
+      const container = document.getElementById('gap-poi-list');
+      container.innerHTML = '';
+      GAP_ACTIVITIES.forEach(item => {
+        const el = document.createElement('div');
+        el.className = `p-3 rounded-2xl border text-xs space-y-1.5 transition ${item.viable ? 'bg-white border-slate-200 shadow-sm' : 'bg-slate-50 border-slate-200 opacity-60'}`;
+        el.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-900">${item.name}</span>
+            <span class="font-bold ${item.viable ? 'text-emerald-600' : 'text-rose-500'}">总计 ${item.totalMin} 分钟</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px] text-slate-500">
+            <span>双程步行: ${item.roundTripWalk}m · 停留: ${item.serviceMin}m</span>
+            <span class="text-[10px] font-medium">${item.note}</span>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+    }
+
+    function showToast(msg, icon = 'fa-circle-check', isError = false) {
+      const box = document.getElementById('toast-box');
+      document.getElementById('toast-msg').innerText = msg;
+      const iconEl = document.getElementById('toast-icon');
+      iconEl.className = `fa-solid ${icon} ${isError ? 'text-rose-400' : 'text-emerald-400'} text-sm`;
+      box.classList.remove('hidden');
+      setTimeout(() => {
+        box.classList.add('hidden');
+      }, 2500);
+    }
+
+    // Global Add To Plan handler
+    window.addToPlan = function(poiId) {
+      const poi = COMMUTE_POIS.find(p => p.id === poiId);
+      if (!poi) return;
+      
+      showToast(`已将「${poi.name}」加入今天安排`, 'fa-circle-plus');
+      // Switch to plan tab
+      switchTab('view-plan');
+    };
+
+    window.markTaskDone = function(taskId) {
+      const task = TODAY_TASKS.find(t => t.id === taskId);
+      if (task) {
+        task.status = 'done';
+        const next = TODAY_TASKS.find(t => t.status === 'pending');
+        if (next) next.status = 'current';
+        renderPlanTasks();
+        showToast("任务已办结，动线已更新！");
+      }
+    };
+
+    window.skipTask = function(taskId) {
+      TODAY_TASKS = TODAY_TASKS.filter(t => t.id !== taskId);
+      renderPlanTasks();
+      showToast("已从计划中跳过该任务");
+    };
+
+    function switchTab(targetViewId) {
+      APP_STATE.currentTab = targetViewId;
+      document.querySelectorAll('.view-panel').forEach(el => el.classList.add('hidden'));
+      const activePanel = document.getElementById(targetViewId);
+      if (activePanel) activePanel.classList.remove('hidden');
+
+      // Update Tab Button Styles
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        if (btn.dataset.target === targetViewId) {
+          btn.classList.add('text-blue-600');
+          btn.classList.remove('text-slate-400', 'hover:text-slate-700');
+        } else {
+          btn.classList.remove('text-blue-600');
+          btn.classList.add('text-slate-400');
+        }
+      });
+
+      // Update Header Subtitle & Map Modes
+      const subtitle = document.getElementById('page-subtitle');
+      const sheetTitle = document.getElementById('sheet-title');
+
+      if (targetViewId === 'view-commute') {
+        subtitle.innerText = "通勤沿途 · 顺路办事有向可达性";
+        sheetTitle.innerHTML = `<span>沿途顺路候选</span><span class="px-1.5 py-0.2 text-[10px] bg-emerald-100 text-emerald-700 rounded-full font-bold">3个可行</span>`;
+        renderCommuteMap();
+      } else if (targetViewId === 'view-isochrone') {
+        subtitle.innerText = "独立等时圈 · 真实步行网络探测";
+        sheetTitle.innerHTML = `<span>等时圈可达统计</span><span class="px-1.5 py-0.2 text-[10px] bg-blue-100 text-blue-700 rounded-full font-bold">8向实测</span>`;
+        renderIsochroneMap(APP_STATE.selectedIsoThreshold);
+        renderIsochroneList();
+      } else if (targetViewId === 'view-plan') {
+        subtitle.innerText = "今天安排 · 多任务有向排程与重排";
+        sheetTitle.innerHTML = `<span>执行时间线</span><span class="px-1.5 py-0.2 text-[10px] bg-blue-100 text-blue-700 rounded-full font-bold">余量充足</span>`;
+        renderPlanTasks();
+      } else if (targetViewId === 'view-community') {
+        subtitle.innerText = "社区体检 · 五类生活供给与盲区诊断";
+        sheetTitle.innerHTML = `<span>社区诊断处方</span><span class="px-1.5 py-0.2 text-[10px] bg-slate-100 text-slate-700 rounded-full font-bold">MCLP算法</span>`;
+        renderCommunityMap();
+      } else if (targetViewId === 'view-gap') {
+        subtitle.innerText = "时间空档 · 往返非对称可行闭环";
+        sheetTitle.innerHTML = `<span>空档闭环候选</span><span class="px-1.5 py-0.2 text-[10px] bg-emerald-100 text-emerald-700 rounded-full font-bold">预算校验</span>`;
+        renderGapList();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initMap();
+      renderCommuteList();
+      renderIsochroneList();
+      renderPlanTasks();
+      renderGapList();
+
+      // Navigation clicks
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.target));
+      });
+
+      // POI Category filters in Commute View
+      document.querySelectorAll('.poi-cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.poi-cat-btn').forEach(b => {
+            b.classList.remove('bg-blue-600', 'text-white');
+            b.classList.add('bg-slate-100', 'text-slate-600');
+          });
+          btn.classList.add('bg-blue-600', 'text-white');
+          btn.classList.remove('bg-slate-100', 'text-slate-600');
+          renderCommuteList(btn.dataset.cat);
+        });
+      });
+
+      // Isochrone Threshold Button Toggle
+      document.querySelectorAll('.iso-threshold-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.iso-threshold-btn').forEach(b => {
+            b.className = 'iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600';
+          });
+          btn.className = 'iso-threshold-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow-sm';
+          const mins = parseInt(btn.dataset.min);
+          APP_STATE.selectedIsoThreshold = mins;
+          renderIsochroneMap(mins);
+          // Update stats dynamically
+          document.getElementById('iso-stat-area').innerHTML = `${(0.07 * mins).toFixed(2)} <span class="text-[10px] font-normal">km²</span>`;
+          document.getElementById('iso-stat-radius').innerHTML = `${mins * 75} <span class="text-[10px] font-normal">米中位</span>`;
+          showToast(`已切换为 ${mins} 分钟道路等时圈`);
+        });
+      });
+
+      // Point Selection Banner buttons
+      document.getElementById('btn-cancel-select').addEventListener('click', () => {
+        document.getElementById('selection-confirm-banner').classList.add('hidden');
+        APP_STATE.tempSelectedLatLng = null;
+      });
+
+      document.getElementById('btn-confirm-select').addEventListener('click', () => {
+        document.getElementById('selection-confirm-banner').classList.add('hidden');
+        if (APP_STATE.tempSelectedLatLng) {
+          APP_STATE.isoCenter = {
+            name: "已选地图点",
+            lat: APP_STATE.tempSelectedLatLng.lat,
+            lng: APP_STATE.tempSelectedLatLng.lng
+          };
+          document.getElementById('iso-origin-name').innerText = `${APP_STATE.tempSelectedLatLng.lat.toFixed(3)}, ${APP_STATE.tempSelectedLatLng.lng.toFixed(3)}`;
+          switchTab('view-isochrone');
+          showToast("已设定该点为新等时圈原点！", "fa-crosshairs");
+        }
+      });
+
+      document.getElementById('btn-iso-repick').addEventListener('click', () => {
+        showToast("请在地图上点击任意位置选择新原点", "fa-map-pin");
+      });
+
+      // Locate Me Button
+      document.getElementById('btn-locate-me').addEventListener('click', () => {
+        showToast("定位就绪：望京南地铁站", "fa-location-dot");
+        map.setView([APP_STATE.isoCenter.lat, APP_STATE.isoCenter.lng], 15);
+      });
+
+      // Bottom Sheet Height Toggle (Mobile peek / expand)
+      const sheet = document.getElementById('bottom-sheet');
+      let sheetExpanded = false;
+      document.getElementById('sheet-handle').addEventListener('click', () => {
+        sheetExpanded = !sheetExpanded;
+        sheet.style.height = sheetExpanded ? '85%' : '380px';
+      });
+      document.getElementById('btn-toggle-sheet-height').addEventListener('click', (e) => {
+        e.stopPropagation();
+        sheetExpanded = !sheetExpanded;
+        sheet.style.height = sheetExpanded ? '85%' : '380px';
+      });
+
+      // Re-planning Scenario Injections (PRD Section 4.5)
+      document.getElementById('btn-inject-closed').addEventListener('click', () => {
+        const alertBox = document.getElementById('replan-diff-alert');
+        alertBox.classList.remove('hidden');
+        document.getElementById('replan-diff-text').innerHTML = `
+          <strong>[模拟关店事件触发]</strong> 原首选「同仁堂药房」临时闭店。系统基于备选库自动切换为「海王星辰健康药房」。任务链耗时微增 4 分钟，预计到家 19:18，余量仍然满足安全阈值。
+        `;
+        // Alter task item
+        TODAY_TASKS[1].name = "海王星辰健康药房 (自动替选)";
+        TODAY_TASKS[3].time = "19:18";
+        renderPlanTasks();
+        showToast("已成功注入关店情景并自动重排！", "fa-shuffle");
+      });
+
+      document.getElementById('btn-inject-delay').addEventListener('click', () => {
+        const alertBox = document.getElementById('replan-diff-alert');
+        alertBox.classList.remove('hidden');
+        document.getElementById('replan-diff-text').innerHTML = `
+          <strong>[施工延误事件触发]</strong> 望京西辅路临时道路施工，预计通行延误 15 分钟。系统已重排取件任务前置，避免晚间拥堵。
+        `;
+        showToast("已注入延误情景，动线已重排", "fa-road-barrier");
+      });
+
+      // MCLP Prescription Action
+      document.getElementById('btn-toggle-mclp-marker').addEventListener('click', () => {
+        APP_STATE.mclpApplied = !APP_STATE.mclpApplied;
+        const btnText = document.getElementById('mclp-btn-text');
+        if (APP_STATE.mclpApplied) {
+          btnText.innerText = "撤销处方";
+          renderMCLPMarker();
+          showToast("已应用 MCLP 模拟选址处方！", "fa-wand-magic-sparkles");
+        } else {
+          btnText.innerText = "应用处方";
+          if (mapLayers.mclpMarker) {
+            map.removeLayer(mapLayers.mclpMarker);
+            mapLayers.mclpMarker = null;
+          }
+          showToast("已还原初始体检状态");
+        }
+      });
+
+      // Report Modal Handlers
+      const reportModal = document.getElementById('modal-report');
+      document.getElementById('btn-open-report').addEventListener('click', () => {
+        reportModal.classList.remove('hidden');
+      });
+      document.getElementById('btn-open-ledger').addEventListener('click', () => {
+        reportModal.classList.remove('hidden');
+      });
+      document.getElementById('btn-close-report').addEventListener('click', () => {
+        reportModal.classList.add('hidden');
+      });
+
+      // Export Buttons Mock
+      document.getElementById('btn-export-json').addEventListener('click', () => {
+        showToast("JSON 深度报告已复制至剪贴板", "fa-copy");
+      });
+      document.getElementById('btn-export-md').addEventListener('click', () => {
+        showToast("Markdown 报告文档已生成下载", "fa-file-lines");
+      });
+
+      // Global Reset
+      document.getElementById('btn-reset-all').addEventListener('click', () => {
+        APP_STATE.mclpApplied = false;
+        document.getElementById('mclp-btn-text').innerText = "应用处方";
+        document.getElementById('replan-diff-alert').classList.add('hidden');
+        TODAY_TASKS = [
+          { id: 't-1', name: '离开中关村软件园公司', time: '18:15', status: 'done', icon: 'fa-building' },
+          { id: 't-2', name: '同仁堂药店购买感冒药', time: '18:32', status: 'current', icon: 'fa-capsules', duration: '停留8分', poiId: 'poi-1' },
+          { id: 't-3', name: '丰巢智能柜领取急件', time: '18:55', status: 'pending', icon: 'fa-box', duration: '停留4分', poiId: 'poi-3' },
+          { id: 't-4', name: '顺利到家 (望京西园)', time: '19:14', status: 'pending', icon: 'fa-house', duration: '目标点' }
+        ];
+        switchTab('view-commute');
+        showToast("系统状态已完全复位", "fa-rotate-left");
+      });
+
+      // Device frame toggle
+      const phoneContainer = document.getElementById('phone-container');
+      let isPhoneView = true;
+      document.getElementById('btn-device-toggle').addEventListener('click', () => {
+        isPhoneView = !isPhoneView;
+        if (isPhoneView) {
+          phoneContainer.className = "relative w-full custom-phone-frame bg-slate-50 sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col border sm:border-slate-800 border-0";
+          showToast("已切换为手机视图");
+        } else {
+          phoneContainer.className = "relative w-full h-screen max-h-screen bg-slate-50 overflow-hidden flex flex-col border-0 rounded-none";
+          showToast("已切换为全屏视图");
+        }
+        setTimeout(() => map.invalidateSize(), 300);
+      });
+    });
+  </script>
+</body>
+</html>
