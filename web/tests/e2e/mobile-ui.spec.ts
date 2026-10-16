@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { mockApi, setupRoute } from './mocks'
+import { mockApi, setupRoute, openPlan } from './mocks'
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })
 
@@ -28,14 +28,14 @@ test('mobile plan modal traps focus, closes with Escape and restores the launche
   await setupRoute(page)
   await page.getByRole('button', { name: '买药', exact: true }).click()
   await page.locator('.poi-main').first().click()
-  const launcher = page.locator('.plan-bar')
+  const launcher = page.getByRole('button', { name: '查看行程', exact: true })
   await page.getByRole('button', { name: '加入今天安排', exact: true }).click()
-  await launcher.click()
+  await openPlan(page)
   const dialog = page.getByRole('dialog', { name: '今天安排' })
   const close = dialog.getByRole('button', { name: '关闭今天安排' })
   await expect(close).toBeFocused()
   await page.keyboard.press('Shift+Tab')
-  await expect(dialog.getByRole('button', { name: '规划行程', exact: true })).toBeFocused()
+  await expect(dialog.getByRole('button', { name: '预演行程', exact: true })).toBeFocused()
   await page.keyboard.press('Tab')
   await expect(close).toBeFocused()
   await page.keyboard.press('Escape')
@@ -50,7 +50,7 @@ test('empty service input does not silently replace the task duration with zero'
   await page.getByRole('button', { name: '买药', exact: true }).click()
   await page.locator('.poi-main').first().click()
   await page.getByRole('button', { name: '加入今天安排', exact: true }).click()
-  await page.locator('.plan-bar').click()
+  await openPlan(page)
   const dialog = page.getByRole('dialog', { name: '今天安排' })
   await dialog.getByRole('spinbutton').first().fill('')
   await dialog.getByRole('spinbutton').first().press('Tab')

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 import { mockApi } from './mocks'
 
-test('one life-circle flow shares time, excludes outside facilities and reuses pharmacy for basic checks', async ({ page }) => {
+test('automatic layers keep facility analysis at fifteen minutes and exclude outside facilities', async ({ page }) => {
   await mockApi(page)
   const circles: number[] = []
   const searches: { category: string; windowRadiusM: number }[] = []
@@ -29,21 +29,16 @@ test('one life-circle flow shares time, excludes outside facilities and reuses p
   await page.getByRole('searchbox').fill('回龙观')
   await page.getByRole('button', { name: '搜索', exact: true }).click()
   await page.getByRole('button', { name: '选择 回龙观小区', exact: true }).click()
-  await page.getByRole('button', { name: '设施社区评分' }).click()
   await expect(page.getByText('7/7 已完成')).toBeVisible()
-  expect(circles).toEqual([900])
+  expect(circles).toEqual([900, 300, 600])
   expect(searches.filter(s => s.category === '药店')).toHaveLength(1)
   expect(searches.some(s => s.category === '菜市场')).toBe(true)
   expect(searches.some(s => s.category === '托育托管')).toBe(true)
   expect(facilities.flat().every(id => id.endsWith('-inside'))).toBe(true)
   expect(searches.every(s => s.windowRadiusM < 500)).toBe(true)
-  await page.getByRole('button', { name: '5 分钟', exact: true }).click()
-  await expect(page.locator('.scorecard')).toHaveCount(0)
+  await expect(page.locator('.thresholds button')).toHaveCount(0)
   expect(searches).toHaveLength(7)
-  await page.getByRole('button', { name: '设施社区评分' }).click()
-  await expect(page.getByText('7/7 已完成')).toBeVisible()
-  expect(circles).toEqual([900, 300])
-  expect(searches.slice(7).every(s => s.windowRadiusM < 200)).toBe(true)
+  expect(circles).toEqual([900, 300, 600])
   await expect(page.getByText('1 公里基本设施', { exact: true })).toHaveCount(0)
   await expect(page.getByText('自定义步行时间', { exact: true })).toHaveCount(0)
 })
@@ -52,7 +47,7 @@ test('incomplete isochrone does not start facility coverage or claim a blind are
   await mockApi(page)
   await page.route('**/api/isochrones', route => {
     const body = route.request().postDataJSON()
-    return route.fulfill({ json: { taskId: 'partial', status: 'partial', origin: body.origin, thresholdSeconds: body.thresholdSeconds,
+    return route.fulfill({ json: { taskId: 'partial', status: 'partial', backgroundStatus: 'degraded', origin: body.origin, thresholdSeconds: body.thresholdSeconds,
       radiiM: { 0: 300, 90: 300 }, failedBearings: [180], skippedBearings: [270], sourceKind: 'derived' } })
   })
   let searches = 0
@@ -62,7 +57,7 @@ test('incomplete isochrone does not start facility coverage or claim a blind are
   await page.getByRole('searchbox').fill('回龙观')
   await page.getByRole('button', { name: '搜索', exact: true }).click()
   await page.getByRole('button', { name: '选择 回龙观小区', exact: true }).click()
-  await page.getByRole('button', { name: '设施社区评分' }).click()
+  await expect(page.getByRole('button', { name: '设施社区评分' })).toBeDisabled()
   await expect(page.getByRole('alert').filter({ hasText: '部分步行范围未能查到' })).toBeVisible()
   await expect(page.locator('.scorecard')).toHaveCount(0)
   expect(searches).toBe(0)

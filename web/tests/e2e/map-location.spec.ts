@@ -26,7 +26,7 @@ test('side location button converts GPS and centers map without changing circle 
   await expect(locate).toBeEnabled()
   await locate.click()
   await expect(page.locator('.baidu-map__container').getByRole('button', { name: '当前位置', exact: true })).toBeVisible()
-  await expect(page.locator('.origin-name')).toHaveText('选择一个地点')
+  await expect(page.locator('.origin-name')).toHaveText('搜索社区、地标或地址')
   expect(await page.evaluate(() => (window as unknown as { coordinateConversion: number[] }).coordinateConversion)).toEqual([1, 5])
   expect(requests).toEqual([])
   await expect(locate).toHaveAttribute('aria-busy', 'false')

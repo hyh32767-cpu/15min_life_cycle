@@ -308,6 +308,13 @@ watch(() => store.poiFocusIndex, (index) => {
           >
             {{ plan.loading ? '规划中…' : '安排路线' }}
           </button>
+          <button
+            v-if="plan.result?.status === 'ready'"
+            type="button"
+            @click="planOpen = true"
+          >
+            查看行程
+          </button>
           <p
             v-if="plan.error"
             role="alert"

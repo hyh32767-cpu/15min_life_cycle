@@ -38,7 +38,12 @@ for (const width of [320, 390, 1280]) {
     await page.screenshot({ path: testInfo.outputPath('circle-loading.png') })
     phase = 1
     await expect(loading).toContainText('已显示 16 个方向')
-    await expect.poll(() => page.evaluate(() => (window as unknown as { contourLines: unknown[][] }).contourLines.at(-1))).toEqual(contour().map(({ lng, lat }) => ({ lng, lat })))
+    // Rendering rounds corners; the original contour remains the analysis input.
+    await expect.poll(() => page.evaluate(() => (window as unknown as { contourLines: unknown[][] }).contourLines.at(-1)?.length ?? 0)).toBeGreaterThan(3)
+    const drawn = await page.evaluate(() => (window as unknown as { contourLines: { lng: number; lat: number }[][] }).contourLines.at(-1)!)
+    expect(drawn[0]).toEqual({ lng: origin.lng, lat: origin.lat })
+    expect(drawn.at(-1)).toEqual({ lng: origin.lng, lat: origin.lat + .002 })
+    expect(drawn.every(p => p.lng >= origin.lng && p.lng <= origin.lng + .003 && p.lat >= origin.lat && p.lat <= origin.lat + .002)).toBe(true)
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await expect(loading.locator('.circle-loading__radar i')).toHaveCSS('animation-name', 'none')
     phase = 2

@@ -1,4 +1,44 @@
 import type { Page, Route } from '@playwright/test'
+import { expect } from '@playwright/test'
+
+export async function openPlan(page: Page): Promise<void> {
+  const launcher = page.getByRole('button', { name: '查看行程', exact: true })
+  if (!await launcher.count()) {
+    await page.getByRole('button', { name: '安排路线', exact: true }).click()
+  }
+  await expect(launcher).toBeVisible()
+  await launcher.click()
+  await expect(page.getByRole('dialog', { name: '今天安排' })).toBeVisible()
+}
+
+export async function openFavorites(page: Page, tab: 'places' | 'routes' = 'places') {
+  await page.getByRole('button', { name: '我的收藏', exact: true }).click()
+  const dialog = page.getByRole('dialog', { name: '我的收藏', exact: true })
+  const selector = dialog.getByRole('tab', { name: tab === 'routes' ? /^路线 / : /^地点 / })
+  if (await selector.count()) await selector.click()
+  return dialog
+}
+
+export async function saveRoute(page: Page, name: string): Promise<void> {
+  const dialog = await openFavorites(page, 'routes')
+  await dialog.locator('.favorite-route-create > summary').click()
+  await dialog.getByLabel('收藏路线名称', { exact: true }).fill(name)
+  await dialog.getByRole('button', { name: '收藏当前路线', exact: true }).click()
+  await expect(dialog.getByRole('status')).toHaveText('路线已收藏')
+  await page.getByRole('button', { name: '关闭地点选择', exact: true }).click()
+}
+
+export async function useRoute(page: Page, name: string): Promise<void> {
+  const dialog = await openFavorites(page, 'routes')
+  await dialog.locator('.favorite-route-row').filter({ hasText: name }).getByRole('button').first().click()
+}
+
+export async function pickFavorite(page: Page): Promise<void> {
+  const dialog = await openFavorites(page)
+  await dialog.getByRole('button', { name: '＋ 添加收藏', exact: true }).click()
+  await page.getByRole('button', { name: '地图选位置', exact: true }).click()
+  await page.locator('.baidu-map__container').click({ position: { x: 80, y: 200 } })
+}
 
 function candidate(uid: string, name: string, address: string, lng: number, lat: number) {
   return {

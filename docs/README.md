@@ -9,6 +9,7 @@
 | 产品能力与运行 | [项目README](../README.md) |
 | 安装、环境配置与服务器部署 | [安装与部署指南](deployment.md)、[部署模板](../tools/deploy/tencent/README.md) |
 | GitHub自动检查 | [Actions设置](ci.md) |
+| 首次CI失败原因与修复 | [85 CI修复记录](85-CI失败修复与浏览器回归.md) |
 | 背景、架构、场景与创新点 | [介绍PDF](media/shunlu-introduction.pdf)、[精选界面](media/README.md) |
 | 当前网格算法与研究演进 | [算法研究导航](research/README.md) |
 | 新算法接入与设施社区评分 | [79 新网格上线](79-新网格上线与设施社区评分.md) |

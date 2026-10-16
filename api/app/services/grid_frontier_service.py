@@ -131,8 +131,10 @@ class GridFrontierService:
                         'approxNote':'100米网格前沿近似；轴线检查与屏障追踪，未测内区仍为估计，非完整路网证明',
                         'classificationBoundary':'grid-frontier-approximation','clipped':state['clipped']}}
             try:
+                # Final progress is emitted by the core before durable cache writes.
+                # Keep the public task running until both result and task alias commit.
                 state=grid_frontier(measure,threshold_s=threshold_seconds,half_m=half,max_pairs=max_pairs,
-                    on_progress=lambda s:publish(payload(s)))
+                    on_progress=lambda s:publish(payload(s)) if not s['done'] else None)
                 full=payload(state)
                 if owner.cache and full['status']=='complete' and full['expiresAt']:
                     owner.cache.put(key=key,algorithm='grid-frontier',algorithm_version=VERSION,

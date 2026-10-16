@@ -1,5 +1,6 @@
 import math
 import threading
+import pytest
 
 from shapely.geometry import Point, Polygon
 from shapely.ops import unary_union
@@ -152,6 +153,38 @@ def test_service_background_preview_is_separate_from_analysis_and_cache(monkeypa
     assert 'frontier' in _render_report(start['taskId'],'json',full)
     reused=service.run(Coord(lng=116.4,lat=39.9),threshold_seconds=900,max_pairs=440,frontier=True)
     assert reused['cacheHit'] and reused['pairsUsed']==0
+
+
+@pytest.mark.parametrize('blocked_method', ['put', 'register_task'])
+def test_completed_task_is_not_visible_until_cache_is_committed(monkeypatch, tmp_path, blocked_method):
+    from api.app.services import grid_frontier_service as gs
+    from api.app.models.api import RouteBandRequest
+    from api.tests.unit.test_route_band import service, geometry
+    monkeypatch.setattr(gs.PACER, 'acquire', lambda cost: None)
+    band, _, _ = service(tmp_path)
+    cache = band.isochrones.cache
+    entered, release = threading.Event(), threading.Event()
+    original = getattr(cache, blocked_method)
+    def blocked(*args, **kwargs):
+        if blocked_method == 'register_task' or kwargs.get('algorithm') == 'grid-frontier':
+            entered.set()
+            assert release.wait(5)
+        return original(*args, **kwargs)
+    monkeypatch.setattr(cache, blocked_method, blocked)
+    request = dict(routeGeometry=geometry())
+    first = band.run(RouteBandRequest(**request, cacheOnly=False, centerIndex=0))
+    task_id = first['nodes'][0]['taskId']
+    try:
+        assert entered.wait(5)
+        task = band.isochrones.get_task_status(task_id)
+        assert task['backgroundStatus'] == 'running'
+        assert task['status'] != 'complete'
+    finally:
+        release.set()
+        band.isochrones._workers.shutdown(wait=True)
+    assert band.isochrones.get_task_status(task_id)['backgroundStatus'] == 'completed'
+    assert cache.get_by_task(task_id) is not None
+    assert band.run(RouteBandRequest(**request))['completeCount'] == 1
 
 
 def test_rate_error_stops_new_live_calls_and_retains_unknown_samples(monkeypatch):

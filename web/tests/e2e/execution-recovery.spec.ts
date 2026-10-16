@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { mockApi, setupRoute } from './mocks'
+import { mockApi, setupRoute, openPlan } from './mocks'
 
 test('closed required task blocks execution, removing event recovers and persists the new plan', async ({ page }) => {
   await mockApi(page)
@@ -23,8 +23,8 @@ test('closed required task blocks execution, removing event recovers and persist
   await page.getByRole('button', { name: '买药', exact: true }).click()
   await page.locator('.poi-main').first().click()
   await page.getByRole('button', { name: '加入今天安排', exact: true }).click()
-  await page.locator('.plan-bar').click()
-  await page.getByRole('button', { name: '规划行程', exact: true }).click()
+  await openPlan(page)
+  await page.getByRole('button', { name: '重新规划', exact: true }).click()
   await page.getByRole('button', { name: '预演行程' }).click()
   await page.getByText('模拟事件', { exact: true }).click()
   await page.getByRole('combobox', { name: '选择关店目标' }).selectOption('poi-1')
@@ -54,9 +54,16 @@ test('closed required task blocks execution, removing event recovers and persist
   await page.getByRole('button', { name: '完成', exact: true }).click()
   await expect(page.locator('.plan-panel__runlist')).toContainText('已完成')
   await page.getByRole('button', { name: '关闭今天行程' }).click()
-  await expect(page.locator('.plan-bar')).toContainText('18:10')
+  await openPlan(page)
+  if (await page.getByRole('button', { name: '预演行程', exact: true }).count()) await page.getByRole('button', { name: '预演行程', exact: true }).click()
+  await expect(page.locator('.plan-sheet__next')).toContainText('18:10')
+  await page.getByRole('button', { name: '关闭今天行程' }).click()
   await page.reload()
-  await expect(page.locator('.plan-bar')).toContainText('18:10')
-  await page.getByRole('button', { name: '重新开始' }).click()
-  await expect(page.locator('.plan-bar__badge')).toHaveText('0')
+  await openPlan(page)
+  if (await page.getByRole('button', { name: '预演行程', exact: true }).count()) await page.getByRole('button', { name: '预演行程', exact: true }).click()
+  await expect(page.locator('.plan-sheet__next')).toContainText('18:10')
+  await page.getByRole('button', { name: '关闭今天行程' }).click()
+  await page.getByRole('button', { name: '调整顺序', exact: true }).click()
+  await page.getByRole('button', { name: '删除途经点 测试药店', exact: true }).click()
+  await expect(page.locator('.waypoints__row')).toHaveCount(0)
 })

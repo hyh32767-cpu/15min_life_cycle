@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { mockApi, setupRoute } from './mocks'
+import { mockApi, setupRoute, saveRoute, useRoute } from './mocks'
 test.use({ viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true })
 
 test('switching POI category removes old map icons while the next result is pending', async ({ page }) => {
@@ -76,12 +76,10 @@ test('waypoints can be dragged, moved with buttons, replaced, saved and planned 
   expect(tasks[1].precedenceIds).toContain(tasks[0].id)
   await page.reload()
   await expect(page.locator('.waypoints__place strong')).toHaveText(['取件候选', '买菜候选'])
-  await page.getByRole('button', { name: '我的路径', exact: true }).click()
-  await page.getByLabel('路径名称', { exact: true }).fill('途经顺序路径')
-  await page.getByRole('button', { name: '保存路径', exact: true }).click()
+  await saveRoute(page, '途经顺序路径')
   await page.getByRole('button', { name: '反向路径' }).click()
   await expect(page.locator('.waypoints__place strong')).toHaveText(['买菜候选', '取件候选'])
-  await page.locator('.results .result').filter({ hasText: '途经顺序路径' }).click()
+  await useRoute(page, '途经顺序路径')
   await expect(page.locator('.waypoints__place strong')).toHaveText(['取件候选', '买菜候选'])
   await page.locator('.waypoints__place').first().click()
   const picker = page.getByRole('dialog', { name: '选择途经点' })

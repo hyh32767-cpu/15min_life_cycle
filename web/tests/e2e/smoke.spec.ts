@@ -18,6 +18,7 @@ test('endpoint picker searches company/home from mocked api', async ({ page }) =
   await page.getByPlaceholder('搜索任意地点').fill('北京市昌平区回龙观')
   await page.getByRole('button', { name: '搜索', exact: true }).click()
   await expect(page.getByText('回龙观小区').first()).toBeVisible()
+  await page.locator('.result').filter({ hasText: '回龙观小区' }).first().click()
 
   await page.locator('button.endpoint').nth(1).click()
   await page.getByPlaceholder('搜索任意地点').fill('北京市昌平区龙泽园')

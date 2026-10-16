@@ -86,8 +86,24 @@ async function choose(place: PlaceRef): Promise<void> {
   searchOpen.value = false
   snap.value = 1
 }
-function pick(): void { interaction.beginPick(searchTarget.value === 'center' ? 'community-center' : searchTarget.value === 'start' ? 'route-start' : searchTarget.value === 'end' ? 'route-end' : 'waypoint'); searchOpen.value = false; snap.value = 0 }
-watch(() => interaction.pickTarget, target => { if (target) snap.value = 0; else snap.value = 1 })
+let favoritePickRoute: string | null = null
+function pick(): void {
+  favoritePickRoute = addingFavorite.value ? route.fullPath : null
+  interaction.beginPick(addingFavorite.value ? 'saved-place' : searchTarget.value === 'center' ? 'community-center' : searchTarget.value === 'start' ? 'route-start' : searchTarget.value === 'end' ? 'route-end' : 'waypoint')
+  searchOpen.value = false; snap.value = 0
+}
+watch(() => interaction.pickTarget, target => {
+  snap.value = target ? 0 : 1
+  if (favoritePickRoute == null || target === 'saved-place') return
+  const samePage = favoritePickRoute === route.fullPath
+  favoritePickRoute = null
+  if (!samePage) return
+  if (interaction.selectedFor === 'saved-place' && interaction.selectedPlace) {
+    saveFavorite(interaction.selectedPlace)
+    interaction.clearSelected('saved-place')
+  }
+  searchOpen.value = true
+})
 watch(() => interaction.editingWaypoints, editing => { if (editing) snap.value = 2 })
 watch(() => interaction.panelExpandRequested, requested => { if (requested) { snap.value = 2; interaction.panelExpandRequested = false } })
 watch(() => mapRoute.destination, value => { if (value) snap.value = 0 })
@@ -443,14 +459,24 @@ onMounted(async () => { const restored = persistence.restore(); persistence.star
                   加途经点
                 </button>
               </div>
-              <button
+              <div
                 v-for="item in [...places.places].reverse()"
                 :key="item.id"
-                class="shell-picker__place"
-                @click="choose(item.place)"
+                class="favorite-place-row"
               >
-                <strong>{{ item.label }}</strong><small>{{ item.place.address || item.place.name }}</small>
-              </button>
+                <button
+                  class="shell-picker__place"
+                  @click="choose(item.place)"
+                >
+                  <strong>{{ item.label }}</strong><small>{{ item.place.address || item.place.name }}</small>
+                </button>
+                <button
+                  :aria-label="`删除收藏地点 ${item.label}`"
+                  @click="places.remove(item.id)"
+                >
+                  ×
+                </button>
+              </div>
             </template>
           </template>
         </div>
@@ -509,10 +535,7 @@ onMounted(async () => { const restored = persistence.restore(); persistence.star
               @save="saveFavorite"
             />
           </div>
-          <div
-            v-if="!addingFavorite"
-            class="location-tools"
-          >
+          <div class="location-tools">
             <button
               class="location-map-pick"
               aria-label="地图选位置"
@@ -569,6 +592,9 @@ onMounted(async () => { const restored = persistence.restore(); persistence.star
 .shell{height:100dvh;width:100%;overflow:hidden;position:relative;background:#eef2f6;--sheet-height:48dvh;color:#17243a}.shell__map{position:absolute;inset:0}.shell__omni{position:absolute;z-index:25;top:14px;left:14px;width:408px;box-sizing:border-box;padding:12px 14px;display:grid;gap:9px;background:#fffffff5;border:1px solid #e2e8f080;border-radius:18px;box-shadow:0 10px 30px #18283d20;backdrop-filter:blur(18px)}.shell__brand-row,.shell__brand{display:flex;align-items:center;gap:8px}.shell__brand-row{justify-content:space-between}.shell__brand strong{font-size:15px}.shell__brand small{font-size:10px;color:#4d73aa}.shell__brand-mark{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:#3863f5;color:white;font-size:18px}.shell button{font:inherit;cursor:pointer;min-height:38px;border:1px solid #dfe6f0;background:white;border-radius:10px;padding:7px 10px;font-size:12px;color:#334155}.shell .text{border:0;background:none;color:#2863d6;padding:3px 6px}.shell button:disabled{opacity:.5;cursor:default}.shell__search-row{display:flex;align-items:center;background:#f1f5f9;border-radius:12px;min-width:0}.shell .shell__search{flex:1;min-width:0;text-align:left;background:none;border:0;color:#68798f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px;min-height:42px}.shell__search span{margin-right:8px}.shell .shell__saved{border:0;background:none;font-size:11px;flex:none;color:#4f647d}.shell__nav{display:flex;gap:4px;background:#f0f3f8;border-radius:12px;padding:4px}.shell__nav-item{flex:1;text-align:center;padding:8px;color:#718098;font-size:12.5px;font-weight:700;border-radius:9px;text-decoration:none}.shell__nav-item.router-link-exact-active{background:white;color:#2563eb;box-shadow:0 2px 6px #17243a09}.sheet{position:absolute;z-index:24;left:14px;top:191px;bottom:14px;width:408px;background:#fffffff5;border:1px solid #e2e8f080;border-radius:18px;display:flex;flex-direction:column;box-shadow:0 10px 30px #18283d20;backdrop-filter:blur(18px);overflow:hidden}.sheet__handle{display:flex;align-items:center;justify-content:space-between;flex:none;padding:9px 14px;border-bottom:1px solid #e9edf4;color:#6a7c94;font-size:11px;cursor:pointer;touch-action:none}.sheet__grabber{display:none}.sheet__title{font-weight:650}.sheet__content{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:13px 14px}.shell__footer{display:flex;align-items:center;justify-content:space-around;border-top:1px solid #e4eaf2;margin-top:16px;padding-top:6px}.shell__footer a{font-size:11px;text-decoration:none;color:#6a7c94}.shell__layers{position:absolute;z-index:23;right:14px;top:14px;display:flex;gap:6px}.shell__layers button{background:#ffffffed;border-radius:20px;box-shadow:0 3px 12px #17243a12;font-size:11px;min-height:34px}.shell .active{background:#eff5ff;border-color:#8ab0fa;color:#2563eb}.shell--dock-collapsed .sheet{display:none}.shell-modal{position:fixed;inset:0;z-index:80;background:#10243b55;display:flex;align-items:center;justify-content:center;padding:20px}.shell-modal__card{width:460px;max-width:100%;max-height:86dvh;overflow:auto;background:white;border-radius:20px;padding:16px;box-sizing:border-box}.shell-modal__card>header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.shell-modal h3{font-size:16px;margin:0}.shell-picker{display:grid;gap:12px}.shell-picker__targets{display:flex;gap:6px}.shell-picker__targets button{flex:1}.shell-picker__city{display:flex;gap:10px;align-items:center;font-size:12px}.shell-picker input{border:1px solid #dfe6f0;border-radius:10px;min-height:40px;min-width:0;padding:8px;font:inherit;flex:1}.shell .shell-picker__place{display:grid;text-align:left;gap:4px}.shell-picker small{font-size:11px;color:#7b899d}.shell button:focus-visible,.sheet__handle:focus-visible{outline:3px solid #92b5f5;outline-offset:2px}
 @media(max-width:820px){.shell__omni{top:max(8px,env(safe-area-inset-top));left:10px;width:calc(100% - 20px);padding:9px 11px;gap:7px;border-radius:16px}.shell__brand-row{display:none}.shell .shell__search{min-height:39px;font-size:12px}.shell__nav-item{padding:7px;font-size:12px}.sheet{left:0;right:0;top:auto;bottom:0;width:100%;height:var(--sheet-height);border-radius:22px 22px 0 0;transition:height .23s;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom)}.sheet__handle{display:grid;grid-template-columns:1fr auto;gap:7px;padding:8px 14px 7px;min-height:39px;box-sizing:border-box}.sheet__grabber{display:block;grid-column:1/-1;width:34px;height:4px;justify-self:center;border-radius:5px;background:#cbd5e1}.sheet__content{padding:12px 14px}.shell__layers{top:auto;bottom:calc(var(--sheet-height) + 12px);right:10px;transition:bottom .23s}.shell--dock-collapsed .sheet{display:flex}.shell-modal{padding:0;align-items:flex-end}.shell-modal__card{width:100%;max-height:86dvh;border-radius:22px 22px 0 0;padding:16px 16px max(16px,env(safe-area-inset-bottom))}.shell--picking .shell__omni{visibility:visible}}
 @media print{.shell{height:auto;overflow:visible}.shell__omni,.shell__footer,.shell__layers,.sheet__handle{display:none}.shell__map{position:relative;height:360px}.sheet{position:relative;inset:auto;width:100%;height:auto;overflow:visible;box-shadow:none}.sheet__content{overflow:visible}.shell--dock-collapsed .sheet{display:block}}
+.favorite-place-row{display:flex;gap:6px;align-items:center}.favorite-place-row>.shell-picker__place{flex:1;min-width:0}.favorite-place-row>button:last-child{min-width:36px;min-height:44px;border:0;background:transparent;color:#8795a9}
+.sheet__search-row .shell__search span.origin-name{white-space:normal;overflow-wrap:anywhere;font-weight:700}
+.sheet__search-row .shell__search>.app-icon{flex-shrink:0}
 </style>
 <style scoped>
 .sheet .shell__omni{position:static;inset:auto;width:auto;flex:none;order:1;padding:0 12px 8px;margin:0;border:0;box-shadow:none;border-radius:0;background:transparent;backdrop-filter:none}

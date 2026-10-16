@@ -33,6 +33,11 @@ test('a center automatically draws only 5/10/15 layers, analyses at 15 and reuse
   await chooseCenter(page)
   await expect(page.getByText('7/7 已完成', { exact: true })).toBeVisible()
   expect(calls).toEqual([900, 300, 600])
+  // Reselecting the same center must not clear the circle and leave it disabled.
+  await chooseCenter(page)
+  await expect(page.getByText('7/7 已完成', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: '设施社区评分', exact: true })).toBeEnabled()
+  expect(calls).toEqual([900, 300, 600])
   expect(analyses.length).toBeGreaterThan(0)
   expect(analyses.every(s => s === 900)).toBe(true)
   expect(await page.evaluate(() => (window as unknown as { circleColors: string[] }).circleColors.slice(-3))).toEqual(['#3975ed', '#39afa7', '#17b684'])

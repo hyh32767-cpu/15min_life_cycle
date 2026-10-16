@@ -31,6 +31,9 @@ export const useIsochroneStore = defineStore('isochrone', () => {
   }
 
   const origin = ref<NamedCoord | null>(null)
+  // Track deliberate selections separately from the backend's normalized origin.
+  // Selecting the same coordinate should regenerate via cache without response loops.
+  const originSelection = ref(0)
   const originLabel = ref('')
   const thresholdSeconds = ref<number>(900)
   const result = ref<IsochroneResult | null>(null)
@@ -132,7 +135,7 @@ export const useIsochroneStore = defineStore('isochrone', () => {
     // 起点变更会使在途等时圈和 POI 请求失效，避免旧响应回写新起点。
     seq += 1
     poiSeq += 1
-    origin.value = coord
+    origin.value = { ...coord }
     originLabel.value = label
     rangeReused.value = false
     result.value = null
@@ -148,6 +151,7 @@ export const useIsochroneStore = defineStore('isochrone', () => {
     pairsUsedPois.value = 0
     poiTruncated.value = false
     poiTruncationReason.value = null
+    originSelection.value++
   }
 
   async function pollBackgroundUpgrade(taskId: string, currentSeq: number, coord: NamedCoord, seconds: number): Promise<void> {
@@ -319,6 +323,7 @@ export const useIsochroneStore = defineStore('isochrone', () => {
   return {
     rangeReused,
     origin,
+    originSelection,
     originLabel,
     thresholdSeconds,
     result,

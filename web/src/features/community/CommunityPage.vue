@@ -489,8 +489,8 @@ function exportLifeCircleReport(): void {
   link.click()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
-watch([() => route.name, () => iso.origin ? `${iso.origin.crs}:${iso.origin.lng}:${iso.origin.lat}` : ''], ([name, key]) => {
-  if (name !== 'community' || !key || iso.busy) return
+watch([() => route.name, () => iso.originSelection], ([name]) => {
+  if (name !== 'community' || !iso.origin || iso.busy) return
   if (iso.result?.status === 'complete' && iso.result.thresholdSeconds === 900
     && [300, 600, 900].every(seconds => iso.heatLayers.some(layer => layer.status === 'complete' && layer.thresholdSeconds === seconds))) return
   void generateCircle()
