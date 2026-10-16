@@ -63,7 +63,7 @@ for (const width of [390, 1280]) {
     await expect(page.locator('.sheet__actions')).not.toHaveAttribute('inert')
     expect(requests).toBe(3)
     await link.click()
-    await expect(page).toHaveURL('http://127.0.0.1:5173/')
+    await expect(page).toHaveURL('/')
   })
 }
 
@@ -93,5 +93,5 @@ test('polling failure releases the measurement lock and permits retry', async ({
   await expect(page.getByRole('button', { name: '重新生成生活圈', exact: true })).toBeEnabled()
   expect(requests).toBe(1)
   await page.getByRole('link', { name: '顺路办事', exact: true }).click()
-  await expect(page).toHaveURL('http://127.0.0.1:5173/')
+  await expect(page).toHaveURL('/')
 })

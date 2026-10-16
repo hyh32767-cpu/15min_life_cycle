@@ -83,7 +83,7 @@ test('life circle shows places only while commute retains shared routes and plac
   await page.getByRole('button', { name: '我的收藏', exact: true }).click()
   await dialog.getByRole('tab', { name: '路线 1', exact: true }).click()
   await dialog.getByRole('button', { name: '原有收藏路线 构造书店 → 构造药店', exact: true }).click()
-  await expect(page).toHaveURL('http://127.0.0.1:5173/')
+  await expect(page).toHaveURL('/')
   await expect(page.locator('.endpoint').first()).toContainText('构造书店')
   await expect(page.locator('.endpoint').nth(1)).toContainText('构造药店')
   await expect(page.getByRole('button', { name: '我的地点', exact: true })).toHaveCount(0)

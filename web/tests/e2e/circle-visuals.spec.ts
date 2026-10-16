@@ -22,6 +22,9 @@ for (const width of [320, 390, 1280]) {
     })
     await page.route('**/api/isochrones/visual-circle/status', route => route.fulfill({ json: response() }))
     await page.goto('/community')
+    // The shell is eager, but this route is lazy-loaded. Wait for its consumer
+    // before starting the measurement, especially on a cold development server.
+    await expect(page.getByRole('region', { name: '社区等时圈体检' })).toBeVisible({ timeout: 15_000 })
     await page.evaluate(() => {
       const w = window as unknown as { BMap: { Polyline: unknown }; contourLines: unknown[][] }
       w.contourLines = []
